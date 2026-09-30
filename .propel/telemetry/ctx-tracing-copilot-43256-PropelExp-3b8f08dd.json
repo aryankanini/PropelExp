@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-43256-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-24T11:33:04",
+  "updated_at": "2026-09-24T11:33:03",
+  "_cumulative_input_tokens": 399,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-24T11:33:03",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Work in D:\\PropelExp. Implement EP-002 US_018 TASK_001 through TASK_006 only; do not implement frontend TASK_007. Read all six complete task files first. Follow existing frozen strict Pydantic/domain patterns under backend/src/cms_planner and tests. Implement exactly expected files: cms_structure_detector.py, cms_layout.py, deficiency_boundaries.py, deficiency_extraction.py, deficiency_schema.json, deficiency_candidate_validator.py, deficiency_candidate.py, deficiency_policy.py, store_extraction_result.py. Add focused tests at every task Build Commands path. Requirements: deterministic CMS-2567 recognition retaining supported layout; unrecognized stops candidates; recognizable header with zero F-tags remains recognized empty; identify separate F-tag/SOD boundaries across ordered pages including repeated tags and incomplete SOD; closed provider-neutral contract with evidence/confidence/uncertainty and stable identities; incomplete SOD always uncertain/unconfirmed and cannot transition to confirmed; atomic store of recognized layout + candidates, including zero candidates. Integrate with the existing repository conservatively; if CaseAggregate lacks appropriate typed state, prefer a narrowly scoped extraction store/result abstraction in the expected service rather than broad unrelated refactors, but tests must prove no partial writes on rejection. Use standard library + Pydantic only unless pyproject already has another dependency. TDD: add first focused test, run it, implement, rerun. Keep functions <=50 LOC and complexity <=7. Use apply_patch for edits. Mark validation/checklist boxes [x] in only TASK_001..TASK_006 after tests pass. Run all six focused suites together and report files/results. Do not touch frontend, other task files, or unrelated user changes."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 399
+    }
+  ]
+}

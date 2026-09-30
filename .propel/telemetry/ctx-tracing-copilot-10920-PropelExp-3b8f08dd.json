@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-10920-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-24T12:09:14",
+  "updated_at": "2026-09-24T12:09:14",
+  "_cumulative_input_tokens": 355,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-24T12:09:14",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Work in D:\\PropelExp. Implement EP-002 US_019 TASK_001 through TASK_003 completely. Read all three task files first and follow existing backend Pydantic patterns and the US_017/US_018 candidate contracts already present. Required files: backend/src/cms_planner/application/ports/extraction_response.schema.json, backend/src/cms_planner/adapters/ai/extraction_response_validator.py, backend/src/cms_planner/modules/extraction/schema_failure.py, backend/tests/contract/test_extraction_response_contract.py, backend/tests/integration/extraction/test_schema_storage_gate.py. Also add the task_002 focused unit test path if needed by its Build Commands. Requirements: one closed aggregate response requiring provider, deficiency, evidence, confidence, uncertainty fields with no unknowns; missing/unknown/out-of-range/artifact-only normalized text rejects the entire response; never clamp confidence; valid candidates are unconfirmed; invalid response yields one safe typed failure and zero writes; atomic all-or-nothing storage behavior. Use standard library and Pydantic only unless an existing dependency supports this; schema itself must be JSON Schema 2020-12. Avoid duplicating candidate rules where existing domain models can enforce them. TDD with immediate focused validation after first edit. Keep complexity <=7. Mark all validation/checklist boxes [x] in these three task files only after focused suites pass. Run all task build-command suites together and return changed files/tests. Do not touch frontend or unrelated files."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 355
+    }
+  ]
+}

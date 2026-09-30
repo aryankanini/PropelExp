@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-41712-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-24T11:18:39",
+  "updated_at": "2026-09-24T11:18:39",
+  "_cumulative_input_tokens": 305,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-24T11:18:39",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Work in D:\\PropelExp. Implement only EP-002 US_017 TASK_001 and TASK_002 (not frontend TASK_003). Follow existing frozen strict Pydantic patterns under backend/src/cms_planner and the task files at .propel/context/tasks/EP-002/us_017/task_001_define_provider_extraction_port.md and task_002_validate_provider_candidates.md. Required files: backend/src/cms_planner/application/ports/provider_extraction.py, backend/src/cms_planner/application/ports/extraction_schema.json, backend/src/cms_planner/adapters/ai/provider_candidate_validator.py. Add focused tests at the task build-command paths. Contract must be provider-neutral, closed (no extra fields), require provider value plus evidence page/snippet, confidence 0..1, uncertainty boolean, preserve conflicting names as separate candidates, reject candidates lacking page/snippet before case-state mapping. Do not add a provider SDK. Use apply_patch for edits. Run focused tests immediately after first substantive edit and iterate until green. Update only these two task files' validation/checklist boxes to [x] after tests pass. Return changed files and test results. Do not modify unrelated files or frontend."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 305
+    }
+  ]
+}

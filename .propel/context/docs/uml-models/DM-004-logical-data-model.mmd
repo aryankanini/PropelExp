@@ -1,0 +1,73 @@
+erDiagram
+    CASE_SESSION ||--|| DOCUMENT : owns
+    DOCUMENT ||--|{ PAGE : contains
+    CASE_SESSION ||--|{ DEFICIENCY : tracks
+    PAGE ||--o{ EVIDENCE_SPAN : supports
+    DEFICIENCY ||--|{ EVIDENCE_SPAN : cites
+    DEFICIENCY ||--o{ FIELD_REVISION : records
+    CASE_SESSION ||--o{ PROCESSING_JOB : runs
+    DEFICIENCY ||--o| POC_DRAFT : produces
+    POC_DRAFT ||--|{ POC_SECTION : contains
+    POC_DRAFT ||--o| APPROVAL : receives
+
+    CASE_SESSION {
+        uuid id PK
+        string provider_name
+        string lifecycle_state
+        datetime last_activity_at
+    }
+    DOCUMENT {
+        uuid id PK
+        string media_type
+        int byte_count
+        int page_count
+    }
+    PAGE {
+        uuid id PK
+        int page_number
+        string extraction_status
+    }
+    DEFICIENCY {
+        uuid id PK
+        string f_tag
+        text current_sod
+        string review_status
+    }
+    EVIDENCE_SPAN {
+        uuid id PK
+        int page_number
+        text snippet
+        decimal confidence
+    }
+    FIELD_REVISION {
+        uuid id PK
+        string field_name
+        text original_value
+        text current_value
+        string content_origin
+        int revision_number
+    }
+    PROCESSING_JOB {
+        uuid id PK
+        string job_type
+        string stage
+        string terminal_status
+    }
+    POC_DRAFT {
+        uuid id PK
+        int revision_number
+        string provenance_state
+        string approval_state
+    }
+    POC_SECTION {
+        uuid id PK
+        string section_type
+        text content
+        boolean missing_information
+    }
+    APPROVAL {
+        uuid id PK
+        uuid approver_id
+        int approved_revision
+        datetime approved_at
+    }

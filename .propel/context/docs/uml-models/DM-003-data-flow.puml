@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam actorBackgroundColor #DCEBFA
+skinparam componentBackgroundColor #DFF2E1
+skinparam cloudBackgroundColor #E6E6E6
+skinparam folderBackgroundColor #FFF2CC
+
+actor "Compliance Reviewer" as Reviewer
+artifact "CMS-2567 Upload" as Document
+folder "Session Workspace" as Workspace
+component "Native Text Extraction" as Native
+cloud "Approved OCR Service" as OCR
+component "Extraction and Schema Validation" as Extract
+storage "In-Memory Case Aggregate" as State
+component "POC Generation and Guardrails" as POC
+cloud "Approved LLM Service" as LLM
+component "Approval and Export" as Export
+
+Reviewer --> Document : Select file
+Document --> Workspace : Stream within limits
+Workspace --> Native : Read pages
+Native ..> OCR : Incomplete pages only
+OCR --> Native : Text and coordinates
+Native --> Extract : Page text and evidence
+Extract --> State : Validated candidates
+Reviewer --> State : Resolve and confirm
+State --> POC : Reviewed deficiency only
+POC ..> LLM : Minimum necessary context
+LLM --> POC : Structured five-part draft
+POC --> State : Grounded draft and provenance
+State --> Export : Current approved revision
+Export --> Reviewer : Labeled draft
+Reviewer --> Workspace : End or timeout cleanup
+@enduml

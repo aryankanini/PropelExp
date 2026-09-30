@@ -1,0 +1,33 @@
+@startuml
+skinparam shadowing false
+start
+:Receive validated document;
+:Extract native page text;
+if (Page text incomplete?) then (yes)
+  :Send minimum necessary page to OCR adapter;
+  :Validate OCR text and coordinates;
+else (no)
+  :Use native page text;
+endif
+:Assemble page evidence;
+:Request schema-constrained extraction;
+:Validate fields, evidence, and confidence;
+if (Candidate uncertain?) then (yes)
+  :Require reviewer resolution;
+else (no)
+  :Allow reviewer confirmation;
+endif
+:Build reviewed deficiency context;
+note right
+  Direct active-case context only.
+  No vector store or retrieval corpus.
+end note
+:Request five-part POC draft;
+:Validate schema and claim grounding;
+if (Unsupported claim?) then (yes)
+  :Reject claim or emit missing-information marker;
+endif
+:Present draft with provenance;
+:Require human edit and leader approval;
+stop
+@enduml

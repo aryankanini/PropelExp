@@ -1,0 +1,334 @@
+layout=recognized
+boundaries=1
+L0532 sod_chars=14207 pages=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+SOD TEXT:
+Initial Comments
+Initial Comments
+A relicensure survey was completed on 4/10/24.
+One deficiency was cited.
+6.5.9(B) Pt/Clin Func-PtCare-PtCarePol
+Wrtn/Apvd/Rvw
+PATIENT/CLINICAL FUNCTIONS
+6.5.9 Patient Care
+(B) Patient Care Policies
+The facility shall have written patient care
+policies relating to all areas of care, which are
+approved by the medical director and governing
+body. The patient care policies shall be reviewed
+periodically to determine effectiveness; a review
+that shall take place at least annually.
+This STANDARD is not met as evidenced by:
+Based on interviews and document review, the
+facility failed to ensure staff monitored and
+reported changes in patients' blood pressure
+(BP), heart rate, and overall condition and
+documented communication to nursing staff and
+providers before, during, and after dialysis (the
+process of filtering a patient's blood using a
+machine and filter) treatment based on facility
+policy. This failure was observed in two of six
+medical records reviewed (Patient #1 and Patient
+#5).
+Findings include:
+Facility policy:
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+The Pre-Intra-Post Treatment Data Collection,
+Monitoring, and Nursing Assessment policy read,
+its purpose is to obtain and document baseline
+and ongoing information about the patient before,
+during, and after the dialysis treatment through
+data collection and nursing assessment. This
+information will be used in planning and
+documenting the patient's dialysis treatment,
+monitoring during treatment, and for reviewing
+the patient's response to the treatment and status
+prior to discharge.
+The Nursing assessment will be performed and
+documented by a licensed nurse; specifically, a
+Registered Nurse (RN) or if performance of a
+nursing assessment is permitted by state law, a
+Licensed Practical Nurse (LPN) / Licensed
+Vocational Nurse (LVN).
+For pre-treatment data collection/assessment,
+any abnormal findings or findings outside of any
+patient-specific physician-ordered parameters
+discovered during pre-treatment data collection
+will be documented and immediately reported to
+the licensed nurse (refer to "Abnormal Findings"
+section of this policy). If an abnormal finding is
+reported to the licensed nurse pre-treatment, the
+nurse will assess the patient prior to the initiation
+of dialysis. The assessment is a nursing
+responsibility. The nurse will assess the patient's
+pre-treatment as warranted by the patient' s
+condition. The licensed nurse will use his/her
+clinical judgment based on individual patient
+needs to determine if any clinical interventions
+are necessary. The physician (or non-physician
+practitioner [NPP] if applicable) will be notified of
+any concerns that may preclude the initiation of
+dialysis. If there are no abnormal findings or
+concerns identified during the pretreatment data
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+collection, the treatment may be initiated.
+For intradialytic (during dialysis) data
+collection/assessment, the licensed nurse will
+round on those patients without reported
+abnormal findings and complete the nursing
+assessment within one hour of dialysis treatment
+initiation or sooner as required by state law.
+Abnormal findings or findings outside of any
+patient-specific physician-ordered parameters will
+be reported to the licensed nurse immediately
+(refer to "Abnormal Findings" section in this
+policy). The licensed nurse will use his/her
+clinical judgment based on individual patient
+needs to determine if any clinical interventions
+are necessary. The licensed nurse notifies the
+physician (or NPP if applicable) as needed of
+changes in patient status. All findings,
+interventions, and patient response will be
+documented in the patient' s medical record.
+For post-treatment data collection/assessment,
+the PCT or licensed nurse will obtain and
+document basic data on each patient
+post-dialysis and compare to pre-dialysis
+findings. If an abnormal finding(s) or concern is
+identified post-treatment, this needs to be
+reported to the licensed nurse. The licensed
+nurse will assess the patient prior to discharge.
+Licensed nurse will use their clinical judgment
+based on individual patient needs to determine if
+any clinical interventions or notification of
+physician (or NPP as applicable) is necessary
+prior to discharge of the patient from the facility.
+Unless other abnormal parameters are
+established by the facility Governing Body and
+documented in the Governing Body Meeting
+minutes, the following are considered abnormal
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+findings and should be reported to the licensed
+nurse and documented in the patient' s medical
+record. Within each category, definitions may be
+adjusted by a patient specific physician order. In
+addition, the teammate who is observing or
+collecting information should report to the
+licensed nurse whenever there is concern for the
+patient ' s condition or the potential safety of
+initiating dialysis, even in the absence of specific
+abnormal findings. Members of the patient care
+team should report any changes in patient
+conditions or concerns of patient well-being
+immediately to the licensed nurse at any time.
+Abnormal findings include:
+Pre-dialysis blood pressure, systolic (the first BP
+number which measures the pressure in arteries
+when the heart beats) greater than 180 mm/Hg
+or less than 90 mm/Hg, and diastolic (the second
+BP number which measures the pressure in the
+arteries when the heart rests between beats)
+greater than or equal to 100 mm/Hg or less than
+50 mm/Hg. Intradialytic blood pressure, systolic
+greater than 180 mm/Hg or less than 90 mm/Hg,
+and diastolic greater than or equal to 100 mm/Hg
+or less than 50 mm/Hg. Post treatment blood
+pressure, if the patient can stand, standing
+systolic blood pressure greater than 140 mm/Hg
+or less than 90 mm/Hg, and standing diastolic
+blood pressure greater than 90 mm/Hg or less
+than 50 mm/Hg. If the patient is not able to stand,
+document reason and sitting blood pressure.
+Sitting blood pressure for patient's that cannot
+stand, systolic blood pressure greater than 140
+mm/Hg or less than 90 mm/Hg, and diastolic
+blood pressure greater than 90 mm/Hg or less
+than 50 mm Hg. Heart or pulse rate
+pre/intra/post, less than 60 beats per minute or
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+greater than 100 beats per minute and/or an
+irregular heart beat.
+1. The facility failed to ensure patient care
+technicians (PCTs) and registered nurses (RNs)
+monitored and reported changes in patients'
+status and documented communication to
+nursing staff and medical providers before,
+during, and after intradialytic treatment based on
+facility policy.
+A. Medical Record Review
+i. A review of Patient #1's medical record
+revealed a lack of monitoring and assessment by
+care staff before, during, and after dialysis
+treatment, including documentation that the
+provider was notified of abnormal findings.
+a. The treatment record for Patient #1 on 3/25/24
+revealed the patient's pre-dialysis sitting blood
+pressure (BP) was 194/114. Patient #1's
+treatment was initiated at 6:43 a.m. At 6:59 a.m.
+the record read, BP 180/103 and the PCT
+documented diastolic the BP was high and the
+RN was notified. Patient #1's BP continued to
+read high throughout the treatment with no
+documented interventions. At 10:38 a.m., the
+final BP reading was 185/107 with a PCT note
+that read, treatment terminated. The final
+discharge note read, routine discharge. A review
+of the medical record did not reveal evidence the
+physician was notified of the BP readings which
+exceeded facility parameters.
+This medical record review was in contrast to the
+Pre-lntra-Post Treatment Data Collection,
+Monitoring, and Nursing Assessment policy
+which read, the provider should have been
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+notified of any concerns that would preclude the
+initiation of dialysis such as a pre-dialysis systolic
+BP greater than 180 mm/Hg and a diastolic BP
+greater than or equal to 100 mm/Hg.
+Also, according to facility policy, abnormal
+intra-dialytic BP such as a systolic BP greater
+than 180 mm/Hg and a diastolic BP greater than
+or equal to 100 mm/Hg should have been
+reported to the RN immediately. Further, the RN
+should have used their clinical judgment to
+determine if any clinical interventions were
+needed. The RN should have notified the
+provider of abnormally high BP readings.
+Additionally, for an abnormal post-treatment BP
+such as a standing systolic BP greater than 140
+or a diastolic BP greater than 90, the RN should
+have used their clinical judgment to determine if
+any interventions were needed and should have
+notified the provider prior to discharge of the
+patient from the facility.
+ii. A review of Patient #5's medical record
+revealed a lack of monitoring and assessment by
+care staff during and after dialysis treatment,
+including documentation that the provider was
+notified of changes in condition.
+a. The treatment record for Patient #5 on 4/1/24
+revealed the patient's treatment was initiated at
+12:36 p.m. with a BP reading of 138/106. At
+12:58 p.m. the record revealed Patient #5's BP
+was 159/110. At 2:28 p.m. the patient's BP was
+164/115. At 4:36 p.m., Patient #5's BP was
+144/101 and the treatment was terminated. A
+review of the medical record did not reveal
+evidence the RN was notified of the BP readings
+which exceeded facility parameters. Further,
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+there was no evidence the provider was notified
+of elevated diastolic BP readings, which
+exceeded facility parameters.
+This medical record review was in contrast to the
+Pre-lntra-Post Treatment Data Collection,
+Monitoring, and Nursing Assessment policy
+which read, abnormal intra-dialytic BP such as a
+diastolic BP greater than or equal to 100 mm/Hg
+should have been reported to the RN
+immediately. Further, the RN should have used
+their clinical judgment to determine if any clinical
+interventions were needed. The RN should have
+notified the provider of abnormally high BP
+readings.
+Additionally, for an abnormal post-treatment BP
+such as a standing systolic BP greater than 140
+or a diastolic BP greater than 90, the RN should
+have used their clinical judgment to determine if
+any interventions were needed and should have
+notified the provider prior to discharge of the
+patient from the facility.
+B. Interviews
+i. On 4/10/24 at 8:37 a.m., an interview was
+conducted with patient care technician (PCT) #1.
+PCT #1 stated they would notify the RN if the
+patient's systolic BP was above 180 or the
+diastolic BP was above 100. PCT #1 said they
+would notify the RN and document any
+interventions they were directed to complete.
+PCT #1 said it was important to notify the RN if
+the BP was too high because it would be
+dangerous to the patient. They said the patient
+could get a severe headache, seizure, or a stroke
+if the BP was too high.
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+ii.On 4/10/24 at 9:02 a.m., an interview was
+conducted with registered nurse (RN) #2. RN #2
+stated PCTs would notify the RN if there was an
+increase or a drop in BP by 20 points. They said
+the PCTs would document their observations and
+that the RN had been notified. RN #2 stated the
+RN would do any follow-up patient assessment,
+intervention, and documentation needed. Also,
+RN #2 said they would notify the provider for a
+sustained systolic BP of 200 or above. They said
+they would repeat the BP and observe the patient
+for a while before calling because the provider
+preferred that. RN #2 said they could give a PRN
+(use as needed) medication to lower the patient's
+BP if it was 190 or above. RN #2 said it was
+important for PCTs to notify the RN of abnormally
+high BP for patient safety.
+iii. On 4/10/24 at 11:01 a.m., an interview was
+conducted with facility administrator (FA) #3. FA
+#3 stated if the patient's systolic BP was above
+180 or diastolic BP was above 100, the PCTs
+would be expected to notify the RN. They said
+the RN's responsibility would be to assess the
+patient and notify the provider. FA #3 stated it
+was important for the PCT to let the RN know
+about abnormal findings such as an elevated BP
+so the RN could take action and prevent a bad
+patient outcome. They said the RN could
+intervene, give medications to prevent a stroke,
+and monitor the patient closely. Further, FA #3
+stated it was important for the RN to notify the
+provider for a BP greater than 215 to get orders
+to treat the patient. They said the provider had
+taught the care staff to call when the systolic BP
+was greater than 215.
+These interviews were in contrast to the review of
+medical records for Patient #1 and Patient #5,
+Colorado De artment of Public Health & Environment
+LAKEWOOD CROSSING DIALYSIS CENTER
+DEFICIENCY)
+which revealed multiple instances of abnormal
+blood pressures without the RN or provider being
+notified.
+iv. On 4/10/24 at 3:13 p.m., an interview was
+conducted with medical director (MD) #4. MD #4
+stated the RNs had a PRN medication order they
+could give to a patient who had high blood
+pressure. In reference to Patient #1 and Patient
+#5, MD #4 stated the provider orders for BP
+medication did not indicate a parameter so the
+RN would know when they could give the
+medication. They stated this was something that
+should be corrected. Also, MD #4 said RNs
+should notify the provider for a systolic blood
+pressure above 180 and a diastolic blood
+pressure over 110. They said this was important
+because there could be risks to the patient of an
+adverse event like a stroke or a cardiac issue.
+They said even if the patient were to have
+chronically elevated and difficult-to-control blood
+pressures, these patients were still at risk of
+stroke and cardiac events. Further, MD #4 stated
+the facility needed improvement with notifying the
+provider of high blood pressures and
+documenting parameters for administering BP
+medications.

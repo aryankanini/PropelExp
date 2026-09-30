@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-38616-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T18:21:45",
+  "updated_at": "2026-09-23T18:21:44",
+  "_cumulative_input_tokens": 896,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T18:21:44",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Edit files using apply_patch only. In d:\\PropelExp, repair ONLY these 27 original files identified by formal evaluation; do not touch any alternate similarly numbered files or any other files:\nEP-TECH/us_001/task_001_scaffold_frontend_app.md\nEP-TECH/us_001/task_003_enforce_dependency_boundaries.md\nEP-TECH/us_002/task_001_publish_openapi_contract.md\nEP-TECH/us_002/task_002_generate_frontend_api_types.md\nEP-TECH/us_003/task_001_define_typed_runtime_settings.md\nEP-TECH/us_003/task_002_validate_configuration_constraints.md\nEP-TECH/us_004/task_001_configure_frontend_unit_tests.md\nEP-TECH/us_004/task_002_configure_backend_test_foundation.md\nEP-TECH/us_004/task_003_establish_contract_adapter_tests.md\nEP-TECH/us_004/task_004_configure_e2e_and_coverage.md\nEP-TECH/us_005/task_001_configure_loopback_processes.md\nEP-TECH/us_005/task_002_enforce_exact_frontend_origin.md\nEP-001/us_014/task_001_expire_inactive_cases.md\nEP-001/us_014/task_002_cleanup_on_shutdown.md\nEP-002/us_016/task_001_classify_page_text.md\nEP-002/us_016/task_002_extract_native_page_text.md\nEP-002/us_016/task_003_define_ocr_port.md\nEP-002/us_016/task_004_implement_guarded_ocr_adapter.md\nEP-002/us_016/task_005_normalize_extracted_text.md\nEP-002/us_016/task_007_render_page_processing.md\nEP-002/us_017/task_001_define_provider_extraction_port.md\nEP-002/us_018/task_001_detect_cms_layout.md\nEP-002/us_018/task_002_identify_deficiency_boundaries.md\nEP-002/us_018/task_003_define_deficiency_extraction_port.md\nEP-002/us_018/task_004_validate_deficiency_candidates.md\nEP-002/us_018/task_005_retain_uncertain_deficiencies.md\nEP-002/us_020/task_001_define_extraction_events.md\n\nFor each file, read its sibling user story. Ensure Requirement Reference lists EVERY AC from that story, and Implementation Checklist has at least one explicit semantically valid item for EVERY AC, naming AC-XXX. Keep 1-8 checklist items total, preserve exactly one technology layer, and do not invent cross-layer implementation. A task may include a layer-appropriate contract, invariant, projection, or validation responsibility that supports an AC owned elsewhere. Preserve existing content and user changes where possible. For the three/four test foundation files with unspecified library versions, use versions from design.md when available (Vitest 4.x, pytest 9.x, Playwright 1.x); for React Testing Library/HTTPX where design says compatible unspecified, set Version to 'Compatible' rather than N/A/unspecified so the technology table is populated without inventing a lock. Do not change exact approved locks. After edits, validate these 27 files for all-AC-per-file coverage, 1-8 checklist items, layer purity, no placeholders, and report count edited."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 896
+    }
+  ]
+}

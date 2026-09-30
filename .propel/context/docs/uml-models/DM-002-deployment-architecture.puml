@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam actorBackgroundColor #DCEBFA
+skinparam nodeBackgroundColor #DFF2E1
+skinparam cloudBackgroundColor #E6E6E6
+skinparam folderBackgroundColor #FFF2CC
+
+actor "Authorized Local User" as User
+
+node "Local Workstation" as Workstation {
+  node "Web Browser" as Browser {
+    artifact "React 19.3 SPA" as ReactApp
+  }
+  node "Node.js 24 LTS Process" as NodeProcess {
+    artifact "Vite 8.3 Dev Server" as Vite
+  }
+  node "CPython 3.14 Process" as PythonProcess {
+    component "FastAPI 0.141.1 API" as API
+    component "Session Memory" as Memory
+    folder "Per-Session Temp Workspace" as Temp
+  }
+}
+
+cloud "Approved OCR Service" as OCR
+cloud "Approved LLM Service" as LLM
+
+User --> Browser : Local interaction
+Browser --> Vite : Loopback HTTP - Assets
+Browser --> API : Loopback HTTP - REST and SSE
+API --> Memory : In-process state
+API --> Temp : Streamed files
+API ..> OCR : TLS - Minimum necessary pages
+API ..> LLM : TLS - Reviewed deficiency
+@enduml

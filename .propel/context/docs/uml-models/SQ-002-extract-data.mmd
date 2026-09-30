@@ -1,0 +1,31 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Job as Job Runner
+    participant Extract as Extraction Service
+    participant Provider as OCR and LLM Ports
+    participant State as Session Repository
+
+    Reviewer->>UI: Start extraction
+    UI->>API: POST extraction job
+    API->>Job: Enqueue single in-process job
+    Job->>Extract: Read document pages
+    alt Native text is complete
+        Extract->>Extract: Preserve native text and coordinates
+    else Native text is incomplete
+        Extract->>Provider: Request OCR for affected pages
+        Provider-->>Extract: OCR text and coordinates
+    end
+    Extract->>Provider: Request structured deficiency candidates
+    Provider-->>Extract: Provider fields, F-tags, SODs, evidence
+    Extract->>State: Store validated unconfirmed candidates
+    Job-->>API: Emit completed event
+    API-->>UI: SSE review-ready status
+    UI-->>Reviewer: Show extraction results
+    opt Extraction or provider error
+        Job->>State: Store failed stage without false result
+        API-->>UI: SSE failure and retryability
+        UI-->>Reviewer: Show affected stage
+    end

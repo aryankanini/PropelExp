@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-7564-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-29T09:32:22",
+  "updated_at": "2026-09-29T09:32:21",
+  "_cumulative_input_tokens": 902,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-29T09:32:21",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "\"**CMS Deficiency Action Planner**Review**Active case**2 values need review\r\n\r\n1. 1IntakeComplete\r\n2. 2ReviewCurrent\r\n3. 3POC draftsBlocked\r\n4. 4Approval and exportUnavailable\r\nL0000L0532L0000L0532\r\nEnd sessionReview / Extracted document\r\n\r\n# Extracted deficiencies\r\nReview every F-tag and its complete Statement of Deficiency.\r\n\r\nConfirm and continue to POC\r\nComplete extraction\r\n\r\n## 4 deficiencies found\r\n\r\nEvery ID tag, Statement of Deficiency, and Plan of Correction is aligned below.\r\n\r\nID TagStatement of Deficiency (SOD)Plan of Correction (POC)\r\n\r\n### L0000\r\nReviewing\r\nThe CMS-2567 survey was conducted on 2023-08-15 and identified 5 deficiencies.\r\n\r\n**\u00e2\u20ac\u201d**No corrective action needed.\r\n\r\nSource pages (1)\r\n\r\n### L0532\r\nReview L0532\r\nA relicensure survey was conducted on April 10, 2024, identifying one deficiency related to patient care policies. The deficiency indicates that the facility lacks written patient care policies approved by the medical director and governing body, and staff failed to monitor and document vital signs and communication during dialysis sessions. The survey reviewed six medical records and found non\u00e2\u20ac\u2018compliance in two records.\r\n\r\n**\u00e2\u20ac\u201d**The facility will develop and implement comprehensive written patient care policies covering all areas of care, including dialysis monitoring. Policies will be approved by the medical director and governing body and reviewed annually. Staff will receive training on the new policies and on proper monitoring, documentation, and communication of vital signs during dialysis. The facility will establish a monitoring system to ensure compliance and conduct quarterly audits of medical records to verify adherence.\r\n\r\nSource pages (1)\r\n\r\n### L0000\r\nReview L0000\r\nThe CMS-2567 survey was conducted on 2023-08-15 and identified 3 deficiencies.\r\n\r\n**\u00e2\u20ac\u201d**No corrective action needed.\r\n\r\nSource pages (1)\r\n\r\n### L0532\r\nReview L0532\r\nThe facility failed to ensure that patient care technicians (PCTs) and registered nurses (RNs) monitored and reported changes in patients' status and documented communication to nursing staff and medical providers before, during, and after intradialytic treatment in accordance with facility policy. Medical record reviews of Patients #1 and #5 on 3/25/24 and 4/1/24, respectively, revealed that pre\u00e2\u20ac\u2018dialysis systolic blood pressures exceeded 180 mmHg and diastolic pressures exceeded 100 mmHg, yet no documented interventions, RN notifications, or provider alerts were recorded. Interviews with PCT #1, RN #2, facility administrator #3, and medical director #4 confirmed that staff were aware of the policy thresholds but did not consistently notify the RN or provider, and that PRN medication orders lacked clear parameters. Consequently, the facility is not meeting the requirement to promptly notify nursing staff and medical providers of abnormal intradialytic blood pressure readings, nor to document such communication and interventions.\r\n\r\n**1.**Implement a standardized monitoring protocol requiring PCTs to record BP at specified intervals, immediately notify RN of any readings exceeding thresholds, and document all communications and interventions in the treatment record. Provide training and audit compliance.\r\n\r\n**A.**No corrective action needed.\r\n\r\n**i.**Conduct a comprehensive audit of all dialysis treatment records for the past 12 months to identify missed notifications and ensure that any abnormal BP readings are documented and communicated to the RN and provider. Update documentation templates to include mandatory fields for provider notification.\r\n\r\n**a.**Revise the treatment record template to require entries for provider notification when BP exceeds policy limits, and train staff on the importance of documenting such notifications. Perform monthly spot checks to verify compliance.\r\n\r\nSource pages (9)\"\r\n\r\n\r\nThis is what's being sisplayed for now, are we aiming to see this itself ?"
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 902
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-15964-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-24T18:14:57",
+  "updated_at": "2026-09-24T18:14:56",
+  "_cumulative_input_tokens": 100,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-24T18:14:56",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "So, first things, when I'm uploading a document, the extractor is reading it really well, it extracts out all pages, but in frontend, I see only little text, I want everything structured, tags, their SODs in front of them all of them seperatley,I need that page next and well structured to be understood well.\r\n\r\nEven if their are multiple points under one SOD, I need it fully structured and placed in frontend."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 100
+    }
+  ]
+}

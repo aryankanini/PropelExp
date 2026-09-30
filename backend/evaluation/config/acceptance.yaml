@@ -1,0 +1,11 @@
+{
+  "dataset": {
+    "id": "cms2567-approved-100-page-v1",
+    "sha256": "1de0c90c8d328a61932521ecdb4915b28eb3b500c55191fa764515046d0579d8"
+  },
+  "thresholds": {
+    "maximum_duration_seconds": 300,
+    "minimum_timing_rate": 0.95,
+    "minimum_field_accuracy": 0.95
+  }
+}

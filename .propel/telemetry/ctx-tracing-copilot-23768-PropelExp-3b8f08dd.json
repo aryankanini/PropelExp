@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-23768-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T13:39:51",
+  "updated_at": "2026-09-23T13:39:50",
+  "_cumulative_input_tokens": 342,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T13:39:50",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "/design-architecture \r\nFor the technical architecture, use the following technology direction as a constraint:\r\n\r\n### Frontend\r\n\r\n- React\r\n- Modern React-based frontend architecture\r\n- Keep frontend and backend as separate applications\r\n\r\n### Backend\r\n\r\n- Python\r\n- API-based backend\r\n- Use a suitable Python web framework, with FastAPI preferred unless the architecture analysis identifies a strong reason otherwise.\r\n\r\n### Repository structure\r\nThe intended high-level repository structure is:\r\n\r\n```\r\nproject-root/\r\n\u00e2\u201d\u0153\u00e2\u201d\u20ac\u00e2\u201d\u20ac frontend/\r\n\u00e2\u201d\u201d\u00e2\u201d\u20ac\u00e2\u201d\u20ac backend/\r\n```\r\nThe frontend and backend should have clear separation of responsibilities and communicate through well-defined APIs.\r\n\r\n### Important\r\nDo not implement the application or create the source-code structure yet.\r\n\r\nDuring `/design-architecture`, define:\r\n\r\n- Frontend architecture\r\n- Backend architecture\r\n- API boundaries\r\n- Extraction/OCR architecture\r\n- AI/POC generation architecture\r\n- In-memory state management\r\n- Configuration/environment management\r\n- Error handling\r\n- Security/trust boundaries\r\n- Localhost development setup\r\n- Communication between React frontend and Python backend\r\n- Recommended internal folder/module structure\r\nThe final source-code folder structure should be created during the implementation phase based on the approved architecture."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 342
+    }
+  ]
+}

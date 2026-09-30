@@ -1,0 +1,27 @@
+sequenceDiagram
+    autonumber
+    actor User as Authorized User
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Life as Lifecycle Service
+    participant State as Session Repository
+    participant Work as Temp Workspace
+
+    User->>UI: Choose end session
+    UI-->>User: Warn that case data will be removed
+    alt User confirms
+        UI->>API: DELETE case
+        API->>Life: End active case
+        Life->>State: Remove in-memory aggregate
+        Life->>Work: Delete session workspace
+        Work-->>Life: Zero remaining files
+        API-->>UI: Cleanup completed
+        UI-->>User: Return to empty start state
+    else User cancels
+        UI-->>User: Keep active case unchanged
+    end
+    opt Cleanup fails
+        Life->>Work: Retry idempotent deletion
+        API-->>UI: Cleanup-failed status
+        UI-->>User: Do not claim session cleared
+    end

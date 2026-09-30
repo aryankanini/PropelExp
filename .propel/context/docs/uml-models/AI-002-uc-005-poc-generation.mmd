@@ -1,0 +1,34 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant POC as POC Application Service
+    participant State as Session Repository
+    participant LLM as LLM Adapter
+    participant Guard as Grounding Guardrail
+
+    Reviewer->>UI: Generate POC for confirmed deficiency
+    UI->>API: POST deficiency POC
+    API->>API: Authorize reviewer and case access
+    API->>POC: Generate for current deficiency revision
+    POC->>State: Load reviewed fields and evidence spans
+    State-->>POC: Reviewed deficiency context
+    POC->>LLM: Send minimum necessary reviewed context
+    LLM-->>POC: Five-part structured draft
+    POC->>Guard: Validate sections and claim evidence links
+    alt All claims supported
+        Guard-->>POC: Grounded draft
+        POC->>State: Store AI-generated unapproved revision
+        API-->>UI: Return draft and provenance
+        UI-->>Reviewer: Present editable POC
+    else Facility fact missing
+        Guard-->>POC: Missing-information markers
+        POC->>State: Store guarded incomplete draft
+        API-->>UI: Return draft with required facts
+        UI-->>Reviewer: Request missing information
+    else Provider or schema failure
+        POC->>State: Preserve reviewed deficiency
+        API-->>UI: Return safe retryable failure
+        UI-->>Reviewer: Offer retry
+    end

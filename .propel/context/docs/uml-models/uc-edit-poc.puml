@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "Edit POC draft" as UC006
+}
+Reviewer --> UC006
+@enduml

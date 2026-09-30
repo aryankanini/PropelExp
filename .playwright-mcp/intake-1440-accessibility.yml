@@ -1,0 +1,53 @@
+- generic [ref=f8e3] [box=0,0,1440,900]:
+  - link "Skip to main content" [ref=f8e4] [cursor=pointer] [box=16,-64,171,45]:
+    - /url: "#document-intake"
+  - banner [ref=f8e5] [box=0,0,1440,64]:
+    - strong [ref=f8e6] [box=24,21,232,21]: CMS Deficiency Action Planner
+    - generic [ref=f8e7] [box=1287,22,129,19]: Compliance reviewer
+  - navigation "Case workflow" [ref=f8e8] [box=0,64,248,836]:
+    - generic [ref=f8e9] [box=16,88,215,60]:
+      - strong [ref=f8e10] [box=24,88,199,21]: New working session
+      - generic [ref=f8e11] [box=24,111,199,16]: Session-only storage
+    - list [ref=f8e12] [box=16,168,215,225]:
+      - listitem [ref=f8e13] [box=16,168,215,53]:
+        - generic [ref=f8e14] [box=26,176,28,28]: "1"
+        - generic [ref=f8e15] [box=66,176,43,37]:
+          - text: Intake
+          - generic [ref=f8e16] [box=66,197,43,16]: Current
+      - listitem [ref=f8e17] [box=16,225,215,53]:
+        - generic [ref=f8e18] [box=26,233,28,28]: "2"
+        - generic [ref=f8e19] [box=66,233,61,37]:
+          - text: Review
+          - generic [ref=f8e20] [box=66,255,61,16]: Unavailable
+      - listitem [ref=f8e21] [box=16,283,215,53]:
+        - generic [ref=f8e22] [box=26,291,28,28]: "3"
+        - generic [ref=f8e23] [box=66,291,76,37]:
+          - text: POC drafts
+          - generic [ref=f8e24] [box=66,312,76,16]: Unavailable
+      - listitem [ref=f8e25] [box=16,340,215,53]:
+        - generic [ref=f8e26] [box=26,348,28,28]: "4"
+        - generic [ref=f8e27] [box=66,348,145,37]:
+          - text: Approval and export
+          - generic [ref=f8e28] [box=66,369,145,16]: Unavailable
+    - button "End session" [ref=f8e29] [cursor=pointer] [box=16,832,215,44]
+  - main [ref=f8e30] [box=248,64,1040,836]:
+    - heading "Upload CMS-2567" [level=1] [ref=f8e31] [box=320,112,896,36]
+    - paragraph [ref=f8e32] [box=320,156,631,56]: Start one transient case by selecting a readable CMS-2567 PDF or image-based document.
+    - note [ref=f8e33] [box=320,236,896,75]:
+      - strong [ref=f8e34] [box=340,252,137,21]: Session-only data.
+      - text: Uploaded files and case work are removed when this session ends or after 60 minutes without activity.
+    - region [ref=f8e35] [box=320,335,896,207]:
+      - heading "Select survey document" [level=2] [ref=f8e36] [box=345,375,847,28]
+      - paragraph [ref=f8e37] [box=345,420,847,21]: PDF, PNG, JPEG, or TIFF · up to 50 MB and 200 pages
+      - generic [ref=f8e38] [cursor=pointer] [box=688,457,160,44]: Select CMS-2567
+      - button "Select CMS-2567" [ref=f8e39] [box=848,457,1,1]
+    - region "Upload limits" [ref=f8e40] [box=320,566,896,61]:
+      - generic [ref=f8e41] [box=320,566,288,61]:
+        - strong [ref=f8e42] [box=320,583,288,21]: Supported formats
+        - generic [ref=f8e43] [box=320,608,288,19]: PDF and image-based documents
+      - generic [ref=f8e44] [box=624,566,288,61]:
+        - strong [ref=f8e45] [box=624,583,288,21]: Maximum size
+        - generic [ref=f8e46] [box=624,608,288,19]: 50 MB per working session
+      - generic [ref=f8e47] [box=928,566,288,61]:
+        - strong [ref=f8e48] [box=928,583,288,21]: Maximum length
+        - generic [ref=f8e49] [box=928,608,288,19]: 200 pages before extraction

@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Intake as Intake Service
+    participant Work as Temp Workspace
+
+    Reviewer->>UI: Select PDF or image document
+    UI->>API: POST multipart case upload
+    API->>API: Authenticate and validate CSRF token
+    API->>Intake: Validate stream, media, and limits
+    Intake->>Work: Write randomized partial file
+    alt Valid CMS-2567
+        Intake->>Work: Finalize session file
+        Intake-->>API: Return case ID and accepted status
+        API-->>UI: 201 Created
+        UI-->>Reviewer: Show extraction-ready case
+    else Invalid document structure
+        Intake->>Work: Delete partial file
+        API-->>UI: Validation problem response
+        UI-->>Reviewer: Show reason and new-upload action
+    end
+    opt Stream or workspace error
+        Intake->>Work: Attempt partial cleanup
+        API-->>UI: Safe internal failure with correlation ID
+        UI-->>Reviewer: Show retry action
+    end

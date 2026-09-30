@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-7916-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T18:12:55",
+  "updated_at": "2026-09-23T18:12:55",
+  "_cumulative_input_tokens": 1141,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T18:12:55",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Work in D:\\PropelExp. Generate the remaining implementation task Markdown files for attached user stories US_001 through US_010, using ONLY functions.apply_patch for edits. Do not modify the existing `.propel/context/tasks/EP-TECH/us_001/task_001_scaffold_frontend_app.md`. Read nearby story files and `.propel/context/docs/design.md` only as needed. Follow the authoritative template structure exactly, omitting conditional Design References, AI References, and Mobile References because no story has those impacts. Required non-conditional H2 order: Requirement Reference; Applicable Technology Stack; Task Overview; Dependent Tasks; Impacted Components; Implementation Plan; Current Project State; Expected Changes; External References; Build Commands; Implementation Validation Strategy; Implementation Checklist. Build Commands must link to `.propel/build/`, never include commands. Validation strategy must contain unit and integration test structural checks, but implementation checklists must not invoke downstream workflows. Every task must reference its story and parent epic in content, cover listed ACs, have 1-8 checklist items, one technology layer only, and estimated effort stated in Task Overview at 4-8 hours. No speculative existing files: current repo has no `frontend/`, `backend/`, `app/`, or `server/` source directories; planned files should be CREATE operations. Locked stack from design: React 19.3, TypeScript 7.0, Vite 8.3, Node.js 24 LTS; Python 3.14.7, FastAPI 0.141.1, Pydantic 2.x, compatible Uvicorn; Vitest 4.x, pytest 9.x, Playwright 1.x, HTTPX compatible; OpenAPI 3.1.0; database is None/in-memory repository and temp workspace. Use version-pinned official doc links where possible.\n\nCreate exactly these files/scopes:\n1. EP-TECH/us_001/task_002_scaffold_backend_app.md \u00e2\u20ac\u201d Backend; AC-001 and inward dependencies.\n2. EP-TECH/us_001/task_003_enforce_architecture_boundaries.md \u00e2\u20ac\u201d Architecture Validation; AC-001/AC-002.\n3. EP-TECH/us_002/task_001_publish_openapi_contract.md \u00e2\u20ac\u201d Backend; AC-001.\n4. EP-TECH/us_002/task_002_generate_frontend_api_types.md \u00e2\u20ac\u201d Frontend; AC-002.\n5. EP-TECH/us_002/task_003_detect_contract_drift.md \u00e2\u20ac\u201d Contract Validation; AC-001/AC-002.\n6. EP-TECH/us_003/task_001_validate_runtime_configuration.md \u00e2\u20ac\u201d Backend Configuration; both ACs.\n7. EP-TECH/us_004/task_001_establish_frontend_test_foundation.md \u00e2\u20ac\u201d Frontend Testing.\n8. EP-TECH/us_004/task_002_establish_backend_test_foundation.md \u00e2\u20ac\u201d Backend Testing.\n9. EP-TECH/us_004/task_003_establish_contract_adapter_test_foundation.md \u00e2\u20ac\u201d Contract/Adapter Testing.\n10. EP-TECH/us_004/task_004_establish_playwright_foundation.md \u00e2\u20ac\u201d E2E Testing.\n11. EP-TECH/us_005/task_001_bind_frontend_to_loopback.md \u00e2\u20ac\u201d Frontend Runtime.\n12. EP-TECH/us_005/task_002_enforce_backend_loopback_origin.md \u00e2\u20ac\u201d Backend Runtime/Security.\n13. EP-DATA/us_006/task_001_own_transient_case_aggregate.md \u00e2\u20ac\u201d Backend Data.\n14. EP-DATA/us_007/task_001_preserve_field_revisions.md \u00e2\u20ac\u201d Backend Domain.\n15. EP-DATA/us_008/task_001_isolate_temporary_workspaces.md \u00e2\u20ac\u201d Backend Filesystem.\n16. EP-DATA/us_009/task_001_clear_transient_state_idempotently.md \u00e2\u20ac\u201d Backend Lifecycle.\n17. EP-DATA/us_010/task_001_prevent_durable_case_recovery.md \u00e2\u20ac\u201d Backend Privacy/Configuration.\n\nPreserve exact edge cases from each story. Use story paths under `.propel/context/tasks/.../us_XXX.md`. In Current Project State explicitly say planning-only/no source directories and relevant dependencies. In Expected Changes list concrete coherent CREATE files, no more than 8 rows. Return files created and blockers. Do not run tests or edit anything else."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 1141
+    }
+  ]
+}

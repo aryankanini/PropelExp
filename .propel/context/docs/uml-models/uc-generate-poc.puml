@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+actor "External AI Service" as AI #E6E6E6
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "Generate grounded\nPOC draft" as UC005
+}
+Reviewer --> UC005
+AI --> UC005
+@enduml

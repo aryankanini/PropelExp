@@ -1,0 +1,9 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "Upload and validate\nCMS-2567" as UC001
+}
+Reviewer --> UC001
+@enduml

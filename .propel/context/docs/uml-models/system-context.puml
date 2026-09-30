@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam actorBackgroundColor #DCEBFA
+skinparam actorBorderColor #2F6B9A
+skinparam rectangleBackgroundColor #DFF2E1
+skinparam rectangleBorderColor #39734A
+
+actor "Compliance Reviewer" as Reviewer
+actor "Compliance Leader" as Leader
+actor "CMS / State Survey Agency" as Agency
+rectangle "CMS Deficiency Action Planner" as Planner
+rectangle "External OCR Service" as OCR #E6E6E6
+rectangle "External AI Service" as AI #E6E6E6
+
+Reviewer --> Planner : Documents / Reviews and edits
+Leader --> Planner : Approval / Export
+Planner ..> OCR : Document pages / OCR request
+Planner ..> AI : Reviewed data / Extraction and draft
+Planner ..> Agency : Approved draft / Manual handling only
+@enduml

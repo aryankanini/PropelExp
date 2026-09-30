@@ -1,0 +1,309 @@
+{
+  "_meta": {
+    "purpose": "Synthetic UX data for CMS Deficiency Action Planner wireframes. No record represents a real facility or person.",
+    "entities": {
+      "user": "Configured local users authenticate as either a compliance reviewer or compliance leader.",
+      "providerField": "Evidence-linked provider details extracted from one active CMS-2567.",
+      "deficiency": "Independent F-tag findings with review, draft, approval, and export status.",
+      "evidence": "Page-level source snippets associated with extracted or corrected values.",
+      "processingStage": "Ordered extraction and OCR progress for the active job.",
+      "pocSection": "The five required sections of one Plan of Correction revision.",
+      "approval": "Compliance-leader decision bound to one POC revision."
+    },
+    "relationships": "One active case has provider fields, deficiencies, evidence, and processing stages. Each confirmed deficiency may have one current five-section POC and one approval for its current revision."
+  },
+  "user": [
+    {
+      "id": "usr-reviewer-01",
+      "displayName": "Jordan Lee",
+      "username": "jlee",
+      "role": "Compliance reviewer"
+    },
+    {
+      "id": "usr-leader-01",
+      "displayName": "Morgan Ellis",
+      "username": "mellis",
+      "role": "Compliance leader"
+    }
+  ],
+  "providerField": [
+    {
+      "label": "Provider name",
+      "originalValue": "Northlake Skilled Nursing Center",
+      "currentValue": "Northlake Skilled Nursing Center",
+      "page": 1,
+      "confidence": 98,
+      "origin": "Extracted",
+      "status": "Confirmed"
+    },
+    {
+      "label": "Provider number",
+      "originalValue": "12-3456",
+      "currentValue": "12-3456",
+      "page": 1,
+      "confidence": 97,
+      "origin": "Extracted",
+      "status": "Confirmed"
+    },
+    {
+      "label": "Survey exit date",
+      "originalValue": "08/14/2026",
+      "currentValue": "08/14/2026",
+      "page": 1,
+      "confidence": 95,
+      "origin": "Extracted",
+      "status": "Confirmed"
+    },
+    {
+      "label": "Facility address",
+      "originalValue": "4800 Harbor View Drive, Lakeview, ST 00000",
+      "currentValue": "4800 Harbor View Drive, Lakeview, ST 00000",
+      "page": 1,
+      "confidence": 93,
+      "origin": "Extracted",
+      "status": "Confirmed"
+    },
+    {
+      "label": "Survey type",
+      "originalValue": "Recertification and complaint",
+      "currentValue": "Recertification and complaint",
+      "page": 1,
+      "confidence": 88,
+      "origin": "User-edited",
+      "status": "Confirmed"
+    }
+  ],
+  "deficiency": [
+    {
+      "id": "def-0689",
+      "fTag": "F689",
+      "title": "Free of accident hazards / supervision / devices",
+      "scopeSeverity": "D",
+      "pages": "12-16",
+      "confidence": 96,
+      "status": "Confirmed",
+      "pocStatus": "Draft revision 3",
+      "selected": true
+    },
+    {
+      "id": "def-0880",
+      "fTag": "F880",
+      "title": "Infection prevention and control",
+      "scopeSeverity": "E",
+      "pages": "24-31",
+      "confidence": 91,
+      "status": "Needs review",
+      "pocStatus": "Blocked",
+      "selected": false
+    },
+    {
+      "id": "def-0609",
+      "fTag": "F609",
+      "title": "Reporting allegations of abuse",
+      "scopeSeverity": "D",
+      "pages": "38-41",
+      "confidence": 97,
+      "status": "Confirmed",
+      "pocStatus": "Approved",
+      "selected": false
+    },
+    {
+      "id": "def-0756",
+      "fTag": "F756",
+      "title": "Drug regimen review",
+      "scopeSeverity": "D",
+      "pages": "46-49",
+      "confidence": 84,
+      "status": "Needs review",
+      "pocStatus": "Blocked",
+      "selected": false
+    },
+    {
+      "id": "def-0812",
+      "fTag": "F812",
+      "title": "Food procurement, storage, preparation and service",
+      "scopeSeverity": "E",
+      "pages": "55-59",
+      "confidence": 94,
+      "status": "Confirmed",
+      "pocStatus": "Ready for generation",
+      "selected": false
+    },
+    {
+      "id": "def-0684",
+      "fTag": "F684",
+      "title": "Quality of care",
+      "scopeSeverity": "G",
+      "pages": "63-72",
+      "confidence": 89,
+      "status": "Confirmed",
+      "pocStatus": "Awaiting approval",
+      "selected": false
+    },
+    {
+      "id": "def-0658",
+      "fTag": "F658",
+      "title": "Services meet professional standards",
+      "scopeSeverity": "D",
+      "pages": "77-80",
+      "confidence": 92,
+      "status": "Confirmed",
+      "pocStatus": "Draft revision 1",
+      "selected": false
+    },
+    {
+      "id": "def-0725",
+      "fTag": "F725",
+      "title": "Sufficient nursing staff",
+      "scopeSeverity": "E",
+      "pages": "84-91",
+      "confidence": 87,
+      "status": "Needs review",
+      "pocStatus": "Blocked",
+      "selected": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-001",
+      "page": 12,
+      "method": "Native text",
+      "confidence": 96,
+      "snippet": "Based on observation, interview, and record review, the facility failed to ensure the environment remained free from an identified transfer hazard for one of five residents reviewed for accidents.",
+      "supports": "F689 deficiency statement"
+    },
+    {
+      "id": "ev-002",
+      "page": 13,
+      "method": "Native text",
+      "confidence": 95,
+      "snippet": "Observation showed the transfer sling available in Resident #12's room did not match the size documented in the current care plan.",
+      "supports": "Affected resident finding"
+    },
+    {
+      "id": "ev-003",
+      "page": 15,
+      "method": "OCR",
+      "confidence": 82,
+      "snippet": "The Director of Nursing stated that staff should verify sling size before each mechanical-lift transfer and acknowledged that the verification was not documented.",
+      "supports": "Corrective process finding"
+    },
+    {
+      "id": "ev-004",
+      "page": 24,
+      "method": "OCR",
+      "confidence": 68,
+      "snippet": "The facility failed to maintain hand hygiene practices during medication administration for two observed staff members.",
+      "supports": "F880 candidate A"
+    },
+    {
+      "id": "ev-005",
+      "page": 25,
+      "method": "OCR",
+      "confidence": 64,
+      "snippet": "Glove changes were observed without documented hand hygiene between resident contacts.",
+      "supports": "F880 candidate B"
+    },
+    {
+      "id": "ev-006",
+      "page": 31,
+      "method": "Native text",
+      "confidence": 91,
+      "snippet": "The infection preventionist confirmed that competency observations had not been completed for the current quarter.",
+      "supports": "F880 monitoring finding"
+    }
+  ],
+  "processingStage": [
+    {
+      "name": "Upload validation",
+      "status": "Complete",
+      "detail": "42.8 MB PDF accepted; 96 pages",
+      "percent": 100
+    },
+    {
+      "name": "Native text extraction",
+      "status": "Complete",
+      "detail": "Text recovered from 78 pages",
+      "percent": 100
+    },
+    {
+      "name": "OCR fallback",
+      "status": "Complete",
+      "detail": "18 pages processed",
+      "percent": 100
+    },
+    {
+      "name": "Provider extraction",
+      "status": "Complete",
+      "detail": "5 provider fields found",
+      "percent": 100
+    },
+    {
+      "name": "Deficiency detection",
+      "status": "Active",
+      "detail": "8 candidates found; validating page evidence",
+      "percent": 76
+    },
+    {
+      "name": "Review package",
+      "status": "Pending",
+      "detail": "Waiting for deficiency validation",
+      "percent": 0
+    }
+  ],
+  "pocSection": [
+    {
+      "id": "affected-residents",
+      "title": "Affected residents",
+      "origin": "User-edited",
+      "status": "Complete",
+      "content": "Resident #12 was assessed immediately for injury, and the transfer sling was replaced with the size specified in the current care plan. The responsible nurse documented the assessment and notified the resident representative on August 15, 2026."
+    },
+    {
+      "id": "others-at-risk",
+      "title": "Other residents at risk",
+      "origin": "AI-generated",
+      "status": "Needs information",
+      "content": "[Information needed: Identify the residents who use mechanical lifts and record the date their sling-size and care-plan review was completed.]"
+    },
+    {
+      "id": "corrective-measures",
+      "title": "Corrective measures",
+      "origin": "User-edited",
+      "status": "Complete",
+      "content": "The Director of Nursing will re-educate licensed nurses and nursing assistants on matching sling size to the care plan and verifying equipment before every mechanical-lift transfer. Competency will be observed before staff resume independent lift transfers."
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring",
+      "origin": "AI-generated",
+      "status": "Complete",
+      "content": "The unit manager will audit five mechanical-lift transfers weekly for four weeks, then monthly for two months. Results will be reviewed by the Quality Assurance and Performance Improvement committee, with immediate correction of any variance."
+    },
+    {
+      "id": "completion-date",
+      "title": "Completion date",
+      "origin": "User-edited",
+      "status": "Complete",
+      "content": "September 12, 2026"
+    }
+  ],
+  "approval": [
+    {
+      "pocId": "poc-def-0609",
+      "fTag": "F609",
+      "revision": 2,
+      "approvedBy": "Morgan Ellis",
+      "approvedAt": "September 21, 2026 at 2:34 PM",
+      "status": "Approved"
+    },
+    {
+      "pocId": "poc-def-0689",
+      "fTag": "F689",
+      "revision": 3,
+      "approvedBy": null,
+      "approvedAt": null,
+      "status": "Awaiting approval"
+    }
+  ]
+}

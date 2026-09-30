@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-18812-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-24T18:41:44",
+  "updated_at": "2026-09-24T18:41:43",
+  "_cumulative_input_tokens": 826,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-24T18:41:43",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "\"**CMS Deficiency Action Planner**Review**Active case**0 values need review\r\n\r\n1. 1IntakeComplete\r\n2. 2ReviewCurrent\r\n3. 3POC draftsPending confirmation\r\n4. 4Approval and exportUnavailable\r\nEnd sessionReview / Extracted document\r\n\r\n# Extracted deficiencies\r\nReview every F-tag and its complete Statement of Deficiency.\r\n\r\nComplete extraction\r\n\r\n## 1 deficiency found\r\n\r\nEvery ID tag, Statement of Deficiency, and Plan of Correction is aligned below.\r\n\r\nID TagStatement of Deficiency (SOD)Plan of Correction (POC)\r\n\r\n### L0532\r\nReviewing\r\nThe facility failed to ensure staff monitored and reported changes in patients' blood pressure, heart rate, and overall condition and documented communication to nursing staff and providers before, during, and after dialysis treatment based on facility policy. This failure was observed in two of six medical records reviewed (Patient #1 and Patient #5).\r\n\r\nImplement a standardized monitoring protocol that requires staff to record BP, heart rate, and overall condition at pre\u00e2\u20ac\u2018, intra\u00e2\u20ac\u2018, and post\u00e2\u20ac\u2018dialysis intervals and immediately report any abnormal findings to the licensed nurse. Provide training and competency assessments for all nursing staff on the updated policy. Conduct quarterly audits of medical records to ensure compliance and document corrective actions.\r\n\r\nSource pages (9)\r\n\r\nReview tools\r\n\r\n## L0532\r\n\r\nStatement of Deficiency\r\n## L0532\r\n\r\nExtractedRevision 1Extracted SOD text\r\n\r\n```\r\nThe facility failed to ensure staff monitored and reported changes in patients' blood pressure, heart rate, and overall condition and documented communication to nursing staff and providers before, during, and after dialysis treatment based on facility policy. This failure was observed in two of six medical records reviewed (Patient #1 and Patient #5).\r\n```\r\n\r\nAI-suggested Plan of Correction\r\n\r\nImplement a standardized monitoring protocol that requires staff to record BP, heart rate, and overall condition at pre\u00e2\u20ac\u2018, intra\u00e2\u20ac\u2018, and post\u00e2\u20ac\u2018dialysis intervals and immediately report any abnormal findings to the licensed nurse. Provide training and competency assessments for all nursing staff on the updated policy. Conduct quarterly audits of medical records to ensure compliance and document corrective actions.\r\n\r\nEdit / correct SOD textSave correction\r\n\r\n## Revision history\r\n\r\n1. ExtractedRevision 1**Current**\r\nThe facility failed to ensure staff monitored and reported changes in patients' blood pressure, heart rate, and overall condition and documented communication to nursing staff and providers before, during, and after dialysis treatment based on facility policy. This failure was observed in two of six medical records reviewed (Patient #1 and Patient #5).\r\n\r\nEvidence retained from page 1\r\nDeficiency cms-2567:0001\r\n\r\n## Confirmation readiness\r\n\r\n**Ready to confirm**POC generation pending confirmation\r\nConfirm deficiencyGenerate POC\r\n\r\n## Source evidence\r\nPage 1 \u00c2\u00b7 Native text\r\n\r\n**100% confidence**Search full evidenceComplete snippet shown\r\n\r\nL 532\r\nInitial Comments\r\nInitial Comments\r\nA relicensure survey was completed on 4/10/24.\r\nOne deficiency was cited.\r\n6.5.9(B) Pt/Clin Func-PtCare-PtCarePol\r\nWrtn/Apvd/Rvw\"\r\n\r\nIts showing same information twice and why only one structured SOD is coming and npt others if there ar emultiple pages worth of content."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 826
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Job as Job Runner
+    participant State as Session Repository
+    participant Provider as OCR or LLM Adapter
+
+    Provider--xJob: Timeout, throttle, or invalid response
+    Job->>State: Record typed failed stage
+    Job-->>API: Emit failure event with correlation ID
+    API-->>UI: SSE safe failure status
+    UI-->>Reviewer: Show failed stage and retry option
+    Reviewer->>UI: Request retry
+    UI->>API: POST retry for failed operation
+    API->>Job: Retry preserved operation
+    loop Maximum two transient retries
+        Job->>Provider: Repeat minimum necessary request
+        Provider-->>Job: Response or transient failure
+    end
+    alt Valid provider response
+        Job->>State: Store unconfirmed result
+        API-->>UI: SSE review-ready event
+        UI-->>Reviewer: Present result for review
+    else Retries exhausted
+        Job->>State: Preserve reviewed state and terminal failure
+        API-->>UI: SSE terminal failure
+        UI-->>Reviewer: Keep work and show later retry
+    else Replacement upload required
+        API-->>UI: Reject retry and request a valid document
+        UI-->>Reviewer: Show upload action
+    end

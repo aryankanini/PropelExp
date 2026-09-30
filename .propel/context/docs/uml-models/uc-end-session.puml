@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+actor "Compliance Leader" as Leader #DCEBFA
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "End transient\nworking session" as UC009
+}
+Reviewer --> UC009
+Leader --> UC009
+@enduml

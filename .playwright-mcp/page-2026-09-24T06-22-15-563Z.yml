@@ -1,0 +1,76 @@
+- generic [ref=f7e3]:
+  - link "Skip to main content" [ref=f7e4] [cursor=pointer]:
+    - /url: "#processing-progress"
+  - banner [ref=f7e5]:
+    - strong [ref=f7e6]: CMS Deficiency Action Planner
+    - generic [ref=f7e50]: Compliance reviewer
+  - navigation "Case workflow" [ref=f7e7]:
+    - generic [ref=f7e51]:
+      - strong [ref=f7e52]: Northlake Skilled Nursing Center
+      - generic [ref=f7e53]: 96 pages, active case
+    - list [ref=f7e54]:
+      - listitem [ref=f7e55]:
+        - generic [ref=f7e56]: "1"
+        - generic [ref=f7e57]:
+          - text: Intake
+          - generic [ref=f7e58]: Processing failed
+      - listitem [ref=f7e59]:
+        - generic [ref=f7e60]: "2"
+        - generic [ref=f7e61]:
+          - text: Review
+          - generic [ref=f7e62]: Waiting
+      - listitem [ref=f7e63]:
+        - generic [ref=f7e64]: "3"
+        - generic [ref=f7e65]:
+          - text: POC drafts
+          - generic [ref=f7e66]: Unavailable
+      - listitem [ref=f7e67]:
+        - generic [ref=f7e68]: "4"
+        - generic [ref=f7e69]:
+          - text: Approval and export
+          - generic [ref=f7e70]: Unavailable
+  - main [ref=f7e8]:
+    - paragraph [ref=f7e9]: Job EXT-2026-0918
+    - heading "Processing survey document" [level=1] [ref=f7e10]
+    - paragraph [ref=f7e11]: Required OCR work remains incomplete. Confirmed results are retained.
+    - alert [ref=f7e12]:
+      - heading "OCR on pages 29-30-31 failed" [level=2] [ref=f7e13]
+      - generic [ref=f7e14]:
+        - paragraph [ref=f7e15]: The failed operation remains incomplete. Confirmed work has not changed.
+        - paragraph [ref=f7e16]:
+          - strong [ref=f7e17]: "Affected operation:"
+          - text: OCR on pages 29-30-31
+        - paragraph [ref=f7e18]:
+          - strong [ref=f7e19]: "Retained work:"
+          - text: Validated pages and provider fields remain available
+        - paragraph [ref=f7e20]:
+          - strong [ref=f7e21]: "Retryable:"
+          - text: "Yes"
+      - paragraph [ref=f7e22]: "Correlation ID: OCR-4F82"
+      - button "Retry failed operation" [active] [ref=f7e24] [cursor=pointer]
+    - status [ref=f7e71]: OCR recovery was queued. Retained work remains unchanged.
+    - list "Processing stages" [ref=f7e25]:
+      - listitem [ref=f7e26]:
+        - generic [aria-hidden] [ref=f7e27]: "1"
+        - generic [ref=f7e28]:
+          - strong [ref=f7e29]: Upload validation
+          - paragraph [ref=f7e30]: 42.8 MB PDF accepted, 96 pages
+        - generic [ref=f7e31]: Complete
+      - listitem [ref=f7e32]:
+        - generic [aria-hidden] [ref=f7e33]: "2"
+        - generic [ref=f7e34]:
+          - strong [ref=f7e35]: Native text extraction
+          - paragraph [ref=f7e36]: Text recovered from 78 pages
+        - generic [ref=f7e37]: Complete
+      - listitem [ref=f7e38]:
+        - generic [aria-hidden] [ref=f7e39]: "3"
+        - generic [ref=f7e40]:
+          - strong [ref=f7e41]: OCR fallback
+          - paragraph [ref=f7e42]: Failed on pages 29-31
+        - generic [ref=f7e43]: Failed
+      - listitem [ref=f7e44]:
+        - generic [aria-hidden] [ref=f7e45]: "4"
+        - generic [ref=f7e46]:
+          - strong [ref=f7e47]: Review package
+          - paragraph [ref=f7e48]: Waiting for the failed OCR operation
+        - generic [ref=f7e49]: Pending

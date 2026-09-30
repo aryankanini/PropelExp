@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-6224-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T17:57:36",
+  "updated_at": "2026-09-23T17:57:35",
+  "_cumulative_input_tokens": 226,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T17:57:35",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Research only; do not edit files. In workspace d:\\PropelExp, read all 15 user stories: .propel/context/tasks/EP-TECH/us_001..us_005, EP-001/us_011..us_015, EP-002/us_016..us_020. Read targeted relevant sections of .propel/context/docs/design.md, spec.md, figma_spec.md, designsystem.md, and model.md as needed, plus inspect current source directories for actual/existing or clearly planned component paths. Build a compact but complete planning inventory per story. Each task must be one technology layer, <=8 hours, <=8 checklist items, cover every AC, and AI tasks only where AIR tags exist. Note [UNCLEAR] blockers. For each proposed task return: sequence, slug/title, layer, hours, AC coverage, likely concrete file operations, dependencies, UI/AI refs. Also report exact locked technology versions found in design and whether source code exists. Do not generate task markdown files."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 226
+    }
+  ]
+}

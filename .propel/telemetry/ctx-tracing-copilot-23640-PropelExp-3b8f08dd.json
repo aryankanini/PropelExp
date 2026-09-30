@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-23640-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T18:13:33",
+  "updated_at": "2026-09-23T18:13:33",
+  "_cumulative_input_tokens": 502,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T18:13:33",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Continue template-conformance repair in d:\\PropelExp. One file, EP-003/us_021/task_001_review-values-beside-evidence-frontend.md, has already been repaired. Repair the remaining 22 task_*.md files under EP-003/us_021..us_025 and EP-004/us_026..us_030. Use apply_patch only. Do not alter the already repaired file unless validation finds a defect. Exact required structure/order: H1 `# Task - TASK_XXX`; `## Requirement Reference` with bold User Story, Story Location, Acceptance Criteria nested bullets, Edge Cases nested bullets; horizontal rule; conditional Design References only Frontend with exact table rows UI Impact/Figma URL/Wireframe Status/Wireframe Type/Wireframe Path-URL/Screen Spec/UXR Requirements/Design Tokens; horizontal rule; conditional AI References only AI tasks with exact table rows AI Impact/AIR Requirements/AI Pattern/Prompt Template Path/Guardrails Config/Model Provider; horizontal rule; Applicable Technology Stack exact table Layer|Technology|Version|Justification and exactly one layer; horizontal rule; Task Overview; Dependent Tasks; Impacted Components; Implementation Plan; Current Project State; Expected Changes exact table Action|File Path|Description (CREATE each concrete impacted source file); External References; Build Commands; Implementation Validation Strategy checkboxes; Implementation Checklist checkboxes. No Mobile section. Frontend stack React 19.3, TypeScript 7.0, Vite 8.3 TR-002. Backend Python 3.14.7, FastAPI 0.141.1, Pydantic 2.x, compatible Uvicorn TR-003. AI stack provider-neutral adapter contract v1, JSON Schema 2020-12, Pydantic 2.x AIR/TR-008. Preserve existing task content, estimates <=8 and 1-8 checklist items, AC/edge wording. Frontend design values already present. Build Commands references .propel/build only. Validation can mention tests; checklist cannot be unit-test tasks or downstream workflows. Work in manageable batches but complete all 22 before returning. Run aggregate validation on all 23 for count, headings/order, tables, layer purity, estimates, checklist counts, naming/sequences, and forbidden workflow commands. Return concise validation report."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 502
+    }
+  ]
+}

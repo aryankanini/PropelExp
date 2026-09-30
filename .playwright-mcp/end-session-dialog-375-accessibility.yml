@@ -1,0 +1,6 @@
+- dialog [ref=f8e50] [box=19,256,322,299]:
+  - heading "End transient session?" [level=2] [ref=f8e51] [box=44,281,273,28]
+  - paragraph [ref=f8e52] [box=44,326,273,85]: The uploaded document, extraction results, edits, drafts, and approvals will be permanently removed from this device.
+  - generic [ref=f8e53] [box=44,435,273,96]:
+    - button "Cancel" [active] [ref=f8e54] [cursor=pointer] [box=44,487,273,44]
+    - button "End session and remove data" [ref=f8e55] [cursor=pointer] [box=44,435,273,44]

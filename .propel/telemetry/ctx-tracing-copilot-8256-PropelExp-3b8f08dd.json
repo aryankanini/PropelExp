@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-8256-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T18:06:49",
+  "updated_at": "2026-09-23T18:06:48",
+  "_cumulative_input_tokens": 1350,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T18:06:48",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Write the 16 development task Markdown files for the inventories below in D:\\PropelExp. This is an implementation task, not research. Follow .propel/templates/task-template.md exactly (template is MCP-backed; its structure is: H1 Task, Requirement Reference, conditional Design References, conditional AI References, conditional Mobile References, Applicable Technology Stack, Task Overview, Dependent Tasks, Impacted Components, Implementation Plan, Current Project State, Expected Changes, External References, Build Commands, Implementation Validation Strategy, Implementation Checklist). Use apply_patch for all edits. Do not create a task for US_031 because its state is Removed - Out of Scope for MVP. Create these files:\nEP-005/us_032/task_001_implement-current-revision-approval.md (Backend 8h AC-001 AC-002), task_002_build-approval-review-interface.md (Frontend 8h AC-001 AC-002), task_003_enforce-ai-approval-guardrail.md (AI/ML 4h AC-001 AC-002);\nEP-005/us_033/task_001_invalidate-approval-on-revision.md (Backend 8h AC-001 AC-002), task_002_show-reapproval-workflow-state.md (Frontend 6h AC-001 AC-002);\nEP-005/us_034/task_001_authorize-current-revision-export.md (Backend 8h AC-001 AC-002 AC-003), task_002_build-approved-export-interface.md (Frontend 6h AC-001 AC-002 AC-003), task_003_enforce-ai-export-guardrail.md (AI/ML 4h AC-001 AC-002);\nEP-005/us_035/task_001_prefix-and-isolate-export-content.md (Backend 6h AC-001 AC-002), task_002_preview-required-export-label.md (Frontend 4h AC-001 AC-002);\nEP-006/us_036/task_001_build-persistent-workflow-rail.md (Frontend 8h AC-001 AC-002);\nEP-006/us_037/task_001_make-workspace-wcag-accessible.md (Frontend 8h AC-001 AC-002);\nEP-006/us_038/task_001_announce-dynamic-workflow-states.md (Frontend 8h AC-001 AC-002);\nEP-006/us_039/task_001_adapt-workspace-across-viewports.md (Frontend 8h AC-001 AC-002);\nEP-006/us_040/task_001_render-stable-semantic-feedback.md (Frontend 8h AC-001 AC-002), task_002_meet-api-response-budget.md (Backend 8h AC-003).\nRead each source story in its directory and preserve exact AC and edge-case wording under Requirement Reference. Use parent epic and story in Task Overview/traceability. Every file must have 1-8 implementation checklist items, each explicitly maps to AC IDs, and no downstream workflow commands. Do not add unit-test implementation checklist items. Validation strategy can structurally require unit/integration tests per template. Use only one technology layer per file.\nLocked stack: Frontend React 19.3, TypeScript 7.0, Vite 8.3; Backend Python 3.14.7, FastAPI 0.141.1, Pydantic 2.x, compatible Uvicorn; AI provider-neutral OCR/LLM adapters, Adapter contract v1, JSON Schema 2020-12. Testing belongs only in validation, not as task layer. No database. Architecture paths must follow design.md: frontend/src/app, frontend/src/features/approval-export, frontend/src/shared/{api,model,ui}; backend/src/cms_planner/{api,domain,application,modules/approval,modules/export,adapters/ai,infrastructure}. Confirmed UI paths include WorkflowRail.tsx, AppShell.tsx, StatusBadge.tsx, Alert.tsx, Modal.tsx, SplitPane.tsx, RevisionHistory.tsx. Since implementation folders do not yet exist, list concrete CREATE operations only, with minimal plausible filenames under these confirmed directories.\nAll active stories have UI Impact Yes, but include Design References only for frontend task files. Use story screen IDs/wireframe references and UXR mappings exactly. Figma URL is N/A because figma_spec says pending Figma file. Design Tokens should cite .propel/context/docs/designsystem.md#design-tokens and relevant accessibility/responsive sections. Include AI References only for the AI/ML files: AIR-005, AI Pattern Provider-neutral guarded output, Prompt Template Path N/A, Guardrails Config use a concrete CREATE path only if included in Expected Changes, Model Provider Provider-neutral. Omit Mobile References everywhere; mobile delivery is out of MVP and responsive web is not a mobile layer.\nDependencies must preserve story dependencies and task sequencing. For same-story tasks, frontend depends on backend where API behavior is needed; AI guardrails depend on backend approval/export task. External references must be version-pinned URLs where possible. Build Commands must link to .propel/build/. Current Project State should show only relevant planned paths and state that frontend/backend implementation directories are not yet present.\nAfter the first edit, immediately perform focused validation on that file before further edits, then continue. Finally validate all files for: existence; exact H2 order from template with conditional sections correctly omitted; <=8 checklist items; one layer per file; effort <=8h stated in overview; all ACs covered across each story; no task files under us_031; no downstream workflow commands; markdown formatting. Return a concise report listing files and validation results. Do not edit any other files."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 1350
+    }
+  ]
+}

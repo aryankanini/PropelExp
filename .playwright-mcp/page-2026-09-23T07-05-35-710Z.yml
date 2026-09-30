@@ -1,0 +1,341 @@
+- generic [active] [ref=f2e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=f2e2] [cursor=pointer]
+      - link "Accessibility help" [ref=f2e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-IN
+  - generic [ref=f2e8]:
+    - search [ref=f2e9]:
+      - generic [ref=f2e11]:
+        - link "Go to Google Home" [ref=f2e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQPHoECAYQBA
+        - generic [ref=f2e21]:
+          - generic [ref=f2e22]:
+            - combobox "Search" [ref=f2e25]: site:cms.gov CMS-2567 plan of correction five elements nursing home site:cms.gov CMS-2567 plan of correction five elements nursing home
+            - generic [ref=f2e26]:
+              - button "Clear" [ref=f2e28] [cursor=pointer]
+              - generic [ref=f2e33]:
+                - button "Search by voice" [ref=f2e34] [cursor=pointer]
+                - button "Search by image" [ref=f2e37] [cursor=pointer]
+          - button "Search" [ref=f2e40] [cursor=pointer]
+    - generic [ref=f2e45]:
+      - button "Settings" [ref=f2e47] [cursor=pointer]
+      - button "Share" [ref=f2e52] [cursor=pointer]
+      - generic [ref=f2e58]:
+        - button "Google apps" [ref=f2e60] [cursor=pointer]
+        - link "Sign in" [ref=f2e65] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3Dsite%253Acms.gov%2BCMS-2567%2Bplan%2Bof%2Bcorrection%2Bfive%2Belements%2Bnursing%2Bhome%26sei%3DOnqzaumAKPehnesPxbSSgAU&ec=futura_srp_og_si_72236_p
+  - generic [ref=f2e68]:
+    - navigation [ref=f2e74]:
+      - generic [ref=f2e80]:
+        - list [ref=f2e81]:
+          - listitem [ref=f2e82]:
+            - link "AI Mode" [ref=f2e85] [cursor=pointer]:
+              - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&udm=50&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ2J8OegQIERAD
+          - listitem [ref=f2e89]:
+            - link "All" [disabled] [ref=f2e90]
+          - listitem [ref=f2e93]:
+            - link "Images" [ref=f2e94] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQtKgLegQIFxAB
+          - listitem [ref=f2e97]:
+            - link "Forums" [ref=f2e98] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=forums&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQs6gLegQIGRAB
+          - listitem [ref=f2e101]:
+            - link "Shopping" [ref=f2e102] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=28&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&ved=1t:220175&ictx=111
+          - listitem [ref=f2e105]:
+            - link "News" [ref=f2e106] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&tbm=nws&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ0pQJegQIGxAB
+          - listitem [ref=f2e109]:
+            - link "Videos" [ref=f2e110] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=vids&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviQfyEb-IJlAfY0A7wXorsSkXeKVIZ71E_R2YRg28PHo9kgSMv-37UyND_MBjj0q8uZ9wXOk8RiWq-e2X3NuC6ammYkY7RYlhrDT8yUb74DQjLssIGEtA2GMmtiE7STE0APBP8sg&q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sa=X&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQtKgLegQIGBAB
+          - listitem [ref=f2e113]:
+            - button [ref=f2e114] [cursor=pointer]:
+              - generic "More filters" [ref=f2e115]: More
+        - button "Tools" [ref=f2e122] [cursor=pointer]
+    - heading "Search Results" [level=1] [ref=f2e129]
+    - main [ref=f2e135]:
+      - generic [ref=f2e139]:
+        - generic [ref=f2e142]:
+          - heading "Web results" [level=2] [ref=f2e143]
+          - generic [ref=f2e144]:
+            - generic [ref=f2e147]:
+              - link "Statement of Deficiencies and plan of correction Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › downloads › cms2567" [ref=f2e149] [cursor=pointer]:
+                - /url: /goto?url=CAESfgHrOzAV1SLR4H_mt6QC4RHZ0tRHIzR6_84rBqCcO_h_E-A1bXaEjFFMe0XA2TiTg3U90j5Ts0cWk1fuXTHdCKN97I7q64iwr_qXqjhZMgJXd2Jpqpez7lZ0F_sxMbBGAXRYKhLV6BXApTzHFN1_m7doI9frdmWqRmT85njasw
+                - heading "Statement of Deficiencies and plan of correction" [level=3] [ref=f2e150]
+                - generic [ref=f2e156]:
+                  - generic [ref=f2e157]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                  - generic [ref=f2e159]: https://www.cms.gov › downloads › cms2567
+              - generic [ref=f2e161]: PDF
+              - button "About this result" [ref=f2e166] [cursor=pointer]
+            - generic [ref=f2e171]:
+              - generic [ref=f2e172]:
+                - generic [ref=f2e173]:
+                  - text: Name and Address of
+                  - emphasis [ref=f2e174]: Facility
+                  - text: – Indicate the name and address of the
+                  - emphasis [ref=f2e175]: facility
+                  - text: identified on the official certification record. When surveying.
+                - link "Read more" [ref=f2e176] [cursor=pointer]:
+                  - /url: /goto?url=CAES4gEB6zswFdnzYu3uCN9JJ4ArYug8igmw5AJtbwPkSDarkCwTYxpdIn8HZJQRNQkQyQehtmJgnWZeEA2s-OwrAOlPKggYpx_9Gst29WCv7rtPnpM-rVc1hSkrstgaMs0dgxRJ5b_XU0KVV6P2ASEI7JCAS7b6KDUBHoXftPhGmqAHqB1tl_t2As2qc2XsABdswOnOVkil3bovhKG0qxw_5zrIMNLhYJDho_TnV7DNVx0DTRvlQFnE3ET52Mio53dTdjtwoAJyIXyGDbqeSxw4xA29rD9XraeL-tfhba39Ji81SKQI
+              - generic [ref=f2e177]: 5 pages
+        - generic [ref=f2e181]:
+          - generic [ref=f2e184]:
+            - link "Pub. 100-07 State Operations Provider Certification Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › files › document" [ref=f2e186] [cursor=pointer]:
+              - /url: /goto?url=CAESZwHrOzAVLjJutRer2Aa-n0TPf5nTc_mse8KX5e9zdkOedzxyEWPn1J3t-_gZWRdICuipj38WyahM59aNmUpjlD30NjQmd6KcR-DFras9uTm9YDPOQjey8H5cbUONBMgFaEd3cKx3WaI
+              - heading "Pub. 100-07 State Operations Provider Certification" [level=3] [ref=f2e187]
+              - generic [ref=f2e193]:
+                - generic [ref=f2e194]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e196]: https://www.cms.gov › files › document
+            - generic [ref=f2e198]: PDF
+            - button "About this result" [ref=f2e203] [cursor=pointer]
+          - generic [ref=f2e208]:
+            - generic [ref=f2e209]:
+              - generic [ref=f2e210]: 26 Jun 2026 —
+              - generic [ref=f2e211]:
+                - text: Surveyors document on the
+                - emphasis [ref=f2e212]: CMS
+                - text: "-"
+                - emphasis [ref=f2e213]: "2567"
+                - text: the
+                - emphasis [ref=f2e214]: nursing home's
+                - text: actions to
+                - emphasis [ref=f2e215]: correct
+                - text: the past noncompliance.
+            - generic [ref=f2e216]: 116 pages
+        - generic [ref=f2e220]:
+          - generic [ref=f2e223]:
+            - link "Medicare State Operations Manual Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › manuals › downloads" [ref=f2e225] [cursor=pointer]:
+              - /url: /goto?url=CAESkAEB6zswFURbl7-OfBCm84QV4jnCDkz1ufgrlB6gGOjWsYEVYJLcbdgujxvXfKvEF6tCHFVEIhNdqQ5wtiIFM3HaFQ2CsryVsSGKZ8VwU8wniPrphvaCQUye2XoGJDeKGU7Tthr7eXyVkVBrct4BcH8YcC00EiXe0-wsofTwWFLKUTomoEfqH-uR2t03fv_5ktw
+              - heading "Medicare State Operations Manual" [level=3] [ref=f2e226]
+              - generic [ref=f2e232]:
+                - generic [ref=f2e233]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e235]: https://www.cms.gov › manuals › downloads
+            - generic [ref=f2e237]: PDF
+            - button "About this result" [ref=f2e242] [cursor=pointer]
+          - generic [ref=f2e247]:
+            - generic [ref=f2e248]:
+              - generic [ref=f2e249]: 23 Jul 1999 —
+              - generic [ref=f2e250]:
+                - emphasis [ref=f2e251]: CMS
+                - text: "-"
+                - emphasis [ref=f2e252]: "2567"
+                - text: the
+                - emphasis [ref=f2e253]: nursing home's
+                - text: actions to
+                - emphasis [ref=f2e254]: correct
+                - text: the past noncompliance. The provider's
+                - emphasis [ref=f2e255]: plan of correction
+                - text: column on the
+                - emphasis [ref=f2e256]: CMS
+                - text: "-"
+                - emphasis [ref=f2e257]: "2567"
+                - text: will print “ ...
+            - generic [ref=f2e258]: 162 pages
+        - generic [ref=f2e262]:
+          - generic [ref=f2e265]:
+            - link "Revised Long-Term Care (LTC) Surveyor Guidance Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › files › document › revised-..." [ref=f2e267] [cursor=pointer]:
+              - /url: /goto?url=CAESxAEB6zswFaC2f2wLnRMGuraUMCRkCBeEZSBrwJTBYLEsl4fZy6xiyaCEbIpw-30IMvRqc5hYalkxVzSqAJKOyafxBlBYmvz-HXSk3LOMOyolN8DELiz6VWtih-_LG-wloNBDP93Cv3gLmPpYSWYE0xfefHh3JuOrgtoDFzWUhWqlHkWN0pTfjFED-TlJIplbfpCakM-s-nq-G9uwybUxkGSfA7obSJuCf6U6OwF6PoXEKMS4ErpcwWq6Zor8hYf4zxwiBLkq
+              - heading "Revised Long-Term Care (LTC) Surveyor Guidance" [level=3] [ref=f2e268]
+              - generic [ref=f2e274]:
+                - generic [ref=f2e275]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e277]: https://www.cms.gov › files › document › revised-...
+            - generic [ref=f2e279]: PDF
+            - button "About this result" [ref=f2e284] [cursor=pointer]
+          - generic [ref=f2e289]:
+            - generic [ref=f2e290]:
+              - generic [ref=f2e291]: 18 Nov 2024 —
+              - generic [ref=f2e292]:
+                - text: "Revised Surveyor Guidance:"
+                - emphasis [ref=f2e293]: CMS
+                - text: is releasing the following revised guidance for
+                - emphasis [ref=f2e294]: nursing home
+                - text: "surveyors: • Admission, Transfer & Discharge, ..."
+              - link "Read more" [ref=f2e295] [cursor=pointer]:
+                - /url: /goto?url=CAESwAIB6zswFXgBvhGkGbIHG4kZSQulD9cnDM9pP7JsXOok0s6qjPMjTV5dSXv6Sk3bVjmQYRLudzKLKDnzwW7a_P67s62fDjEWDo3P2ncKRiryzAl-EanGWoV63Ef7ouW_uZVi0_ZOt32M0OEm_tK4h24jaG-_qK5xF0Vha3Ssxn2PKQoOp7_h60_UqOhf-tybYJeawn072ua6R_xl-dwe8Tj-Ya2jCgrLpeJCPH1LYK4B3RJvgp-ZpqfYbCXokwjMgPNmlKE2dS1s7RB6GKh8YP9Twa-6RcsLDYRug0kfIc38wGMsDp07YWKPLrqAbCNVItTlUf8WUkef5fH72HvLOxUiZver9l4OxXTvApoNXDWxNR0Hg4PJvOMzyxbd286d_V2BvzFiKG3JQiGrI2vOa_PoEqNDoejmt1xiUeuZi5n_Ww
+            - generic [ref=f2e296]: 902 pages
+        - generic [ref=f2e300]:
+          - generic [ref=f2e303]:
+            - link "CMS Manual System Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › transmittals › downloads" [ref=f2e305] [cursor=pointer]:
+              - /url: /goto?url=CAESbgHrOzAVMpE_ZmMq3zWCMMBVC1zZNryKEaIStKwf4XcS2r9Z80_a20-GsaOSal-NGDCEZSAxDVT5wkWXuGdimDlDDRuGBU04OkZrTrBmusftPJoEgV7vE35ebcQG69qUYibPKx4ZA7FnbWWtAZwi
+              - heading "CMS Manual System" [level=3] [ref=f2e306]
+              - generic [ref=f2e312]:
+                - generic [ref=f2e313]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e315]: https://www.cms.gov › transmittals › downloads
+            - generic [ref=f2e317]: PDF
+            - button "About this result" [ref=f2e322] [cursor=pointer]
+          - generic [ref=f2e329]:
+            - text: An acceptable
+            - emphasis [ref=f2e330]: plan of correction
+            - text: must contain the following
+            - emphasis [ref=f2e331]: elements
+            - text: ": 1. The"
+            - emphasis [ref=f2e332]: plan
+            - text: for correcting each specific deficiency cited; 2. The
+            - emphasis [ref=f2e333]: plan
+            - text: should address ...
+        - generic [ref=f2e337]:
+          - generic [ref=f2e340]:
+            - link "State Operations Manual Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › Transmittals › downloads" [ref=f2e342] [cursor=pointer]:
+              - /url: /goto?url=CAESkQEB6zswFd1kJwVH54FOPkHtO-3OB7TVgnHDeWrpo2zCyvOqKWSNUFMT_7UNYo8m_NrKSfTxWoRoisUKGYN1OT3bmqIDvD0CsRm4LMbQ_wBDhtcrj4y27lmPcJvTYu50vQOd0E9n_1qhtvKGNklKDUoQEzwIem5u91fhHOKt8OBgo94TOllDHlVzCBiMPFtTuYTK
+              - heading "State Operations Manual" [level=3] [ref=f2e343]
+              - generic [ref=f2e349]:
+                - generic [ref=f2e350]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e352]: https://www.cms.gov › Transmittals › downloads
+            - generic [ref=f2e354]: PDF
+            - button "About this result" [ref=f2e359] [cursor=pointer]
+          - generic [ref=f2e364]:
+            - generic [ref=f2e366]:
+              - text: The original Form
+              - emphasis [ref=f2e367]: CMS
+              - text: "-"
+              - emphasis [ref=f2e368]: "2567"
+              - text: is disclosable when a clean
+              - emphasis [ref=f2e369]: plan of correction
+              - text: is not submitted and signed by the
+              - emphasis [ref=f2e370]: facility
+              - text: .
+            - generic [ref=f2e371]: 46 pages
+        - generic [ref=f2e375]:
+          - generic [ref=f2e378]:
+            - link "PRINCIPLES OF DOCUMENTATION - 2000 Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › files › document" [ref=f2e380] [cursor=pointer]:
+              - /url: /goto?url=CAEScgHrOzAVw67ZDLAxxgPvK2SPVZrTf_z6tXfQmx7F3tejlYL5c-hLFmHXAVrgAfYrcYwYx6jiFpyuI8e_mQeDhu9leH5wuhAZIWMnJ1Wn0m6d94gkAWWTWiff9Bg7ZxKIuRhqN-RGu6T4noRnEnFUMGnG7Q
+              - heading "PRINCIPLES OF DOCUMENTATION - 2000" [level=3] [ref=f2e381]
+              - generic [ref=f2e387]:
+                - generic [ref=f2e388]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e390]: https://www.cms.gov › files › document
+            - generic [ref=f2e392]: PDF
+            - button "About this result" [ref=f2e397] [cursor=pointer]
+          - generic [ref=f2e404]:
+            - emphasis [ref=f2e405]: CMS
+            - text: "-"
+            - emphasis [ref=f2e406]: "2567"
+            - text: "- Statement of Deficiencies and"
+            - emphasis [ref=f2e407]: Plan of Correction
+            - text: ": the official document on which citations are recorded. Outcome: a result/consequence of laboratory ..."
+        - generic [ref=f2e411]:
+          - generic [ref=f2e414]:
+            - link "QSO-25-14-NH Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › files › document › qso-25-..." [ref=f2e416] [cursor=pointer]:
+              - /url: /goto?url=CAESawHrOzAVIrW2pQsyYt9IYlkKz1spop0qMbKmV0gMXOwiofXxj7qm4VSPjCuPfsJNNS2Sq8S03owWATiphI__qi2zmKoiYdSosTsezFh0-lcSKHL-YQvocQmB-pCr0JbJLcRAFthDhxE6l4jA
+              - heading "QSO-25-14-NH" [level=3] [ref=f2e417]
+              - generic [ref=f2e423]:
+                - generic [ref=f2e424]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e426]: https://www.cms.gov › files › document › qso-25-...
+            - generic [ref=f2e428]: PDF
+            - button "About this result" [ref=f2e433] [cursor=pointer]
+          - generic [ref=f2e438]:
+            - generic [ref=f2e439]:
+              - generic [ref=f2e440]: 10 Mar 2025 —
+              - generic [ref=f2e441]:
+                - text: These updates are essential to maintaining the integrity of
+                - emphasis [ref=f2e442]: nursing home
+                - text: care.
+                - emphasis [ref=f2e443]: CMS
+                - text: will publish these updates in Appendix PP of the State ...
+              - link "Read more" [ref=f2e444] [cursor=pointer]:
+                - /url: /goto?url=CAESyAEB6zswFXdtS_GYdTklQDftlkL8kzwIDQge0JSXT27yvDSAqV5j2vKAtRONMvRnpf1yLK3-FkO0mvcTXOF13-akBPbAi2f1GYRBN_-lrXg6a0ROIuoGR0VtJs5eWCfYYMa_y2SCCAdus4_JAszUyDsm6iFWTy1ajFXv8iqBorrDatm_OCYsRLOAAJAdYcnxpwN5kserZJKBpRiD-_H3fAcot0oeSR3rjM9MnEqFbTHx8IfcFEb_AEWgiEtBjES4GdNYCeEcuB6ZwA
+            - generic [ref=f2e445]: 918 pages
+        - generic [ref=f2e449]:
+          - generic [ref=f2e452]:
+            - link "DEPARTMENT OF HEALTH & HUMAN SERVICES Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › downloads › SCLetter11_41" [ref=f2e454] [cursor=pointer]:
+              - /url: /goto?url=CAESsQEB6zswFUqKwiAreu51lO2-EM6Yuse7UZdE0UQgYss3K7iwrthHFSfKVPIczQbRbZbZEmNqHw3EhpneVxuwvR_XoL46H8HX7F416MYr84Nc4PFoUMCx36F-qgNqeCbX1Dm-D07nJwNCf7g6obZ66kXGuXRV3JHs9wvx3U44U4P62an_zbNKMdNf3gRkMQA8FXhNuk1qwXnyYtQjwQg0WPrJHOpdmWScz6SOUYl09kp8dhs
+              - heading "DEPARTMENT OF HEALTH & HUMAN SERVICES" [level=3] [ref=f2e455]
+              - generic [ref=f2e461]:
+                - generic [ref=f2e462]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e464]: https://www.cms.gov › downloads › SCLetter11_41
+            - generic [ref=f2e466]: PDF
+            - button "About this result" [ref=f2e471] [cursor=pointer]
+          - generic [ref=f2e476]:
+            - generic [ref=f2e477]:
+              - generic [ref=f2e478]: 30 Sept 2011 —
+              - generic [ref=f2e479]:
+                - text: (6) Include
+                - emphasis [ref=f2e480]: Plans of Correction
+                - text: ": For each recertification and complaint survey completed, provide the"
+                - emphasis [ref=f2e481]: nursing facility
+                - text: or skilled nursing ...
+              - link "Read more" [ref=f2e482] [cursor=pointer]:
+                - /url: /goto?url=CAESkwIB6zswFf5zmDRopibfJsDlw4ZTcSWHh4SwfPtVW1j2Npy_dPumt2Xk7lWvcDqmauSw9mO1HImG3t5NK4Av3cw7xoo7lX9j12iSI_iP65-i70KpiYxnkEFYLS3kETy8qEgbk5d9bvhOJpeBA-aU4G7z9v1y2IwrBzsAYde0pRFpOMNjI33PXQ96IR6xYj2zEgSVy_vB0NS0ka7fupgMzolf9fyYUxgQnbFSQ85sRzh65xKYo5lFMz0wzUngZJVp6tRMTG48ghUUJY3T6oLB49YxdYr1kyn0BqWDk42SDTtaDlwpVDASEk6b_jiR3DkYb_Hcptna5LCVwhshNbd_aat59bWLpplG6in3B-x3tOTQkjwYVw
+            - generic [ref=f2e483]: 4 pages
+        - generic [ref=f2e487]:
+          - generic [ref=f2e490]:
+            - link "Medicare State Operations Manual Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › medicare › downloads" [ref=f2e492] [cursor=pointer]:
+              - /url: /goto?url=CAESsAEB6zswFd1fpqN2DhxJd1QTD35JvIMrR8meq0Z3Wqf3uU6FUmIhFPMjLk093EcGxGp3BArO8zfENCRbORPhaW-vi0Rq1rVSYR-RaHzWA9nbdkVfTu_14nc0qiaxJy4P-3G84JG87QSLh1YZPE6cpImAKiknIPzdxp5AWT8qDSGqqGa711SbTWid3tTc7Z46HMzhoKm1mrd9zvStyFwqef58g09JY53pQZSekWsjk88_rQ
+              - heading "Medicare State Operations Manual" [level=3] [ref=f2e493]
+              - generic [ref=f2e499]:
+                - generic [ref=f2e500]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                - generic [ref=f2e502]: https://www.cms.gov › medicare › downloads
+            - generic [ref=f2e504]: PDF
+            - button "About this result" [ref=f2e509] [cursor=pointer]
+          - generic [ref=f2e514]:
+            - generic [ref=f2e515]:
+              - generic [ref=f2e516]: 23 Jul 1999 —
+              - generic [ref=f2e517]:
+                - text: Surveyors document on the
+                - emphasis [ref=f2e518]: CMS
+                - text: "-"
+                - emphasis [ref=f2e519]: "2567"
+                - text: the
+                - emphasis [ref=f2e520]: nursing home's
+                - text: actions to
+                - emphasis [ref=f2e521]: correct
+                - text: the past noncompliance. CMS or the State indicates in the ...
+              - link "Read more" [ref=f2e522] [cursor=pointer]:
+                - /url: /goto?url=CAESjAIB6zswFQPMmBpPGxLpT1788fXpayYyT_EiOgWTXGsimvrqPKxMcFqiSiNYxKBTz_QiN22hexmYUOl7wRHakztx5SQJGKqVTWcTAoVyIR5-CvNr8TbVJmbZVI76fmOeQgx09rSxMh9z3_iSQEqsR06_Tc0E2EJ83uZ0gVUVKmQD02KYjzZay_4DEmi6M6ee4RR_eqVS9_UlhU2_fPN1yyocH7b9OhSlexAMIL6-3aDM8YKT9Xi2ftX0n9VNbgDHZUH7Oz3B7MG52X-juEfThcS0X9-MfVk4cf8ZAmWN4OyAFDuCDwQwoRwhXgVrHiLrSXyBvoME7oMbpld7_KlD-O73b3RWD2F5U61JG8qW
+            - generic [ref=f2e523]: 158 pages
+      - navigation [ref=f2e526]:
+        - heading "Page navigation" [level=1] [ref=f2e527]
+        - text: "1"
+        - link "Page 2" [ref=f2e530] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=10&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAE
+          - text: "2"
+        - link "Page 3" [ref=f2e532] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=20&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAG
+          - text: "3"
+        - link "Page 4" [ref=f2e534] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=30&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAI
+          - text: "4"
+        - link "Page 5" [ref=f2e536] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=40&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAK
+          - text: "5"
+        - link "Page 6" [ref=f2e538] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=50&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAM
+          - text: "6"
+        - link "Page 7" [ref=f2e540] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=60&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAO
+          - text: "7"
+        - link "Page 8" [ref=f2e542] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=70&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAQ
+          - text: "8"
+        - link "Page 9" [ref=f2e544] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=80&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAS
+          - text: "9"
+        - link "Page 10" [ref=f2e546] [cursor=pointer]:
+          - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=90&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8tMDegQIMhAU
+          - text: "10"
+        - heading [level=2] [ref=f2e548]:
+          - link "Next" [ref=f2e549] [cursor=pointer]:
+            - /url: /search?q=site:cms.gov+CMS-2567+plan+of+correction+five+elements+nursing+home&sca_esv=459cc50bc9b1d43b&ei=O3qzasv2CPKuseMPzaewkAU&start=10&sa=N&sstk=AS6-VmLbVT30ZivrHom9CwUDdGx6I9A4DoOMxhO5jCh_Jz1XqhcD6DPLfkiAksvdYSpS_rkKlJGcAaPa-PzOaGSen1Dt7ynIkJhWlQ&ved=2ahUKEwiLgOTekYSXAxVyV2wGHc0TDFIQ8NMDegQIMhAW
+      - navigation
+    - contentinfo [ref=f2e552]:
+      - heading "Footer links" [level=1] [ref=f2e553]
+      - generic [ref=f2e557]:
+        - generic [ref=f2e559]:
+          - text: India
+          - generic [ref=f2e561]:
+            - button "560103, Bengaluru, Karnataka - From your IP address" [ref=f2e563] [cursor=pointer]:
+              - generic [ref=f2e564]: 560103, Bengaluru, Karnataka
+              - generic [ref=f2e566]:
+                - text: "-"
+                - generic [ref=f2e567]: From your IP address
+            - text: "-"
+            - button "Update location" [ref=f2e569] [cursor=pointer]
+        - generic [ref=f2e572]:
+          - link "Help" [ref=f2e573] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-IN&fg=1
+          - link "Send feedback" [ref=f2e574] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=f2e575] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-IN&fg=1
+          - link "Terms" [ref=f2e576] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-IN&fg=1

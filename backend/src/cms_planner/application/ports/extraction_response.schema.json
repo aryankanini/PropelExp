@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cms-planner.local/schemas/extraction-response-v1.json",
+  "title": "ExtractionResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provider_candidates", "deficiency_candidates"],
+  "properties": {
+    "provider_candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/providerCandidate"}
+    },
+    "deficiency_candidates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/deficiencyCandidate"}
+    }
+  },
+  "$defs": {
+    "providerCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "page_number",
+        "snippet",
+        "confidence",
+        "uncertainty"
+      ],
+      "properties": {
+        "provider": {"type": "string", "pattern": "[A-Za-z0-9]"},
+        "page_number": {"type": "integer", "minimum": 1},
+        "snippet": {"type": "string", "pattern": "[A-Za-z0-9]"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "uncertainty": {"type": "boolean"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "page_number", "text"],
+      "properties": {
+        "evidence_id": {"type": "string", "minLength": 1},
+        "page_number": {"type": "integer", "minimum": 1},
+        "text": {"type": "string", "pattern": "[A-Za-z0-9]"}
+      }
+    },
+    "deficiencyCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id",
+        "boundary_id",
+        "f_tag",
+        "sod_text",
+        "evidence",
+        "confidence",
+        "uncertainty"
+      ],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1},
+        "boundary_id": {"type": "string", "minLength": 1},
+        "f_tag": {"type": "string", "pattern": "^F[0-9]{4}$"},
+        "sod_text": {
+          "type": ["string", "null"],
+          "pattern": "[A-Za-z0-9]"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/evidence"}
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "uncertainty": {"type": "boolean"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"sod_text": {"type": "null"}}},
+          "then": {"properties": {"uncertainty": {"const": true}}}
+        }
+      ]
+    }
+  }
+}

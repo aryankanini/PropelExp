@@ -1,0 +1,29 @@
+sequenceDiagram
+    autonumber
+    actor Leader as Compliance Leader
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Approval as Approval Service
+    participant State as Session Repository
+
+    Leader->>UI: Open POC for approval
+    UI->>API: GET current POC and evidence
+    API->>State: Load current revision and provenance
+    State-->>UI: Review package
+    alt Content is acceptable
+        Leader->>UI: Approve current revision
+        UI->>API: POST approval
+        API->>Approval: Authorize leader and validate revision
+        Approval->>State: Store approval for current revision
+        API-->>UI: Enable copy and download
+    else Changes are required
+        Leader->>UI: Return draft for editing
+        UI->>API: PATCH review disposition
+        Approval->>State: Keep POC unapproved
+        API-->>UI: Show changes-required state
+    end
+    opt Actor unauthorized or revision stale
+        Approval-->>API: Deny without state change
+        API-->>UI: Authorization or conflict problem
+        UI-->>Leader: Keep export disabled
+    end

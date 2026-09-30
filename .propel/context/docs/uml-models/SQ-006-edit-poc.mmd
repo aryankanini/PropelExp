@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant POC as POC Service
+    participant State as Session Repository
+
+    Reviewer->>UI: Open current POC draft
+    UI->>API: GET case projection
+    API->>State: Load draft revision and provenance
+    State-->>UI: Current POC
+    Reviewer->>UI: Edit one or more sections
+    UI->>API: PATCH POC revision
+    API->>POC: Validate required sections
+    alt Draft was unapproved
+        POC->>State: Append user-edited revision
+        API-->>UI: Return updated unapproved draft
+    else Draft was approved
+        POC->>State: Append revision and revoke approval
+        API-->>UI: Return reapproval-required state
+    end
+    UI-->>Reviewer: Show content origin and status
+    opt Revision conflict or workspace error
+        POC-->>API: Typed edit failure
+        API-->>UI: Preserve last retained revision
+        UI-->>Reviewer: Show conflict or retry action
+    end

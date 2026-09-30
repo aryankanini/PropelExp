@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-23216-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-29T15:38:11",
+  "updated_at": "2026-09-29T15:38:10",
+  "_cumulative_input_tokens": 428,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-29T15:38:10",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "\"ID tag\r\n### K0000\r\n\r\n2 source pages\r\n\r\n#### Statement of Deficiency\r\n\r\nBldg. 01 A Life Safety Code Recertification and Licensure Survey was conducted by the Indiana Department of Health in accordance with 42 CFR 483.90(a). Survey Date: 10/07/24 Facility Number: 000045 Provider Number: 155109 AIM Number: 100291400 At this Life Safety Code survey, Brickyard Healthcare - Twelfth Street Care Center was found DEPARTMENT OF HEALTH AND HUMAN SERVICES CENTERS FOR MEDICARE & MEDICAID SERVICES OMB NO. 0938-039 SUMMARY STATEMENT OF DEFICIENCIE BRICKYARD HEALTHCARE - TWELFTH STREET CARE CENTER t i li ith R i t f not in compliance with Requirements for Participation in Medicare/Medicaid, 42 CFR Subpart 483.90(a), Life Safety from Fire and the 2012 edition of the National Fire Protection Association (NFPA) 101, Life Safety Code (LSC), Chapter 19, Existing Health Care Occupancies and 410 IAC 16.2. The one-story facility constructed in 1965 and 1966 was determined to be of Type IV (2HH) construction and fully sprinklered. The 1986 one story therapy addition was determined to be of Type V (111) construction and fully sprinklered. The facility has a fire alarm system with hard wired smoke detection in the corridors and in spaces open to the corridors. Battery powered smoke detectors are provided all resident sleeping rooms. The building is fully protected by a 100-kW diesel powered generator. The facility has a capacity of 87 and had a census of 66 at the time of the survey. All areas where the residents have customary access were sprinklered. All areas providing facility services were sprinklered, except an unsprinklered garage and storage shed. Quality Review completed on 10/08/24 NFPA 101 Egress Doors\"\r\n\r\nSee, this tag is still using data of previous tag E0000"
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 428
+    }
+  ]
+}

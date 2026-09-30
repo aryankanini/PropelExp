@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-30232-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-23T18:10:19",
+  "updated_at": "2026-09-23T18:10:18",
+  "_cumulative_input_tokens": 626,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-23T18:10:18",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Repair all 23 task_*.md files under d:\\PropelExp\\.propel\\context\\tasks\\EP-003\\us_021..us_025 and EP-004\\us_026..us_030 to conform exactly to the task template returned by PropelIQ. Use apply_patch only. Preserve substantive content and concise scope. Required exact section order: H1 `# Task - [TASK_XXX]` (use TASK_001 etc matching filename); `## Requirement Reference` with bold fields User Story, Story Location, Acceptance Criteria nested bullets, Edge Cases nested bullets; then `---`; conditional `## Design References` only for Frontend/UI tasks using table columns Reference Type|Value and rows UI Impact, Figma URL, Wireframe Status, Wireframe Type, Wireframe Path/URL, Screen Spec, UXR Requirements, Design Tokens; then `---`; conditional `## AI References` only for AI tasks using table with rows AI Impact, AIR Requirements, AI Pattern, Prompt Template Path, Guardrails Config, Model Provider; then `---`; no Mobile section; `## Applicable Technology Stack` must be a table Layer|Technology|Version|Justification containing exactly the task's one layer (Frontend OR Backend OR AI/ML), then `---`; Task Overview; Dependent Tasks; Impacted Components; Implementation Plan; Current Project State; Expected Changes as table Action|File Path|Description with each concrete file from Impacted Components as CREATE; External References; Build Commands; Implementation Validation Strategy using checkboxes; Implementation Checklist using checkboxes. Keep estimates <=8 hours and checklist 1-8. Ensure no task mixes layers. Frontend versions React 19.3 / TypeScript 7.0 / Vite 8.3 justified TR-002. Backend Python 3.14.7 / FastAPI 0.141.1 / Pydantic 2.x / compatible Uvicorn justified TR-003. AI/ML adapter contract v1 / JSON Schema 2020-12 / Pydantic 2.x justified AIR-003 or AIR-004 and TR-008. Use story source path as plain workspace path or valid local link. Acceptance Criteria should include complete source wording, not merely titles if feasible. Edge case exact. UI rows use given values already in each file. Wireframe status AVAILABLE, types HTML; for US023/025 path is .propel/context/wireframes/Hi-Fi/; all Figma URLs N/A. Build Commands should retain canonical .propel/build link, not invent commands. Validation may mention tests but no workflow invocation. After first edits run focused validation immediately. Final automated validation over all files: exact section ordering, required table headers/rows, checklist count, one tech table row/layer, estimates <=8, 23 total, names/sequences, no prohibited Mobile/Database sections, no downstream workflow commands. Return result and note any ambiguity."
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 626
+    }
+  ]
+}

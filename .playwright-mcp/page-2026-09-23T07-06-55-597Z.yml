@@ -1,0 +1,473 @@
+- generic [active] [ref=f3e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=f3e2] [cursor=pointer]
+      - link "Accessibility help" [ref=f3e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-IN
+  - generic [ref=f3e8]:
+    - search [ref=f3e9]:
+      - generic [ref=f3e11]:
+        - link "Go to Google Home" [ref=f3e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQPHoECAYQBA
+        - generic [ref=f3e21]:
+          - generic [ref=f3e22]:
+            - combobox "Search" [ref=f3e25]: nursing home CMS 2567 plan of correction software AI deficiency management nursing home CMS 2567 plan of correction software AI deficiency management
+            - generic [ref=f3e26]:
+              - button "Clear" [ref=f3e28] [cursor=pointer]
+              - generic [ref=f3e33]:
+                - button "Search by voice" [ref=f3e34] [cursor=pointer]
+                - button "Search by image" [ref=f3e37] [cursor=pointer]
+          - button "Search" [ref=f3e40] [cursor=pointer]
+    - generic [ref=f3e45]:
+      - button "Settings" [ref=f3e47] [cursor=pointer]
+      - button "Share" [ref=f3e52] [cursor=pointer]
+      - generic [ref=f3e58]:
+        - button "Google apps" [ref=f3e60] [cursor=pointer]
+        - link "Sign in" [ref=f3e65] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3Dnursing%2Bhome%2BCMS%2B2567%2Bplan%2Bof%2Bcorrection%2Bsoftware%2BAI%2Bdeficiency%2Bmanagement&ec=futura_srp_og_si_72236_p
+  - generic [ref=f3e68]:
+    - navigation [ref=f3e74]:
+      - generic [ref=f3e80]:
+        - list [ref=f3e81]:
+          - listitem [ref=f3e82]:
+            - link "AI Mode" [ref=f3e85] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&udm=50&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ2J8OegQIERAD
+          - listitem [ref=f3e89]:
+            - link "All" [disabled] [ref=f3e90]
+          - listitem [ref=f3e93]:
+            - link "Images" [ref=f3e94] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQtKgLegQIFhAB
+          - listitem [ref=f3e97]:
+            - link "Forums" [ref=f3e98] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=forums&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQs6gLegQIFRAB
+          - listitem [ref=f3e101]:
+            - link "Shopping" [ref=f3e102] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=28&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&ved=1t:220175&ictx=111
+          - listitem [ref=f3e105]:
+            - link "News" [ref=f3e106] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&tbm=nws&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ0pQJegQIFBAB
+          - listitem [ref=f3e109]:
+            - link "Short videos" [ref=f3e110] [cursor=pointer]:
+              - /url: /search?sca_esv=459cc50bc9b1d43b&udm=39&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832QufJlY6zJud3Z__pVf55T9OZytGE_G8syR6_it17OviczSoVV5LqPZs_UFZqNlcWFpfa4UD7y68a_CwwPsyuweMRBOgMeViM_0XjSvphjJF67PmivR11ayjqfZfPLP3Jxoa7A8LjTvZKtjEDD2DyHVseWtX9iWcfHJZbUzxDc8ipLvRCA&q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQs6gLegQIExAB
+          - listitem [ref=f3e113]:
+            - button [ref=f3e114] [cursor=pointer]:
+              - generic "More filters" [ref=f3e115]: More
+        - button "Tools" [ref=f3e122] [cursor=pointer]
+    - heading "Search Results" [level=1] [ref=f3e129]
+    - generic [ref=f3e134]:
+      - generic [ref=f3e156]:
+        - generic [ref=f3e158]:
+          - heading "AI Overview" [level=2] [ref=f3e162]
+          - button "Listen" [ref=f3e166]:
+            - generic [ref=f3e170] [cursor=pointer]
+        - generic [ref=f3e176]:
+          - generic [ref=f3e177]:
+            - generic [ref=f3e196]:
+              - generic [ref=f3e199]:
+                - generic [ref=f3e200]:
+                  - text: AI-powered Plan of Correction (POC) software for nursing homes
+                  - mark [ref=f3e201]:
+                    - text: automates the analysis of Form
+                    - generic [ref=f3e202]: CMS-2567
+                    - text: Statement of Deficiencies to draft, assign, and track regulatory corrections in minutes
+                  - text: .
+                  - generic [ref=f3e204]:
+                    - link "Skypoint AI (+1) – skyComply™ | AI Compliance for Senior Living & SNFs. Related results" [ref=f3e205] [cursor=pointer]:
+                      - /url: /goto?url=CAESXwHrOzAVq36iZtAg0KvwDhl4grhhSrMNmNOr6P9WgJc6UO39us7-ijLSZlw4JAWdPHoP1PUs4WEj3hGVIWYQQ45sl53W84aW8m2KU2fpGxylF2l5NcCDDifDKyZoKpAO
+                    - button "Skypoint AI (+1) – skyComply™ | AI Compliance for Senior Living & SNFs. Related results" [ref=f3e206] [cursor=pointer]:
+                      - generic [ref=f3e208]:
+                        - generic [ref=f3e209]: Skypoint AI
+                        - generic [ref=f3e210]: "+1"
+                - heading "How AI Deficiency Management Works" [level=3] [ref=f3e215]
+                - list [ref=f3e216]:
+                  - listitem [ref=f3e218]:
+                    - generic [ref=f3e219]:
+                      - strong [ref=f3e220]: "Document Intake:"
+                      - text: Users upload the
+                      - generic [ref=f3e221]: CMS-2567
+                      - text: PDF; the AI reads the text, extracts specific F-Tags or K-Tags, and identifies the scope and severity codes.
+                    - generic [ref=f3e223]:
+                      - link "www.easypocapp.com (+1) – EasyPOC — AI Plan of Correction & Policy Generator for Skilled .... Related results" [ref=f3e224] [cursor=pointer]:
+                        - /url: /goto?url=CAESUwHrOzAV_HLjbTDXiMfnxmCG0maFhyN1a9wLvDd1i1S5SPxnbi9DTVLIAqJxgNVF9Pa6E99d9N5j722wTeir67y_Urq504jhXkhIDwKNQs50KevO
+                      - button "www.easypocapp.com (+1) – EasyPOC — AI Plan of Correction & Policy Generator for Skilled .... Related results" [ref=f3e225] [cursor=pointer]:
+                        - generic [ref=f3e227]:
+                          - generic [ref=f3e228]: www.easypocapp.com
+                          - generic [ref=f3e229]: "+1"
+                  - listitem [ref=f3e235]:
+                    - generic [ref=f3e236]:
+                      - strong [ref=f3e237]: "Root Cause Analysis:"
+                      - text: The software scans historical data and federal guidelines (42 CFR Part 483) to generate an accurate underlying cause for the citation.
+                    - generic [ref=f3e239]:
+                      - link "LinkedIn (+1) – Never Write a Plan of Correction Ever Again. Let me show you .... Related results" [ref=f3e240] [cursor=pointer]:
+                        - /url: /goto?url=CAESlgEB6zswFQhZq7EtGnTu1adQAMFrwq3TcvZEDztZGy4OStp3bkRk9tCCdey6nvLA-KVZTjPbiUqa1dZv-2-yKMbAHzHBUSOwlhRLmDjuCMy9jmwm9HgT-tfPeZU08MsWUCiMlPkhOf-ZGATP3nIUeOvOtSQPnzDDpYgtpWo-FrGAheStl_c_8LVqXX9ab9yXDubmXV0MwgA
+                      - button "LinkedIn (+1) – Never Write a Plan of Correction Ever Again. Let me show you .... Related results" [ref=f3e241] [cursor=pointer]:
+                        - generic [ref=f3e243]:
+                          - generic [ref=f3e244]: LinkedIn
+                          - generic [ref=f3e245]: "+1"
+                  - listitem [ref=f3e251]:
+                    - generic [ref=f3e252]:
+                      - strong [ref=f3e253]: "Corrective & Preventive Action Drafts:"
+                      - text: It automatically builds the required five-part response plan addressing the specific resident, systemic changes, staff retraining, and ongoing auditing.
+                    - generic [ref=f3e255]:
+                      - link "www.easypocapp.com (+1) – AI. Related results" [ref=f3e256] [cursor=pointer]:
+                        - /url: /goto?url=CAESfgHrOzAVG1C3SCZTAEUDm0nODXUASvjDY1_ZmNRYSStw1fJMw8m0VxczQQi3ef_ckSULqAozIWVGr_UdOcgsVnzPJ41LYmBQYXMGeEMOTokpAC-0LmX-VgzM74-jITgo1euOEXoziMGoiELF0zhzcdo3Xu8PMGp-uZyjbpqxAA
+                      - button "www.easypocapp.com (+1) – AI. Related results" [ref=f3e257] [cursor=pointer]:
+                        - generic [ref=f3e259]:
+                          - generic [ref=f3e260]: www.easypocapp.com
+                          - generic [ref=f3e261]: "+1"
+                  - listitem [ref=f3e267]:
+                    - generic [ref=f3e268]:
+                      - strong [ref=f3e269]: "Workflow & Task Closing:"
+                      - text: Corrective actions route directly to designated staff roles, requiring uploaded evidence (logs, photos, training records) before a task is marked complete.
+                    - generic [ref=f3e271]:
+                      - link "Skypoint AI – skyComply™ | AI Compliance for Senior Living & SNFs. Related results" [ref=f3e272] [cursor=pointer]:
+                        - /url: /goto?url=CAESXwHrOzAVq36iZtAg0KvwDhl4grhhSrMNmNOr6P9WgJc6UO39us7-ijLSZlw4JAWdPHoP1PUs4WEj3hGVIWYQQ45sl53W84aW8m2KU2fpGxylF2l5NcCDDifDKyZoKpAO
+                      - button "Skypoint AI – skyComply™ | AI Compliance for Senior Living & SNFs. Related results" [ref=f3e273] [cursor=pointer]:
+                        - generic [ref=f3e274]: Skypoint AI
+                - heading "Popular AI Compliance & POC Tools" [level=3] [ref=f3e282]
+                - list [ref=f3e283]:
+                  - listitem [ref=f3e285]:
+                    - generic [ref=f3e286]:
+                      - link "EasyPOC" [ref=f3e288] [cursor=pointer]:
+                        - /url: /goto?url=CAESUwHrOzAV_HLjbTDXiMfnxmCG0maFhyN1a9wLvDd1i1S5SPxnbi9DTVLIAqJxgNVF9Pa6E99d9N5j722wTeir67y_Urq504jhXkhIDwKNQs50KevO
+                      - text: ": Generates tailored Plans of Correction, policies, and audit checklists aligned with Appendix PP and NFPA 101."
+                  - listitem [ref=f3e290]:
+                    - generic [ref=f3e291]:
+                      - link "Clearpol" [ref=f3e293] [cursor=pointer]:
+                        - /url: /goto?url=CAESWAHrOzAVZKulfxXaKsb2LCf1IpEbR_XowDYu9vxzCIbyrAEOCvV0Lm3l63IH6qijnz9Davi20w5BYfd1B1KQbnM9IR9XYwecNyAWEjZ-9qC3kyi6DwVmD60
+                      - text: ": Features a specialized POC writer designed to pass state review on the first submission."
+                  - listitem [ref=f3e295]:
+                    - generic [ref=f3e296]:
+                      - link "SkyComply" [ref=f3e298] [cursor=pointer]:
+                        - /url: /goto?url=CAESXwHrOzAVq36iZtAg0KvwDhl4grhhSrMNmNOr6P9WgJc6UO39us7-ijLSZlw4JAWdPHoP1PUs4WEj3hGVIWYQQ45sl53W84aW8m2KU2fpGxylF2l5NcCDDifDKyZoKpAO
+                      - text: ": Automates deficiency routing, task completion verification, and Medicare Additional Documentation Requests (ADRs)."
+                  - listitem [ref=f3e300]:
+                    - generic [ref=f3e301]:
+                      - link "SNFQAPI" [ref=f3e303] [cursor=pointer]:
+                        - /url: /goto?url=CAESoQEB6zswFcHlQ4aqKJcKS_RnTZjCRaNOXbdOEtnUPgFxOE9S6n0HDhJiw9C7YU4aLKCUX3wExJ6Qr3YEBWsiiWlDEF7fdUshwqgTtzVGeqaJLtiRIisrwZSD4m_PxX81aMg2yHv6FJhbsrPrPmWKdjvmAU6X9GU1Yrb8zUcDQFBn4GbFDI3fK-l16xQKqpAKHuqvODE5u_m7oKZVi2gSbHXUZw
+                      - text: ": Integrates with Electronic Health Records (EHR) to track ongoing compliance and generate mock-survey POCs."
+                    - generic [ref=f3e305]:
+                      - link "IntuitionLabs (+4) – SNFQAPI - Quality reporting (Five-Star, QAPI) Software. Related results" [ref=f3e306] [cursor=pointer]:
+                        - /url: /goto?url=CAESoQEB6zswFcHlQ4aqKJcKS_RnTZjCRaNOXbdOEtnUPgFxOE9S6n0HDhJiw9C7YU4aLKCUX3wExJ6Qr3YEBWsiiWlDEF7fdUshwqgTtzVGeqaJLtiRIisrwZSD4m_PxX81aMg2yHv6FJhbsrPrPmWKdjvmAU6X9GU1Yrb8zUcDQFBn4GbFDI3fK-l16xQKqpAKHuqvODE5u_m7oKZVi2gSbHXUZw
+                      - button "IntuitionLabs (+4) – SNFQAPI - Quality reporting (Five-Star, QAPI) Software. Related results" [ref=f3e307] [cursor=pointer]:
+                        - generic [ref=f3e309]:
+                          - generic [ref=f3e310]: IntuitionLabs
+                          - generic [ref=f3e311]: "+4"
+                - generic [ref=f3e317]:
+                  - generic [ref=f3e318]: "If you'd like, let me know:"
+                  - list [ref=f3e319]:
+                    - listitem [ref=f3e320]:
+                      - generic [ref=f3e321]:
+                        - text: Are you looking to
+                        - strong [ref=f3e322]: evaluate a specific software tool
+                        - text: "?"
+                    - listitem [ref=f3e323]:
+                      - generic [ref=f3e324]:
+                        - text: Do you need help addressing a
+                        - strong [ref=f3e325]: particular F-tag citation
+                        - text: "?"
+                  - generic [ref=f3e326]: I can provide more targeted details or workflow advice.
+              - generic [ref=f3e331]:
+                - list [ref=f3e333]:
+                  - listitem [ref=f3e334]:
+                    - generic [ref=f3e335]:
+                      - link "skyComply™ | AI Compliance for Senior Living & SNFs. Opens in new tab." [ref=f3e336] [cursor=pointer]:
+                        - /url: /goto?url=CAESXwHrOzAVq36iZtAg0KvwDhl4grhhSrMNmNOr6P9WgJc6UO39us7-ijLSZlw4JAWdPHoP1PUs4WEj3hGVIWYQQ45sl53W84aW8m2KU2fpGxylF2l5NcCDDifDKyZoKpAO
+                      - generic [ref=f3e337]:
+                        - generic [ref=f3e338]:
+                          - generic [ref=f3e341]: Skypoint AI
+                          - button "About this result" [ref=f3e347] [cursor=pointer]
+                        - generic [ref=f3e353]:
+                          - generic [ref=f3e354]: skyComply™ | AI Compliance for Senior Living & SNFs
+                          - generic [ref=f3e355]: For skilled nursing operators, the same platform also automates Medicare ADR responses — from letter intake to a submission-ready ...
+                  - listitem [ref=f3e359]:
+                    - generic [ref=f3e360]:
+                      - link "AI. Opens in new tab." [ref=f3e361] [cursor=pointer]:
+                        - /url: /goto?url=CAESfgHrOzAVG1C3SCZTAEUDm0nODXUASvjDY1_ZmNRYSStw1fJMw8m0VxczQQi3ef_ckSULqAozIWVGr_UdOcgsVnzPJ41LYmBQYXMGeEMOTokpAC-0LmX-VgzM74-jITgo1euOEXoziMGoiELF0zhzcdo3Xu8PMGp-uZyjbpqxAA
+                      - generic [ref=f3e362]:
+                        - generic [ref=f3e363]:
+                          - generic [ref=f3e366]: www.easypocapp.com
+                          - button "About this result" [ref=f3e372] [cursor=pointer]
+                        - generic [ref=f3e378]:
+                          - generic [ref=f3e379]: AI
+                          - generic [ref=f3e380]: What Is an AI Plan of Correction Generator? An AI plan of correction generator is a specialized software tool that uses artificial...
+                  - listitem [ref=f3e383]:
+                    - generic [ref=f3e384]:
+                      - link "EasyPOC — AI Plan of Correction & Policy Generator for Skilled .... Opens in new tab." [ref=f3e385] [cursor=pointer]:
+                        - /url: /goto?url=CAESUwHrOzAV_HLjbTDXiMfnxmCG0maFhyN1a9wLvDd1i1S5SPxnbi9DTVLIAqJxgNVF9Pa6E99d9N5j722wTeir67y_Urq504jhXkhIDwKNQs50KevO
+                      - generic [ref=f3e386]:
+                        - generic [ref=f3e387]:
+                          - generic [ref=f3e390]: www.easypocapp.com
+                          - button "About this result" [ref=f3e396] [cursor=pointer]
+                        - generic [ref=f3e402]:
+                          - generic [ref=f3e403]: EasyPOC — AI Plan of Correction & Policy Generator for Skilled ...
+                          - generic [ref=f3e404]: Survey-ready Plans of Correction and Policies in minutes, not days Draft a complete Plan of Correction in under a minute, generate...
+                - button "Show all related results" [ref=f3e408] [cursor=pointer]:
+                  - generic [ref=f3e409]: Show all
+            - generic [ref=f3e413]:
+              - generic [ref=f3e414]: AI can make mistakes, so double-check responses
+              - generic [ref=f3e418]:
+                - button "Share" [ref=f3e425]
+                - generic [ref=f3e434]:
+                  - button "Good response" [ref=f3e439] [cursor=pointer]:
+                    - img "Good response" [ref=f3e442]
+                  - button "Bad response" [ref=f3e448] [cursor=pointer]:
+                    - img "Bad response" [ref=f3e451]
+                - button "More" [ref=f3e462] [cursor=pointer]
+          - generic [ref=f3e473]:
+            - generic:
+              - alert
+            - textbox "Ask anything" [ref=f3e475]
+            - button "Add files and tools" [ref=f3e479] [cursor=pointer]
+            - button "Microphone" [ref=f3e489] [cursor=pointer]
+      - main [ref=f3e495]:
+        - generic [ref=f3e499]:
+          - generic [ref=f3e502]:
+            - heading "Web results" [level=2] [ref=f3e503]
+            - generic [ref=f3e504]:
+              - generic [ref=f3e507]:
+                - link "Let AI Help You Fill Out Form CMS-2567, Statement of ... hellobasestation.com https://hellobasestation.com › blog › let-ai-help-you-fill-..." [ref=f3e509] [cursor=pointer]:
+                  - /url: /goto?url=CAESxAEB6zswFXA912d3yDp2nXlTI-kRR6gNC_RWdrlXGYL_u4jby8o4LJel9KTv1fpzZI1RWIqIpQ4ICwCbJtex85qQrTLgITy-QV0JJZ73hme22EmbxbT4lUtO_s1e-8rufYJTwvLq82sCW9ZfDbKxUDxKiUnZCrSLbN2ZZAwf9Yo-PIGYywp8FOahzRTY1foNZjhsysEJsCxY41F9PzM5w6IXJn5ErVdy4FhHj18bZdMjk-3Mt2UZL2nnSSQL_xPJz_0tfmnR
+                  - heading "Let AI Help You Fill Out Form CMS-2567, Statement of ..." [level=3] [ref=f3e510]
+                  - generic [ref=f3e516]:
+                    - generic [ref=f3e517]: hellobasestation.com
+                    - generic [ref=f3e519]: https://hellobasestation.com › blog › let-ai-help-you-fill-...
+                - button "About this result" [ref=f3e525] [cursor=pointer]
+              - generic [ref=f3e531]:
+                - generic [ref=f3e532]: 31 Oct 2025 —
+                - generic [ref=f3e533]:
+                  - text: The Form
+                  - emphasis [ref=f3e534]: CMS
+                  - text: "-"
+                  - emphasis [ref=f3e535]: "2567"
+                  - text: ", Statement of"
+                  - emphasis [ref=f3e536]: Deficiencies
+                  - text: and
+                  - emphasis [ref=f3e537]: Plan of Correction
+                  - text: ", is a critical document for healthcare"
+                  - emphasis [ref=f3e538]: facilities
+                  - text: . an
+                  - emphasis [ref=f3e539]: AI
+                  - text: "-powered solution."
+          - generic [ref=f3e543]:
+            - generic [ref=f3e546]:
+              - 'link "AI-Generated Plans of Correction for SNFs: Complete Guide easypocapp.com https://www.easypocapp.com › blog › ai-generated-plans..." [ref=f3e548] [cursor=pointer]':
+                - /url: /goto?url=CAESfgHrOzAVhsRH5bBbVAO955V40FaThWV-AL_fpGiaVWw51n_B-FJ1Kr7w-Xl00UEBFb0ZnwozrGJd3oP9yaffUQAn_Zh357tIG0CRVS64TnX5ffFQa8APm3jnxVqzetVP09LMof_LcqXvLs0FtcPc6btA89gA0Lv7onGlmgsXWQ
+                - 'heading "AI-Generated Plans of Correction for SNFs: Complete Guide" [level=3] [ref=f3e549]'
+                - generic [ref=f3e555]:
+                  - generic [ref=f3e556]: easypocapp.com
+                  - generic [ref=f3e558]: https://www.easypocapp.com › blog › ai-generated-plans...
+              - button "About this result" [ref=f3e564] [cursor=pointer]
+            - generic [ref=f3e570]:
+              - generic [ref=f3e571]: 9 Apr 2026 —
+              - generic [ref=f3e572]:
+                - text: An AI plan of correction generator is a specialized software tool that uses artificial intelligence
+                - emphasis [ref=f3e573]: to draft compliant Plans of Correction
+                - text: in ...
+              - link "Read more" [ref=f3e574] [cursor=pointer]:
+                - /url: /goto?url=CAES1QEB6zswFdJanUi8IahvdPnL9SwOGKhPKS1AOlTXcBuNxB-RnU7qC_Baz8ihokDJrP6CKmqVEZuGNX5-OlmiI_4RoaAWCiJKPYcr13ehK2yYEAiSPmwS9QQNSlCTf_QYRIyUFaQMJl3GNcYB84Rq3Y2KL4VjI9vfPEIiReMjGULxrYa4FRKFX4fvA_ZedfwMTh74GNrMHL6mXqnvTUJ2kOWW08oEyn2yi5z00GbuJx2xcDh7dtoF6-o1KJmsEdx2jn6d1p6StzyTAeEzN2f81c3gy3X4z8I
+          - generic [ref=f3e578]:
+            - generic [ref=f3e581]:
+              - link "skyComply™ | AI Compliance for Senior Living & SNFs Skypoint AI https://skypoint.ai › Products" [ref=f3e583] [cursor=pointer]:
+                - /url: /goto?url=CAESXwHrOzAV68mbvj23LcaT-VYILUhMfSvHZLLLVjuyyXK0SH7BL3CbKryKsPb-Knwqfzei_9QoF23eAJael2eTX7ucF4nW0WPVHu3yFRa65U6xNzzPRfz6IFLYhOA7dFHA
+                - heading "skyComply™ | AI Compliance for Senior Living & SNFs" [level=3] [ref=f3e584]
+                - generic [ref=f3e590]:
+                  - generic [ref=f3e591]: Skypoint AI
+                  - generic [ref=f3e593]: https://skypoint.ai › Products
+              - button "About this result" [ref=f3e599] [cursor=pointer]
+            - generic [ref=f3e605]:
+              - generic [ref=f3e606]:
+                - text: skyComply™ goes beyond
+                - emphasis [ref=f3e607]: plan of correction
+                - text: generation from
+                - emphasis [ref=f3e608]: CMS 2567
+                - text: files. It runs mock assessments, tracks every
+                - emphasis [ref=f3e609]: deficiency
+                - text: to closure, automates Medicare ...
+              - link "Read more" [ref=f3e610] [cursor=pointer]:
+                - /url: /goto?url=CAEStwEB6zswFfLOLwvds_ThLoQK9ZBfZIz__4DUxtYWKJNcu1cWTD1o6Myj02JuZuyoY2lOmRhulUlEfsPD3Q8l619SUsNP4XEkjgQOAhWXDb7xKX6DvAtqS-xnBSjG2Wi4BYHaopWrPTVkxXsnWqLabx4fmKuRaau0pejPKiwUdVyT8KoqaGStgvARBhJ0Pwb-O-5oS9ETOj5Gc3N09G5klPJt1TRRNAAe_jEIO7JCV_E5jc0zObauONA
+          - generic [ref=f3e614]:
+            - generic [ref=f3e617]:
+              - link "Statement of Deficiencies and plan of correction Centers for Medicare & Medicaid Services | CMS (.gov) https://www.cms.gov › downloads › cms2567" [ref=f3e619] [cursor=pointer]:
+                - /url: /goto?url=CAESfgHrOzAVQG9S4I-SMbrUWMxZu1yt7VMmDuxB7X6Zxf2X8fBER6JobhMxHspzwYLUiUbHbtbCmIWhdF4OxuYmpNRBkvui9-s9hh97eYyY1H7wL4tqeuyEkWLJZCLoy83k9qT56VjGyFCvsjwmmiUVeryFyWesd834UrJY10vtNQ
+                - heading "Statement of Deficiencies and plan of correction" [level=3] [ref=f3e620]
+                - generic [ref=f3e626]:
+                  - generic [ref=f3e627]: Centers for Medicare & Medicaid Services | CMS (.gov)
+                  - generic [ref=f3e629]: https://www.cms.gov › downloads › cms2567
+              - generic [ref=f3e631]: PDF
+              - button "About this result" [ref=f3e636] [cursor=pointer]
+            - generic [ref=f3e641]:
+              - generic [ref=f3e643]:
+                - text: This document contains a listing of
+                - emphasis [ref=f3e644]: deficiencies
+                - text: cited by the surveying State Agency (SA), Accrediting Organization (AO) or Regional Office (RO) as requiring ...
+              - generic [ref=f3e645]: 5 pages
+            - generic [ref=f3e647]:
+              - text: "Missing: AI ‎| Show results with:"
+              - link "AI" [ref=f3e648] [cursor=pointer]:
+                - /url: /search?sca_esv=459cc50bc9b1d43b&q=nursing+home+CMS+2567+plan+of+correction+software+%22AI%22+deficiency+management&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ5t4CegQINBAB
+          - generic [ref=f3e652]:
+            - generic [ref=f3e655]:
+              - 'link "Nursing Home Software: Buyer''s Guide by Category Hathr AI https://www.hathr.ai › Blog" [ref=f3e657] [cursor=pointer]':
+                - /url: /goto?url=CAESbQHrOzAVFgGby3Zh5NVmXF9RCaq4mJOvThGgK_Zmo5sj4Cw2lIHoPBg6JKw308zPO2Vbd3E-l7hSXftJoQy2l_brXboNQRZBcfDSAdHCHXQYtPCbLnxVJnZFDeLof0kVayGnmce1FVX-XwHzK6g
+                - 'heading "Nursing Home Software: Buyer''s Guide by Category" [level=3] [ref=f3e658]'
+                - generic [ref=f3e664]:
+                  - generic [ref=f3e665]: Hathr AI
+                  - generic [ref=f3e667]: https://www.hathr.ai › Blog
+              - button "About this result" [ref=f3e673] [cursor=pointer]
+            - generic [ref=f3e679]:
+              - generic [ref=f3e680]: 15 Aug 2026 —
+              - generic [ref=f3e681]:
+                - text: Upload your last three
+                - emphasis [ref=f3e682]: CMS
+                - text: "-"
+                - emphasis [ref=f3e683]: "2567"
+                - text: forms and ask Hathr.
+                - emphasis [ref=f3e684]: AI
+                - text: which
+                - emphasis [ref=f3e685]: deficiencies
+                - text: recur and which
+                - emphasis [ref=f3e686]: Plan of Correction
+                - text: commitments appear to have lapsed.
+              - link "Read more" [ref=f3e687] [cursor=pointer]:
+                - /url: /goto?url=CAESywEB6zswFYq0g3D9Ii88iJ67GRv_yblWvmmjGfkEOzjvtHNwlWFeFY9vVr91eM2DPVGhTKWy__Advekpka4Sw3M3mAng8mC9Le53eaN9-D-cprWzGGfl9cNrj63kJ5IgEP20Ee43IOs8lu8MG_7QLE5_wpopVNmPV2XqWv1Rxj-I2uyt0UJmESII23dDEdnB6IE8WemC8IpUQnieR_Q1jU3g_UkWk-TwKtZrwE0CRppcGvQEBUHhXKajYGgMGlPohg-an_ooBeLTdwdKAQ
+          - generic [ref=f3e691]:
+            - generic [ref=f3e694]:
+              - link "Form CMS-2567, Statement of Deficiencies Instafill.ai https://instafill.ai › CMS forms" [ref=f3e696] [cursor=pointer]:
+                - /url: /goto?url=CAESWwHrOzAVKrtThcsuTw4fMfjmsryqCt4Zt1u9RVqRodmRKhubg1zjaDerQq0ZS3bBTbNEO9lNDB6SGo1GFzIw29CDqDOgup-eKEuWugBH8WPTBLgYSebryVDbZ6U
+                - heading "Form CMS-2567, Statement of Deficiencies" [level=3] [ref=f3e697]
+                - generic [ref=f3e703]:
+                  - generic [ref=f3e704]: Instafill.ai
+                  - generic [ref=f3e706]: https://instafill.ai › CMS forms
+              - button "About this result" [ref=f3e712] [cursor=pointer]
+            - generic [ref=f3e718]:
+              - generic [ref=f3e719]:
+                - text: Form CMS-2567, Statement of Deficiencies and Plan of Correction,
+                - emphasis [ref=f3e720]: is used to report deficiencies identified during health facility surveys
+                - text: .
+              - link "Read more" [ref=f3e721] [cursor=pointer]:
+                - /url: /goto?url=CAESzAEB6zswFZxtAwesg-NzysDB-YJjIhk0jxjoDTxWe2AkW6sfqdRAcULM9yqcMAgJLlBRi4N1Y6--lGK3Q2KvxhCN-HyzYnEt8SHsqiTiE8HfvCyRdzTCBSl-FFGAy-6ZPUc1t-G1tYDMM8_jjRXEq-CP1H54rlL9DlxC9Q7aqlBKRuJMXNMqQ6TI2xRkRFepg5wmr76mvxDTe6u2HmNjNaZMP0FCZ_0qCBISnWV8MoTI53p_2CuQ1OMxQX3gx8We4w6squzVF-8Hqt71ybY
+          - generic [ref=f3e725]:
+            - generic [ref=f3e728]:
+              - link "CMS 2567 Statement Of Deficiencies And Plan Of Correction useanvil.com https://www.useanvil.com › forms › healthcare-survey" [ref=f3e730] [cursor=pointer]:
+                - /url: /goto?url=CAESowEB6zswFRTdBOgtaVKTiUsRfHWe_KYy9-XsQsf3J9kh96QsVI5S-3QYOn118Id_7FLGfKj6ETafbWFUoky-PCp76hQuWUoGVlE03coWtGjNNPxRZP9XexGpftfIN-jooh_X2TBmLZx4W2JMXtt8f96beEC5dHa-8MxbE8yM0HlLdicCrydyL7yzPrySjXcEPbJnAlv_75NMMPtXyE3zLGO8Bk3R
+                - heading "CMS 2567 Statement Of Deficiencies And Plan Of Correction" [level=3] [ref=f3e731]
+                - generic [ref=f3e737]:
+                  - generic [ref=f3e738]: useanvil.com
+                  - generic [ref=f3e740]: https://www.useanvil.com › forms › healthcare-survey
+              - button "About this result" [ref=f3e746] [cursor=pointer]
+            - generic [ref=f3e753]:
+              - text: Annual certification and state licensure survey report documenting
+              - emphasis [ref=f3e754]: facility deficiencies
+              - text: and required corrections.
+          - generic [ref=f3e758]:
+            - generic [ref=f3e761]:
+              - link "Can an AI Write Your Plan of Correction? What to Know ... CMS Compliance Group https://cmscompliancegroup.com › can-an-ai-write-your-..." [ref=f3e763] [cursor=pointer]:
+                - /url: /goto?url=CAESugEB6zswFX71d_fi7wMAhOzoazjV9SvFBsobIN47DYn_UkEAv2r9JcjEEBT3Y2vGlhcwUdHfOVIe40FEEpR3hZaFJyKbtnZOQtWHKGfr78pratIlmEDXM1pkbCdG577vjPT-EKFOcIbGlD78MLIlFdoxCIJls94z8sGu_a3VOsD8opVM5mQB_tqRsiiNQnDKQfcBpEiMYi1yP2Be3GdhiM6H-skAGR7BgLIs4LinoVi3KCqT1f0j_jAFSoY
+                - heading "Can an AI Write Your Plan of Correction? What to Know ..." [level=3] [ref=f3e764]
+                - generic [ref=f3e770]:
+                  - generic [ref=f3e771]: CMS Compliance Group
+                  - generic [ref=f3e773]: https://cmscompliancegroup.com › can-an-ai-write-your-...
+              - button "About this result" [ref=f3e779] [cursor=pointer]
+            - generic [ref=f3e785]:
+              - generic [ref=f3e786]: 31 Aug 2026 —
+              - generic [ref=f3e787]:
+                - text: The short answer is yes –
+                - emphasis [ref=f3e788]: AI can write a POC
+                - text: . Several tools now exist that will generate one for you in minutes based on the deficiency tag and ...
+            - generic [ref=f3e789]: "Missing: 2567 ‎management"
+          - generic [ref=f3e794]:
+            - generic [ref=f3e797]:
+              - link "Never Write a Plan of Correction Ever Again. Let me show ... LinkedIn · Aysha Kuhlor MSN, RN,PAC-NE, MSC-NH 70+ reactions · 2 years ago" [ref=f3e799] [cursor=pointer]:
+                - /url: /goto?url=CAESlgEB6zswFWtJJvsDT56q3_LxcdtM60l4hG9017kJSN3K7T9vVmBkZnkuhYCb9yym7lO5L_siN0rXYKEs6iEgMyoPN3RThSfZcB-HcWt6IPJeBpS_0NaUrE4mk0Ts9mwrQ_76uz5VrYk1g9GYG_Uah4Oa3Ufwflm6y5vDFXIEpGSy9YyU2isjXXSUuddj20NQuPR8ti1mSrI
+                - heading "Never Write a Plan of Correction Ever Again. Let me show ..." [level=3] [ref=f3e800]
+                - generic [ref=f3e806]:
+                  - generic [ref=f3e807]: LinkedIn · Aysha Kuhlor MSN, RN,PAC-NE, MSC-NH
+                  - generic [ref=f3e809]: 70+ reactions · 2 years ago
+              - button "About this result" [ref=f3e815] [cursor=pointer]
+            - generic [ref=f3e821]:
+              - generic [ref=f3e822]:
+                - emphasis [ref=f3e823]: AI
+                - text: "Assistance: POC-365 suggests corrective actions tailored to the specific"
+                - emphasis [ref=f3e824]: deficiency
+                - text: ", ensuring that all necessary steps are covered and ..."
+              - link "Read more" [ref=f3e825] [cursor=pointer]:
+                - /url: /goto?url=CAESiAIB6zswFc7drNICXyYszUO9MV36pFlUUBrLHeGfVufPyrur2XNVqQaQ91Sfh8Zj_4pSNKrDxQT051OE-vqMyrhtB-qctO-8r5ilTHevCttpUvxUhHii_wT6-0sSGA0xPswznUwpM4CUADmtjtwFu9cmxHk27IP0BiDn_OaZEqye20XTRrpapvOKvPUZGmMvqtECoX8bUHj6orAArA6aoOJRqNK3eN5ZLUdWTN_3gqwkF10WfKJsB7JEnMP_KaL5MepZpxYjNA2xhhouYJLW67uIIBnWKcPFwBWE6lTUyKjP4HfMK2KC95kL5LPLmt5o1FBX5nE5VRNcd6snK_nqs7zwEM9zcI49Wbk
+        - generic [ref=f3e827]:
+          - generic [ref=f3e832]:
+            - heading "People also search for" [level=2] [ref=f3e834]
+            - generic [ref=f3e836]:
+              - generic [ref=f3e837]:
+                - link "CMS-500 form pdf" [ref=f3e841] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS-500+form+pdf&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhEEAE
+                - link "CMS memo" [ref=f3e855] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+memo&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhJEAE
+                - link "CMS authorization form" [ref=f3e869] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+authorization+form&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhIEAE
+                - link "CMS Forms List" [ref=f3e883] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+Forms+List&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhHEAE
+              - generic [ref=f3e894]:
+                - link "Clia condition level deficiency" [ref=f3e898] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=Clia+condition+level+deficiency&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhGEAE
+                - link "CMS gov Medicare CMS forms CMS forms downloads cms1763 PDF" [ref=f3e912] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+gov+Medicare+CMS+forms+CMS+forms+downloads+cms1763+PDF&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhDEAE
+                - link "CMS fire" [ref=f3e926] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+fire&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhFEAE
+                - link "CMS enforcement" [ref=f3e940] [cursor=pointer]:
+                  - /url: /search?sca_esv=459cc50bc9b1d43b&q=CMS+enforcement&sa=X&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ1QJ6BAhCEAE
+          - navigation [ref=f3e951]:
+            - heading "Page navigation" [level=1] [ref=f3e952]
+            - text: "1"
+            - link "Page 2" [ref=f3e955] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=10&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAE
+              - text: "2"
+            - link "Page 3" [ref=f3e957] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=20&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAG
+              - text: "3"
+            - link "Page 4" [ref=f3e959] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=30&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAI
+              - text: "4"
+            - link "Page 5" [ref=f3e961] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=40&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAK
+              - text: "5"
+            - link "Page 6" [ref=f3e963] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=50&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAM
+              - text: "6"
+            - link "Page 7" [ref=f3e965] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=60&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAO
+              - text: "7"
+            - link "Page 8" [ref=f3e967] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=70&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAQ
+              - text: "8"
+            - link "Page 9" [ref=f3e969] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=80&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAS
+              - text: "9"
+            - link "Page 10" [ref=f3e971] [cursor=pointer]:
+              - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=90&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8tMDegQINRAU
+              - text: "10"
+            - heading [level=2] [ref=f3e973]:
+              - link "Next" [ref=f3e974] [cursor=pointer]:
+                - /url: /search?q=nursing+home+CMS+2567+plan+of+correction+software+AI+deficiency+management&sca_esv=459cc50bc9b1d43b&ei=inqzau-ZNIe14-EPo9DSuQY&start=10&sa=N&sstk=AS6-VmKjeLVvuXrD3eGskq59FPi1Z86Pm9lNkTmifmtoDtTg8NVzWYHlkCUlLGitddjUOHQT0Y3rkeCVar1Ae_Fso0WuWruUVMpS3g&ved=2ahUKEwjvhuWEkoSXAxWH2jgGHSOoNGcQ8NMDegQINRAW
+        - navigation
+    - contentinfo [ref=f3e977]:
+      - heading "Footer links" [level=1] [ref=f3e978]
+      - generic [ref=f3e982]:
+        - generic [ref=f3e984]:
+          - text: India
+          - generic [ref=f3e986]:
+            - button "560103, Bengaluru, Karnataka - Based on your past activity" [ref=f3e988] [cursor=pointer]:
+              - generic [ref=f3e989]: 560103, Bengaluru, Karnataka
+              - generic [ref=f3e991]:
+                - text: "-"
+                - generic [ref=f3e992]: Based on your past activity
+            - text: "-"
+            - button "Update location" [ref=f3e994] [cursor=pointer]
+        - generic [ref=f3e997]:
+          - link "Help" [ref=f3e998] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-IN&fg=1
+          - link "Send feedback" [ref=f3e999] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=f3e1000] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-IN&fg=1
+          - link "Terms" [ref=f3e1001] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-IN&fg=1

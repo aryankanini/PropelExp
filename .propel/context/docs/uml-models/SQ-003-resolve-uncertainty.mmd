@@ -1,0 +1,30 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Review as Review Service
+    participant State as Session Repository
+
+    Reviewer->>UI: Open uncertain candidate
+    UI->>API: GET current case projection
+    API->>State: Load candidate and evidence
+    State-->>API: Values, pages, snippets, confidence
+    API-->>UI: Evidence-linked candidate
+    alt Reviewer selects supported candidate
+        Reviewer->>UI: Select candidate
+        UI->>API: PATCH reviewed value
+        API->>Review: Validate evidence association
+        Review->>State: Append resolved revision
+        API-->>UI: Return resolved state
+    else Reviewer enters correction
+        Reviewer->>UI: Enter corrected value
+        UI->>API: PATCH user-edited revision
+        Review->>State: Preserve originals and append correction
+        API-->>UI: Return user-edited state
+    end
+    opt Evidence remains insufficient
+        Review->>State: Keep uncertainty block
+        API-->>UI: Return unresolved-item problem
+        UI-->>Reviewer: Keep drafting disabled
+    end

@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+actor "Compliance Leader" as Leader #DCEBFA
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "Copy or download\napproved POC" as UC008
+}
+Reviewer --> UC008
+Leader --> UC008
+@enduml

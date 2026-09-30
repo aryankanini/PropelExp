@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    actor User as Authorized User
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Export as Export Service
+    participant State as Session Repository
+
+    User->>UI: Select copy or download
+    UI->>API: GET approved POC export
+    API->>Export: Authorize user and request format
+    Export->>State: Load POC and approval revision
+    alt Approval matches current revision
+        State-->>Export: Approved current content
+        Export->>Export: Add required draft label
+        Export-->>API: Text or downloadable response
+        API-->>UI: Return labeled content
+        UI-->>User: Copy text or save file
+    else Approval absent or stale
+        State-->>Export: Export blocked
+        API-->>UI: Approval-required problem
+        UI-->>User: Keep export unavailable
+    end
+    opt Export formatting fails
+        Export-->>API: Safe retryable failure
+        API-->>UI: Preserve approval and offer retry
+        UI-->>User: Show copy fallback
+    end

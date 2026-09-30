@@ -1,0 +1,28 @@
+- generic [ref=f8e3] [box=0,0,360,935]:
+  - link "Skip to main content" [ref=f8e4] [cursor=pointer] [box=16,-64,171,45]:
+    - /url: "#document-intake"
+  - banner [ref=f8e5] [box=0,0,360,64]:
+    - strong [ref=f8e6] [box=16,21,232,21]: CMS Deficiency Action Planner
+  - navigation "Case workflow" [ref=f8e8] [box=0,64,360,69]:
+    - button "End session" [ref=f8e29] [cursor=pointer] [box=16,76,328,44]
+  - main [ref=f8e30] [box=0,133,360,803]:
+    - heading "Upload CMS-2567" [level=1] [ref=f8e31] [box=16,165,328,36]
+    - paragraph [ref=f8e32] [box=16,209,328,84]: Start one transient case by selecting a readable CMS-2567 PDF or image-based document.
+    - note [ref=f8e33] [box=16,317,328,96]:
+      - strong [ref=f8e34] [box=36,333,137,21]: Session-only data.
+      - text: Uploaded files and case work are removed when this session ends or after 60 minutes without activity.
+    - region "Select survey document" [ref=f8e35] [box=16,437,328,213]:
+      - heading "Select survey document" [level=2] [ref=f8e36] [box=33,469,295,28]
+      - paragraph [ref=f8e37] [box=33,514,295,43]: PDF, PNG, JPEG, or TIFF · up to 50 MB and 200 pages
+      - generic [ref=f8e38] [cursor=pointer] [box=100,573,160,44]: Select CMS-2567
+      - button "Select CMS-2567" [ref=f8e39] [box=260,573,1,1]
+    - region "Upload limits" [ref=f8e40] [box=16,673,328,214]:
+      - generic [ref=f8e41] [box=16,673,328,61]:
+        - strong [ref=f8e42] [box=16,690,328,21]: Supported formats
+        - generic [ref=f8e43] [box=16,715,328,19]: PDF and image-based documents
+      - generic [ref=f8e44] [box=16,750,328,61]:
+        - strong [ref=f8e45] [box=16,767,328,21]: Maximum size
+        - generic [ref=f8e46] [box=16,792,328,19]: 50 MB per working session
+      - generic [ref=f8e47] [box=16,827,328,61]:
+        - strong [ref=f8e48] [box=16,843,328,21]: Maximum length
+        - generic [ref=f8e49] [box=16,869,328,19]: 200 pages before extraction

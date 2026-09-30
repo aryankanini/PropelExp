@@ -1,0 +1,31 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Review as Review Service
+    participant State as Session Repository
+
+    Reviewer->>UI: Review provider and deficiency data
+    UI->>API: GET case projection
+    API->>State: Load current values and evidence
+    State-->>UI: Evidence-linked projection
+    alt Values are accurate
+        Reviewer->>UI: Confirm deficiency
+        UI->>API: PATCH confirmation
+    else Values require correction
+        Reviewer->>UI: Edit provider, F-tag, or SOD
+        UI->>API: PATCH corrected revision
+        API->>Review: Validate correction and provenance
+        Review->>State: Append user-edited revision
+        Reviewer->>UI: Confirm corrected deficiency
+        UI->>API: PATCH confirmation
+    end
+    API->>Review: Verify required fields and resolved evidence
+    Review->>State: Mark deficiency confirmed
+    API-->>UI: Return drafting eligibility
+    opt Required evidence is unresolved
+        Review-->>API: Confirmation denied with field errors
+        API-->>UI: Problem response
+        UI-->>Reviewer: Highlight unresolved fields
+    end

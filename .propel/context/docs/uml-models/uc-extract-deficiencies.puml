@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+skinparam shadowing false
+actor "Compliance Reviewer" as Reviewer #DCEBFA
+actor "External OCR Service" as OCR #E6E6E6
+actor "External AI Service" as AI #E6E6E6
+rectangle "CMS Deficiency Action Planner" #DFF2E1 {
+  usecase "Extract provider and\ndeficiency data" as UC002
+}
+Reviewer --> UC002
+OCR --> UC002
+AI --> UC002
+@enduml

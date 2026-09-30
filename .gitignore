@@ -1,0 +1,54 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+env/
+*.egg-info/
+backend/build/
+backend/dist/
+
+# Node and frontend output
+node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+
+# Temporary application data
+.workspace/
+backend/.workspace/
+*.upload
+
+# Logs and runtime files
+*.log
+*.pid
+*.tmp
+*.temp
+
+# Editor and operating system files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local tooling caches
+.cache/
+.tox/
+.nox/

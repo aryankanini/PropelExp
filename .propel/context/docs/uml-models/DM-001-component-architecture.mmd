@@ -1,0 +1,28 @@
+flowchart LR
+    Reviewer[Compliance Reviewer]
+    Leader[Compliance Leader]
+    OCR[Approved OCR Service]
+    LLM[Approved LLM Service]
+
+    subgraph Browser[Browser Process]
+        UI[React SPA]
+        Features[Feature Slices]
+        Client[Typed API Client]
+        UI --> Features --> Client
+    end
+
+    subgraph Backend[FastAPI Process]
+        API[HTTP and SSE Adapters]
+        Core[Application Services]
+        State[Transient State Ports]
+        Providers[OCR and LLM Ports]
+        API --> Core
+        Core --> State
+        Core --> Providers
+    end
+
+    Reviewer --> UI
+    Leader --> UI
+    Client -->|REST JSON, multipart, SSE| API
+    Providers -.->|TLS, minimum necessary data| OCR
+    Providers -.->|TLS, reviewed deficiency| LLM

@@ -1,0 +1,98 @@
+- generic [ref=e3]:
+  - link "Skip to main content" [ref=e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e5]:
+    - strong [ref=e6]: CMS Deficiency Action Planner
+    - generic [ref=e7]: Morgan Ellis · Compliance leader · Session 31:42
+  - generic [ref=e8]:
+    - navigation "Case workflow" [ref=e9]:
+      - strong [ref=e10]: Northlake Skilled Nursing Center
+      - generic [ref=e11]: F689 · Revision 4
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - generic [ref=e14]: "1"
+          - generic [ref=e15]:
+            - text: Intake
+            - generic [ref=e16]: Complete
+        - listitem [ref=e17]:
+          - generic [ref=e18]: "2"
+          - generic [ref=e19]:
+            - text: Review
+            - generic [ref=e20]: Confirmed
+        - listitem [ref=e21]:
+          - generic [ref=e22]: "3"
+          - generic [ref=e23]:
+            - text: POC drafts
+            - generic [ref=e24]: Complete
+        - listitem [ref=e25]:
+          - generic [ref=e26]: "4"
+          - generic [ref=e27]:
+            - text: Approval and export
+            - generic [ref=e28]: Ready
+    - generic [ref=e29]:
+      - main [ref=e30]:
+        - paragraph [ref=e31]: Approval and export / F689
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - heading "Review current POC revision" [level=1] [ref=e34]
+            - paragraph [ref=e35]: Compare evidence, provenance, completeness, and all five required sections.
+          - generic [ref=e36]: Revision 4 · Current
+        - region "Deficiency evidence and completeness" [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: Deficiency
+            - strong [ref=e49]: F689
+          - generic [ref=e50]:
+            - generic [ref=e51]: Evidence
+            - strong [ref=e52]: 2 reviewed sources
+          - generic [ref=e53]:
+            - generic [ref=e54]: Completeness
+            - strong [ref=e55]: 5 of 5 sections
+          - generic [ref=e56]: Complete
+        - region [ref=e60]:
+          - heading "Plan of correction" [level=2] [ref=e61]
+          - article [ref=e62]:
+            - generic [ref=e63]: "1"
+            - generic [ref=e64]:
+              - heading "Affected residents" [level=3] [ref=e65]
+              - paragraph [ref=e66]: Assess each affected resident and update fall-prevention interventions.
+              - generic [ref=e67]: "Provenance: User edited · supported by reviewed evidence"
+          - article [ref=e68]:
+            - generic [ref=e69]: "2"
+            - generic [ref=e70]:
+              - heading "Others at risk" [level=3] [ref=e71]
+              - paragraph [ref=e72]: Identify residents with comparable mobility and supervision risks.
+              - generic [ref=e73]: "Provenance: User edited · supported by reviewed evidence"
+          - article [ref=e74]:
+            - generic [ref=e75]: "3"
+            - generic [ref=e76]:
+              - heading "Corrective measures" [level=3] [ref=e77]
+              - paragraph [ref=e78]: Complete staff retraining and verify care-plan updates.
+              - generic [ref=e79]: "Provenance: User edited · supported by reviewed evidence"
+          - article [ref=e80]:
+            - generic [ref=e81]: "4"
+            - generic [ref=e82]:
+              - heading "Monitoring" [level=3] [ref=e83]
+              - paragraph [ref=e84]: Audit implementation daily for two weeks, then weekly for one month.
+              - generic [ref=e85]: "Provenance: User edited · supported by reviewed evidence"
+          - article [ref=e86]:
+            - generic [ref=e87]: "5"
+            - generic [ref=e88]:
+              - heading "Completion date" [level=3] [ref=e89]
+              - paragraph [ref=e90]: October 1, 2026
+              - generic [ref=e91]: "Provenance: User edited · supported by reviewed evidence"
+        - generic [ref=e92]:
+          - button "Request changes" [ref=e93] [cursor=pointer]
+          - button "Approve current revision" [ref=e99] [cursor=pointer]
+      - complementary [ref=e102]:
+        - heading "Revision history" [level=2] [ref=e103]
+        - list [ref=e108]:
+          - listitem [ref=e109]:
+            - generic [ref=e110]:
+              - strong [ref=e111]: Revision 4
+              - generic [ref=e112]: Current
+            - paragraph [ref=e113]: Updated monitoring cadence
+            - generic [ref=e114]: Morgan Ellis · Today, 10:42
+          - listitem [ref=e115]:
+            - strong [ref=e117]: Revision 3
+            - paragraph [ref=e118]: Added corrective training
+            - generic [ref=e119]: Avery Chen · Yesterday, 16:18

@@ -1,0 +1,37 @@
+sequenceDiagram
+    autonumber
+    actor Reviewer
+    participant UI as React SPA
+    participant API as FastAPI API
+    participant Extract as Extraction Service
+    participant OCR as OCR Adapter
+    participant LLM as LLM Adapter
+    participant Guard as Schema Guardrail
+    participant State as Session Repository
+
+    Reviewer->>UI: Request extraction
+    UI->>API: POST extraction job
+    API->>API: Authorize session and case access
+    API->>Extract: Start bounded job
+    Extract->>Extract: Read native page text
+    alt Native text incomplete
+        Extract->>OCR: Send minimum necessary page
+        OCR-->>Extract: Text and coordinates
+    else Native text complete
+        Extract->>Extract: Retain native text and coordinates
+    end
+    Extract->>LLM: Request structured candidates with page context
+    LLM-->>Extract: Candidate JSON
+    Extract->>Guard: Validate schema, evidence, confidence
+    alt Output valid
+        Guard-->>Extract: Validated candidates
+        Extract->>State: Store unconfirmed extraction revisions
+        Extract-->>API: Review-ready result
+        API-->>UI: SSE terminal event
+        UI-->>Reviewer: Show evidence and uncertainty
+    else Schema or grounding invalid
+        Guard-->>Extract: Typed validation failure
+        Extract->>State: Store failed stage without payload
+        API-->>UI: SSE retryable or terminal failure
+        UI-->>Reviewer: Show safe recovery action
+    end

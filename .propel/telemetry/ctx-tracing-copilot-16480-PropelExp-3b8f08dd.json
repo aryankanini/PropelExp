@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-16480-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-09-28T10:28:29",
+  "updated_at": "2026-09-28T10:28:29",
+  "_cumulative_input_tokens": 361,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-09-28T10:28:29",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "\"(.venv) PS D:\\PropelExp\\backend> python -m uvicorn api.main:app --reload\r\nINFO:     Will watch for changes in these directories: ['D:\\\\PropelExp\\\\backend']\r\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\r\nINFO:     Started reloader process [24468] using StatReload\r\nINFO:     Started server process [26032]\r\nINFO:     Waiting for application startup.\r\nINFO:     Application startup complete.\r\nINFO:     127.0.0.1:54812 - \"GET /api/v1/session/status HTTP/1.1\" 200 OK\r\nINFO:     127.0.0.1:60166 - \"POST /api/v1/cases HTTP/1.1\" 201 Created\r\nINFO:     127.0.0.1:60166 - \"OPTIONS /api/v1/cases/d25ba752c49f4bc8ad7a0a9c58e49de0/extraction-jobs HTTP/1.1\" 200 OK\r\nINFO:     127.0.0.1:60166 - \"POST /api/v1/cases/d25ba752c49f4bc8ad7a0a9c58e49de0/extraction-jobs HTTP/1.1\" 404 Not Found\r\nINFO:     127.0.0.1:61121 - \"GET /api/v1/session/status HTTP/1.1\" 200 OK\r\n\""
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 361
+    }
+  ]
+}
