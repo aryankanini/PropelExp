@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-20044-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-10-05T13:28:45",
+  "updated_at": "2026-10-05T13:28:45",
+  "_cumulative_input_tokens": 1196,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-10-05T13:28:45",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "(.venv) PS D:\\PropelExp\\backend>                     \r\n>> ..\\.venv\\Scripts\\Activate.ps1\r\n>> python -m uvicorn api.main:app --reload --host 127.0.0.1 --port 8000\r\nINFO:     Will watch for changes in these directories: ['D:\\\\PropelExp\\\\backend']\r\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\r\nINFO:     Started reloader process [20320] using StatReload\r\nProcess SpawnProcess-1:\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\process.py\", line 314, in _bootstrap\r\n    self.run()\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\process.py\", line 108, in run\r\n    self._target(*self._args, **self._kwargs)\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\_subprocess.py\", line 80, in subprocess_started\r\n    target(sockets=sockets)\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\server.py\", line 86, in run\r\n    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py\", line 195, in run\r\n    return runner.run(main)\r\n           ^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\runners.py\", line 118, in run\r\n    return self._loop.run_until_complete(task)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\base_events.py\", line 691, in run_until_complete\r\n    return future.result()\r\n           ^^^^^^^^^^^^^^^\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\server.py\", line 90, in serve\r\n    await self._serve(sockets)\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\server.py\", line 97, in _serve\r\n    config.load()\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\config.py\", line 511, in load\r\n    self.loaded_app = self.load_app()\r\n                      ^^^^^^^^^^^^^^^\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\config.py\", line 434, in load_app\r\n    return import_from_string(self.app)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\importer.py\", line 22, in import_from_string\r\n    raise exc from None\r\n  File \"D:\\PropelExp\\.venv\\Lib\\site-packages\\uvicorn\\importer.py\", line 19, in import_from_string\r\n    module = importlib.import_module(module_str)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\AryanPatel\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py\", line 90, in import_module\r\n    return _bootstrap._gcd_import(name[level:], package, level)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\r\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\r\n  File \"<frozen importlib._bootstrap>\", line 1310, in _find_and_load_unlocked\r\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\r\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\r\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\r\n  File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\r\nModuleNotFoundError: No module named 'api'"
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 1196
+    }
+  ]
+}

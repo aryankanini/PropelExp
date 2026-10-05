@@ -128,6 +128,20 @@ def create_extraction_jobs_router(
             # --- boundary detection ---
             layout = detect_cms_layout(final_pages)
             boundaries = identify_deficiency_boundaries(layout, tuple(final_pages))
+            if not boundaries:
+                fallback_pages = _extract_pages_from_bytes(
+                    content,
+                    crop_cms_sod_column=False,
+                )
+                fallback_layout = detect_cms_layout(fallback_pages)
+                fallback_boundaries = identify_deficiency_boundaries(
+                    fallback_layout,
+                    tuple(fallback_pages),
+                )
+                if fallback_boundaries:
+                    final_pages = fallback_pages
+                    layout = fallback_layout
+                    boundaries = fallback_boundaries
             provider_metadata = extract_provider_metadata(tuple(final_pages))
 
             print(f"[EXTRACTION] layout={layout.status} boundaries={len(boundaries)} pages={len(final_pages)}")
@@ -135,9 +149,10 @@ def create_extraction_jobs_router(
                 print(f"[EXTRACTION]   {b.f_tag} complete={b.complete} sod_chars={len(b.sod_text or '')}")
 
             if layout.status is not CmsLayoutStatus.RECOGNIZED or not boundaries:
-                print(f"[EXTRACTION] No boundaries found (layout={layout.status}), completing with zero candidates")
-                repository.update(session_id, lambda current, _=None: (current, None))
-                return
+                raise RuntimeError(
+                    "No deficiency boundaries found after cropped and full-text extraction "
+                    f"(layout={layout.status})"
+                )
 
             candidates = tuple(
                 DeficiencyCandidate(
@@ -228,7 +243,11 @@ def create_job_events_router(job_runner: ExtractionJobRunner) -> APIRouter:
     return router
 
 
-def _extract_pages_from_bytes(content: bytes) -> list[ClassifiedPageText]:
+def _extract_pages_from_bytes(
+    content: bytes,
+    *,
+    crop_cms_sod_column: bool = True,
+) -> list[ClassifiedPageText]:
     pages: list[ClassifiedPageText] = []
     with pymupdf.open(stream=content, filetype="pdf") as doc:
         full_page_texts = tuple(page.get_text("text").strip() for page in doc)
@@ -240,7 +259,7 @@ def _extract_pages_from_bytes(content: bytes) -> list[ClassifiedPageText]:
             native_text = _extract_native_reading_text(
                 page,
                 full_text,
-                is_cms_document=is_cms_document,
+                is_cms_document=is_cms_document and crop_cms_sod_column,
                 include_header=page_index == 0,
             )
             source = SourcePage(

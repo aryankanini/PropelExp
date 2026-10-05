@@ -227,13 +227,28 @@ def test_does_not_treat_tag_ending_in_000_as_initial_comments() -> None:
 
 
 def test_normalizes_common_ocr_tag_variants() -> None:
-    for tag_text in ("F.686", "F\u20110686", "f 0686"):
+    for tag_text in (
+        "F.686",
+        "F\u20110686",
+        "f 0686",
+        "{F 0686}",
+        "F000686",
+    ):
         boundary = identify_deficiency_boundaries(
             recognized_layout(),
             (page(1, f"{tag_text}\nResidents did not receive required treatment."),),
         )[0]
 
         assert boundary.f_tag == "F0686"
+
+
+def test_does_not_treat_long_form_identifier_as_deficiency_tag() -> None:
+    boundaries = identify_deficiency_boundaries(
+        recognized_layout(),
+        (page(1, "Z73511\nFORM CMS-2567 metadata"),),
+    )
+
+    assert boundaries == ()
 
 
 def test_merges_common_continuation_label_variants() -> None:

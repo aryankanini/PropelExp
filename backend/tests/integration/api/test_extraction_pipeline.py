@@ -76,12 +76,38 @@ def multi_page_cms2567_pdf() -> bytes:
     return content
 
 
+def alternate_geometry_cms2567_pdf() -> bytes:
+    document = pymupdf.open()
+    page = document.new_page()
+    page.insert_text(
+        (72, 72),
+        "FORM CMS-2567\nSTATEMENT OF DEFICIENCIES AND PLAN OF CORRECTION",
+    )
+    page.insert_text(
+        (310, 220),
+        "F 0686\nResidents did not receive required treatment.",
+    )
+    content = document.tobytes()
+    document.close()
+    return content
+
+
 def test_continuation_page_excludes_repeated_cms_header() -> None:
     pages = _extract_pages_from_bytes(multi_page_cms2567_pdf())
 
     assert "DEPARTMENT OF HEALTH" not in pages[1].spans[0].text
     assert "CENTERS FOR MEDICARE" not in pages[1].spans[0].text
     assert "not in compliance" in pages[1].spans[0].text
+
+
+def test_full_text_fallback_recovers_tags_outside_standard_sod_crop() -> None:
+    content = alternate_geometry_cms2567_pdf()
+
+    cropped_pages = _extract_pages_from_bytes(content)
+    full_pages = _extract_pages_from_bytes(content, crop_cms_sod_column=False)
+
+    assert "F 0686" not in cropped_pages[0].spans[0].text
+    assert "F 0686" in full_pages[0].spans[0].text
 
 
 def test_preprocessed_llm_result_is_available_to_review_api(

@@ -1,0 +1,47 @@
+{
+  "schema_url": "https://opentelemetry.io/schemas/1.36.0",
+  "resource": {
+    "service.name": "propeliq.ctx-tracker",
+    "gen_ai.framework": "copilot",
+    "user.name": "AryanPatel",
+    "user.full_name": "aryankanini",
+    "user.id": "AryanPatel",
+    "user.email": "aryan.patel@kanini.com",
+    "host.name": "KANINI-LTP-429",
+    "os.type": "windows",
+    "os.version": "11",
+    "host.arch": "AMD64"
+  },
+  "gen_ai.conversation.id": "copilot-12056-PropelExp-3b8f08dd",
+  "gen_ai.provider.name": "openai",
+  "gen_ai.operation.name": "chat",
+  "gen_ai.request.model": null,
+  "gen_ai.system_instructions": [],
+  "context_window": {
+    "limit_tokens": 128000,
+    "counting_method": "tiktoken"
+  },
+  "created_at": "2026-10-05T13:34:09",
+  "updated_at": "2026-10-05T13:34:08",
+  "_cumulative_input_tokens": 60,
+  "turns": [
+    {
+      "turn_id": 1,
+      "event.name": "gen_ai.client.inference.operation.details",
+      "start_time": "2026-10-05T13:34:08",
+      "gen_ai.operation.name": "chat",
+      "gen_ai.input.messages": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "type": "text",
+              "content": "Buddy, when I try to upload different pdfs, it shows\"Extraction completed, but no deficiency records were found. End this session to upload another document.\"\r\n\r\nbut workks fine for the 2 pdfs we were working on since start, please look into the ,atter"
+            }
+          ]
+        }
+      ],
+      "gen_ai.usage.input_tokens": 60
+    }
+  ]
+}

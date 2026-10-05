@@ -17,7 +17,7 @@ from cms_planner.domain.text_span import ClassifiedPageText
 # F 880  L 532
 # F-880  F.880  L-532, including common Unicode dash substitutions from OCR.
 _F_TAG = re.compile(
-    r"^([A-Z])\s*[.\-\u2010-\u2015 ]?\s*(\d{3,4})\b",
+    r"^[{[(]?\s*([A-Z])\s*[.\-\u2010-\u2015 ]?\s*(\d{3,6})\b\s*[])}]?",
     re.IGNORECASE,
 )
 
@@ -51,8 +51,8 @@ _PAGE_HEADER = re.compile(
 _FORM_FRAGMENT = re.compile(
     r"^(?:"
     r"\d{4,}|"                          # pure numbers like 6899
-    r"[A-Z]\d{5,}|"                     # form codes like Z73511
-    r"(?![A-Z]\d{3,4}$)[A-Z0-9]{4,}X?|" # form codes, excluding compact tags
+    r"(?![A-Z]0{1,2}\d{4}$)[A-Z]\d{5,}|" # form codes, excluding padded tags
+    r"(?![A-Z](?:\d{3,4}|0{1,2}\d{4})$)[A-Z0-9]{4,}X?|" # exclude tags
     r"A\.\s*BUILDING[:\s]*|"            # A. BUILDING:
     r"B\.?\s*WING[:\s]*|"               # B.WING
     r"CONSTRUCTION[:\s]*|"              # CONSTRUCTION
@@ -208,8 +208,8 @@ def _normalize_header_tag_order(lines: tuple[str, ...]) -> tuple[str, ...]:
         if (
             zero_match is None
             or deficiency_match is None
-            or zero_match.group(2).zfill(4) != "0000"
-            or deficiency_match.group(2).zfill(4) == "0000"
+            or _normalize_tag_number(zero_match.group(2)) != "0000"
+            or _normalize_tag_number(deficiency_match.group(2)) == "0000"
         ):
             continue
 
@@ -301,7 +301,7 @@ def _consume_line(
 
     if match:
         prefix = match.group(1).upper()
-        number = match.group(2).zfill(4)
+        number = _normalize_tag_number(match.group(2))
         tag = f"{prefix}{number}"
         rest = cleaned[match.end():].strip()
 
@@ -375,7 +375,11 @@ def _line_tag(line: str | None) -> str | None:
     match = _F_TAG.fullmatch(line.strip())
     if match is None:
         return None
-    return f"{match.group(1).upper()}{match.group(2).zfill(4)}"
+    return f"{match.group(1).upper()}{_normalize_tag_number(match.group(2))}"
+
+
+def _normalize_tag_number(number: str) -> str:
+    return number[-4:].zfill(4)
 
 
 def _page_lines(page: ClassifiedPageText) -> tuple[str, ...]:
@@ -398,7 +402,7 @@ def _start_boundary(
     match: re.Match[str],
 ) -> _BoundaryDraft:
     prefix = match.group(1).upper()
-    number = match.group(2).zfill(4)
+    number = _normalize_tag_number(match.group(2))
     f_tag = f"{prefix}{number}"
 
     draft = _BoundaryDraft(
