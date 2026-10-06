@@ -20,7 +20,6 @@ export function ProcessingFailurePage() {
       <a className="skip-link" href="#processing-progress">Skip to main content</a>
       <header className="app-header">
         <strong>CMS Deficiency Action Planner</strong>
-        <span>Compliance reviewer</span>
       </header>
       <nav className="workflow-rail" aria-label="Case workflow">
         <div className="session-label">
@@ -36,7 +35,6 @@ export function ProcessingFailurePage() {
         <EndSessionAction />
       </nav>
       <main className="intake-content processing-content" id="processing-progress">
-        <p className="processing-meta">Job EXT-2026-0918</p>
         <h1>Processing survey document</h1>
         <p className="lede">Required OCR work remains incomplete. Confirmed results are retained.</p>
         <FailedStageAlert

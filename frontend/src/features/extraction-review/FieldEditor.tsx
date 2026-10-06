@@ -84,7 +84,7 @@ export function FieldEditor({
       {field.pocSuggestion && (
         <div className="poc-suggestion-block">
           <p className="poc-suggestion-block__label">
-            AI-suggested Plan of Correction
+            AI-suggested plan of correction
           </p>
           <p className="poc-suggestion-block__content">{field.pocSuggestion}</p>
         </div>

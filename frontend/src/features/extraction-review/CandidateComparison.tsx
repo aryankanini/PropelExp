@@ -52,7 +52,7 @@ export function CandidateComparison({
           }}
           aria-describedby="candidate-correction-help"
         />
-        <p id="candidate-correction-help">The correction will be labeled User-edited. Original candidates remain visible.</p>
+        <p id="candidate-correction-help">The correction will be labeled user-edited. Original candidates remain visible.</p>
       </div>
     </div>
   );

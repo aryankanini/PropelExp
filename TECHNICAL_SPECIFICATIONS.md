@@ -7,16 +7,16 @@ FastAPI backend and a React single-page frontend. It owns a transient workflow
 from document intake through evidence review, POC generation, approval, and
 plain-text export.
 
-| Property | Specification |
-|---|---|
-| Backend | Python 3.14, FastAPI, Pydantic, PyMuPDF |
-| Frontend | React 19, TypeScript 7, Vite 8 |
-| Unit/integration tests | pytest and Vitest |
-| Browser tests | Playwright with Chromium |
-| Persistence | In-memory repositories and temporary filesystem uploads |
-| Primary document | CMS-2567 PDF, maximum 50 MB and 200 pages |
-| Local API | `http://127.0.0.1:8000` |
-| Local frontend | `http://127.0.0.1:5173` |
+| Property               | Specification                                           |
+| ---------------------- | ------------------------------------------------------- |
+| Backend                | Python 3.14, FastAPI, Pydantic, PyMuPDF                 |
+| Frontend               | React 19, TypeScript 7, Vite 8                          |
+| Unit/integration tests | pytest and Vitest                                       |
+| Browser tests          | Playwright with Chromium                                |
+| Persistence            | In-memory repositories and temporary filesystem uploads |
+| Primary document       | CMS-2567 PDF, maximum 50 MB and 200 pages               |
+| Local API              | `http://127.0.0.1:8000`                               |
+| Local frontend         | `http://127.0.0.1:5173`                               |
 
 ## Architecture
 
@@ -206,22 +206,22 @@ the filename `approved-poc-draft.txt`.
 
 ## API Surface
 
-| Method and path | Purpose |
-|---|---|
-| `POST /api/v1/cases` | Upload and validate a CMS-2567 document. |
-| `POST /api/v1/cases/{case_id}/extraction-jobs` | Start asynchronous extraction. |
-| `GET /api/v1/jobs/{job_id}/events` | Stream extraction progress with SSE. |
-| `GET /sessions/{session_id}/review` | Return provider and deficiency review fields. |
-| `PATCH /sessions/{session_id}/deficiencies/{deficiency_id}/confirmation` | Confirm a reviewed deficiency revision. |
-| `POST /deficiencies/{deficiency_id}/poc` | Generate a POC draft. |
-| `GET /deficiencies/{deficiency_id}/poc` | Load the current POC draft. |
-| `PATCH /deficiencies/{deficiency_id}/poc` | Append a POC edit revision. |
-| `POST /api/v1/cases/{case_id}/approval` | Approve the current POC revision. |
-| `POST /api/v1/cases/{case_id}/approval/request-changes` | Return an approved/reviewed revision for changes. |
-| `GET /api/v1/cases/{case_id}/export?format=copy` | Return approved copy content. |
-| `GET /api/v1/cases/{case_id}/export?format=download` | Return approved downloadable content. |
-| `DELETE /api/v1/cases/{case_id}` | End a case and clean up transient state. |
-| `GET /api/v1/session/status` | Query active local session status. |
+| Method and path                                                            | Purpose                                           |
+| -------------------------------------------------------------------------- | ------------------------------------------------- |
+| `POST /api/v1/cases`                                                     | Upload and validate a CMS-2567 document.          |
+| `POST /api/v1/cases/{case_id}/extraction-jobs`                           | Start asynchronous extraction.                    |
+| `GET /api/v1/jobs/{job_id}/events`                                       | Stream extraction progress with SSE.              |
+| `GET /sessions/{session_id}/review`                                      | Return provider and deficiency review fields.     |
+| `PATCH /sessions/{session_id}/deficiencies/{deficiency_id}/confirmation` | Confirm a reviewed deficiency revision.           |
+| `POST /deficiencies/{deficiency_id}/poc`                                 | Generate a POC draft.                             |
+| `GET /deficiencies/{deficiency_id}/poc`                                  | Load the current POC draft.                       |
+| `PATCH /deficiencies/{deficiency_id}/poc`                                | Append a POC edit revision.                       |
+| `POST /api/v1/cases/{case_id}/approval`                                  | Approve the current POC revision.                 |
+| `POST /api/v1/cases/{case_id}/approval/request-changes`                  | Return an approved/reviewed revision for changes. |
+| `GET /api/v1/cases/{case_id}/export?format=copy`                         | Return approved copy content.                     |
+| `GET /api/v1/cases/{case_id}/export?format=download`                     | Return approved downloadable content.             |
+| `DELETE /api/v1/cases/{case_id}`                                         | End a case and clean up transient state.          |
+| `GET /api/v1/session/status`                                             | Query active local session status.                |
 
 FastAPI's generated OpenAPI document is the authoritative transport schema.
 

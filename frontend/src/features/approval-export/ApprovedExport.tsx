@@ -20,7 +20,7 @@ export function ApprovedExport({ revisionLabel, view, pending, failureOpen, onCo
   return (
     <main className="export-main" id="main-content" data-uxr="UXR-002">
       <p className="breadcrumb">Approval and export / Approved revision</p>
-      <div className="review-title"><div><h1>Approved POC draft</h1><p>Copy or download the current revision for local compliance handling.</p></div><StatusBadge status="approved" label={`${revisionLabel} approved`} /></div>
+      <div className="review-title"><div><h1>Approved POC draft</h1><p>Copy or download the current revision for local compliance handling.</p></div><StatusBadge status="approved" label="Revision approved" /></div>
       <section className="approval-detail" aria-label="Approval details">
         <div><span>Approval</span><strong>Current revision</strong></div>
         <div><span>Delivery</span><strong>Local copy or download only</strong></div>

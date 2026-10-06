@@ -58,12 +58,11 @@ export function PocAuthoringPage({ api, confirmed = true }: PocAuthoringPageProp
       </a>
       <header className="poc-header">
         <strong>CMS Deficiency Action Planner</strong>
-        <span>Compliance reviewer · Transient session</span>
       </header>
       <nav className="poc-rail" aria-label="Case workflow">
         <div className="poc-case">
-          <strong>{caseId ?? "Active case"}</strong>
-          <small>Current deficiency · {resolvedDeficiencyId}</small>
+          <strong>Active case</strong>
+          <small>Current deficiency</small>
         </div>
         <ol>
           <li>
@@ -104,8 +103,8 @@ export function PocAuthoringPage({ api, confirmed = true }: PocAuthoringPageProp
       <main id="poc-main" className="poc-main">
         {draft === null ? (
           <section className="poc-empty" aria-labelledby="poc-empty-title">
-            <p className="poc-breadcrumb">POC drafts / {resolvedDeficiencyId}</p>
-            <h1 id="poc-empty-title">Plan of Correction</h1>
+            <p className="poc-breadcrumb">POC drafts</p>
+            <h1 id="poc-empty-title">Plan of correction</h1>
             <p>No POC draft exists for this deficiency.</p>
             <GeneratePocAction confirmed={confirmed} onGenerate={generate} />
             <PocValidationSummary errors={errors} />
@@ -120,7 +119,7 @@ export function PocAuthoringPage({ api, confirmed = true }: PocAuthoringPageProp
 
 function generationError(error: unknown): string {
   if (error instanceof PocApiError) {
-    return `${error.problem.message} Correlation ID: ${error.problem.correlation_id}.`;
+    return error.problem.message;
   }
   if (error instanceof Error) {
     return error.message;

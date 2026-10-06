@@ -20,7 +20,7 @@ describe("RecoveryError", () => {
 
     expect(screen.getAllByRole("alert")).toHaveLength(1);
     expect(screen.getAllByRole("button")).toHaveLength(1);
-    expect(screen.getByText("Correlation ID: OCR-4F82")).toBeInTheDocument();
+    expect(screen.queryByText(/correlation ID/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/provider payload/i)).not.toBeInTheDocument();
   });
 

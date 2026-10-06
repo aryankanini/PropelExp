@@ -48,7 +48,7 @@ export function ConfirmationPanel({
     <section className="confirmation-panel" aria-labelledby="confirmation-title" data-uxr="UXR-502">
       <header>
         <div>
-          <p>Deficiency {deficiencyId}</p>
+          <p>Current deficiency</p>
           <h2 id="confirmation-title">Confirmation readiness</h2>
         </div>
         <DeficiencyStatus state={confirmed ? "confirmed" : blocked ? "blocked" : "ready"} />
@@ -62,7 +62,7 @@ export function ConfirmationPanel({
       {staleRevisionId ? (
         <div className="confirmation-blockers" role="alert">
           <strong>Reload required</strong>
-          <p>Revision {staleRevisionId} is current. Confirmation remains denied.</p>
+          <p>A newer revision is current. Confirmation remains denied.</p>
           <button className="button button--secondary" type="button" onClick={onReload}>Reload current values</button>
         </div>
       ) : null}

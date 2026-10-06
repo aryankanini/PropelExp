@@ -16,7 +16,7 @@ export function PocDraftView({ draft, onSave, onReload }: PocDraftViewProps) {
       <div className="poc-title-row">
         <div>
           <p className="poc-breadcrumb">POC drafts / Selected deficiency</p>
-          <h1 id="poc-draft-title">Plan of Correction</h1>
+          <h1 id="poc-draft-title">Plan of correction</h1>
           <p>Five-part unapproved draft for deficiency {draft.deficiency_id}</p>
         </div>
         <span className="poc-revision">Unapproved · Revision {draft.revisions.length}</span>

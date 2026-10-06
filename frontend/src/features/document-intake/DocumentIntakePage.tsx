@@ -217,7 +217,6 @@ export function DocumentIntakePage() {
 
       <header className="app-header">
         <strong>CMS Deficiency Action Planner</strong>
-        <span>Compliance reviewer</span>
       </header>
 
       <nav className="workflow-rail" aria-label="Case workflow">

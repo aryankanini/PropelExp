@@ -215,12 +215,11 @@ export function ApprovalExportPage() {
       </a>
       <header className="approval-header">
         <strong>CMS Deficiency Action Planner</strong>
-        <span>Compliance leader · {resolvedCaseId}</span>
       </header>
       <div className="approval-body">
         <nav className="approval-rail" aria-label="Case workflow">
           <strong>Active case</strong>
-          <small>{deficiencyId ?? "F-tag"} · {revisionId}</small>
+          <small>Current revision</small>
           <ol>
             <li>
               <span>1</span>

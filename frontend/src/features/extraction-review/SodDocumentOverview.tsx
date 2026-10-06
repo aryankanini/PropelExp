@@ -93,7 +93,7 @@ export function SodDocumentOverview({
 
           <section className="deficiency-record__poc" aria-labelledby={`${field.fieldId}-poc-title`}>
             <div className="deficiency-record__section-heading">
-              <h4 id={`${field.fieldId}-poc-title`}>Suggested Plan of Correction</h4>
+              <h4 id={`${field.fieldId}-poc-title`}>Suggested plan of correction</h4>
               <span>Draft</span>
             </div>
             {pocPoints ? (

@@ -25,9 +25,6 @@ export function Alert({
     >
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.body}>{children}</div>
-      {correlationId ? (
-        <p className={styles.meta}>Correlation ID: {correlationId}</p>
-      ) : null}
       {action ? <div className={styles.actions}>{action}</div> : null}
     </section>
   );
