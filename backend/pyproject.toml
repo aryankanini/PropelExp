@@ -11,11 +11,11 @@ dependencies = [
     "python-multipart>=0.0.20,<1",
     "pytesseract>=0.3.13,<1",
     "uvicorn>=0.24,<1",
+    "httpx>=0.28,<1",
 ]
 
 [project.optional-dependencies]
 test = [
-    "httpx>=0.28,<1",
     "pytest>=7.4,<10",
 ]
 
