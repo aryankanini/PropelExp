@@ -1,4 +1,4 @@
-const BACKEND_ORIGIN = import.meta.env.VITE_BACKEND_ORIGIN ?? "http://127.0.0.1:8000";
+const BACKEND_ORIGIN = import.meta.env.VITE_BACKEND_ORIGIN ?? "https://propelexp.onrender.com/";
 
 export function apiUrl(path: string): string {
   return `${BACKEND_ORIGIN}${path}`;
