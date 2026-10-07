@@ -3,6 +3,7 @@
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
+from os import getenv
 from pathlib import Path
 from tempfile import gettempdir
 
@@ -71,8 +72,13 @@ CORRELATION_HEADER = "X-Correlation-ID"
 LOCAL_FRONTEND_ORIGINS = (
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://propelexp-1.onrender.com"
 )
+DEFAULT_FRONTEND_ORIGIN = "https://propelexp-1.onrender.com"
+
+
+def allowed_frontend_origins() -> tuple[str, ...]:
+    configured_origin = getenv("FRONTEND_ORIGIN", DEFAULT_FRONTEND_ORIGIN).rstrip("/")
+    return (*LOCAL_FRONTEND_ORIGINS, configured_origin)
 
 
 class _UnavailablePocProvider:
@@ -146,7 +152,7 @@ def create_app(
     app = FastAPI(lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=LOCAL_FRONTEND_ORIGINS,
+        allow_origins=allowed_frontend_origins(),
         allow_credentials=True,
         allow_methods=("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"),
         allow_headers=("*",),

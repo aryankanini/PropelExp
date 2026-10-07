@@ -33,6 +33,24 @@ def test_local_frontend_preflight_is_allowed() -> None:
     )
 
 
+def test_configured_frontend_preflight_is_allowed(monkeypatch) -> None:
+    monkeypatch.setenv("FRONTEND_ORIGIN", "https://propelexp-1.onrender.com/")
+
+    with TestClient(create_app()) as client:
+        response = client.options(
+            "/api/v1/session/status",
+            headers={
+                "Origin": "https://propelexp-1.onrender.com",
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == (
+        "https://propelexp-1.onrender.com"
+    )
+
+
 def test_untrusted_frontend_preflight_is_rejected() -> None:
     with TestClient(create_app()) as client:
         response = client.options(
