@@ -1,7 +1,9 @@
-const BACKEND_ORIGIN = import.meta.env.VITE_BACKEND_ORIGIN ?? "https://propelexp.onrender.com/";
+const BACKEND_ORIGIN = (
+  import.meta.env.VITE_BACKEND_ORIGIN ?? "https://propelexp.onrender.com"
+).replace(/\/+$/, "");
 
 export function apiUrl(path: string): string {
-  return `${BACKEND_ORIGIN}${path}`;
+  return `${BACKEND_ORIGIN}/${path.replace(/^\/+/, "")}`;
 }
 
 export function sessionHeaders(sessionId: string): Record<string, string> {
