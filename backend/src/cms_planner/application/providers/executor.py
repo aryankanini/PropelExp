@@ -17,6 +17,10 @@ class ProviderThrottledError(Exception):
     """Identify provider throttling that may succeed after bounded backoff."""
 
 
+class ProviderRequestError(Exception):
+    """Identify a provider rejection that must not be retried."""
+
+
 class TransientProviderTransportError(Exception):
     """Identify a temporary transport failure safe to retry."""
 

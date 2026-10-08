@@ -4,7 +4,10 @@ import json
 from pathlib import Path
 
 from cms_planner.application.failures import ProviderFailure
-from cms_planner.application.providers.executor import ProviderExecutor
+from cms_planner.application.providers.executor import (
+    ProviderExecutor,
+    ProviderRequestError,
+)
 from cms_planner.application.providers.results import (
     ExhaustedProviderRetries,
     InvalidProviderResponse,
@@ -107,7 +110,10 @@ class OpenAiPocProvider:
                 payload=payload,
             )
 
-        result = await self._executor.execute(invoke)
+        try:
+            result = await self._executor.execute(invoke)
+        except ProviderRequestError as exc:
+            raise ProviderFailure() from exc
         if isinstance(result, ExhaustedProviderRetries):
             raise ProviderFailure(provider_payload=result)
 

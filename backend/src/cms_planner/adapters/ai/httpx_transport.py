@@ -6,6 +6,7 @@ from typing import Any
 import httpx
 
 from cms_planner.application.providers.executor import (
+    ProviderRequestError,
     ProviderThrottledError,
     TransientProviderTransportError,
 )
@@ -45,5 +46,11 @@ class HttpxJsonTransport:
             raise TransientProviderTransportError(
                 f"provider server error: {response.status_code}"
             )
-        response.raise_for_status()
-        return response.json()
+        if response.status_code >= 400:
+            raise ProviderRequestError(
+                f"provider rejected request: {response.status_code}"
+            )
+        try:
+            return response.json()
+        except ValueError as exc:
+            raise ProviderRequestError("provider returned invalid JSON") from exc
