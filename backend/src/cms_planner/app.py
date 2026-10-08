@@ -3,6 +3,7 @@
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
+import logging
 from os import getenv
 from pathlib import Path
 from tempfile import gettempdir
@@ -74,6 +75,7 @@ LOCAL_FRONTEND_ORIGINS = (
     "http://127.0.0.1:5173",
 )
 DEFAULT_FRONTEND_ORIGIN = "https://propelexp-1.onrender.com"
+logger = logging.getLogger(__name__)
 
 
 def allowed_frontend_origins() -> tuple[str, ...]:
@@ -112,7 +114,11 @@ def register_provider_adapters(
 def create_configured_poc_provider() -> PocProvider:
     try:
         settings = ProviderSettings.load()
-    except ProviderConfigurationError:
+    except ProviderConfigurationError as error:
+        logger.warning(
+            "POC provider disabled: invalid settings=%s",
+            ",".join(error.setting_names),
+        )
         return _UnavailablePocProvider()
     return OpenAiPocProvider(
         settings,
