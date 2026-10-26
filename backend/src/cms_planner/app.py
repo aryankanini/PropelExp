@@ -26,6 +26,7 @@ from cms_planner.api.confirmations import create_confirmations_router
 from cms_planner.api.corrections import create_corrections_router
 from cms_planner.api.export import create_export_router
 from cms_planner.api.poc import create_poc_router
+from cms_planner.api.poc_document import create_poc_document_router
 from cms_planner.api.problems import register_exception_handlers
 from cms_planner.api.provenance import create_provenance_router
 from cms_planner.api.reapproval import create_reapproval_router
@@ -40,6 +41,7 @@ from cms_planner.api.routes.extraction_jobs import (
 )
 from cms_planner.api.routes.session_status import create_session_status_router
 from cms_planner.application.confirmation_service import ConfirmationService
+from cms_planner.application.case_poc_document_service import CasePocDocumentService
 from cms_planner.application.correction_service import CorrectionService
 from cms_planner.application.failures import ProviderFailure
 from cms_planner.application.poc_generation_service import PocGenerationService
@@ -85,6 +87,12 @@ def allowed_frontend_origins() -> tuple[str, ...]:
 
 class _UnavailablePocProvider:
     def generate(self, request: PocGenerationInput) -> object:
+        raise ProviderFailure()
+
+    def generate_case(
+        self,
+        requests: tuple[PocGenerationInput, ...],
+    ) -> object:
         raise ProviderFailure()
 
 
@@ -198,6 +206,15 @@ def create_app(
             ),
             revision_service=PocRevisionService(active_poc_repository),
             case_repository=repository,
+        )
+    )
+    app.include_router(
+        create_poc_document_router(
+            CasePocDocumentService(
+                repository,
+                active_poc_provider,
+                DeterministicPocGuardrails(),
+            )
         )
     )
     app.include_router(create_approval_router(repository))

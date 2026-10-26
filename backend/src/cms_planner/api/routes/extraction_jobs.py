@@ -32,10 +32,6 @@ from cms_planner.domain.review import (
     ReviewRevision,
 )
 from cms_planner.domain.text_span import BoundingBox, ClassifiedPageText, TextSpan
-from cms_planner.infrastructure.config.provider import (
-    ProviderConfigurationError,
-    ProviderSettings,
-)
 from cms_planner.modules.extraction.cms_structure_detector import detect_cms_layout
 from cms_planner.modules.extraction.deficiency_boundaries import (
     identify_deficiency_boundaries,
@@ -45,12 +41,6 @@ from cms_planner.modules.extraction.page_classifier import classify_pages
 from cms_planner.modules.extraction.provider_metadata import (
     ProviderMetadata,
     extract_provider_metadata,
-)
-from cms_planner.modules.extraction.sod_llm_cleaner import (
-    LlmCleanResult,
-    PreprocessedSod,
-    clean_sod_with_llm,
-    preprocess_sod_text,
 )
 from cms_planner.modules.extraction.text_normalizer import normalize_extracted_page
 
@@ -178,29 +168,9 @@ def create_extraction_jobs_router(
 
             job_runner.emit_progress(job_id, JobStage.EXTRACTION, 80)
 
-            # --- LLM cleaning ---
-            job_runner.emit_progress(job_id, JobStage.GENERATION, 85)
-            _provider_settings: ProviderSettings | None = None
-            try:
-                _provider_settings = ProviderSettings.load()
-                print(f"[LLM] Provider loaded: {_provider_settings.model} @ {_provider_settings.endpoint}")
-            except ProviderConfigurationError as e:
-                print(f"[LLM] Provider config error: {e}")
-
             review_fields = list(_provider_review_fields(provider_metadata))
             for c in candidates:
-                llm_result: LlmCleanResult | None = None
-                if _provider_settings is not None:
-                    preprocessed = preprocess_sod_text(c.sod_text or c.f_tag, c.f_tag)
-                    llm_result = await clean_sod_with_llm(
-                        preprocessed=preprocessed,
-                        f_tag=c.f_tag,
-                        endpoint=str(_provider_settings.endpoint),
-                        api_key=_provider_settings.api_key.get_secret_value(),
-                        model=_provider_settings.model,
-                        timeout_seconds=float(_provider_settings.timeout_seconds),
-                    )
-                review_fields.append(_candidate_to_review_field(c, llm_result))
+                review_fields.append(_candidate_to_review_field(c))
 
             # --- persist ---
             def _apply(current, _fields=tuple(review_fields), _candidates=candidates):
@@ -358,7 +328,6 @@ def _clean_sod_text(text: str) -> str:
 
 def _candidate_to_review_field(
     candidate: DeficiencyCandidate,
-    llm_result: LlmCleanResult | None = None,
 ) -> ReviewField:
     evidence_items = tuple(
         Evidence(
@@ -372,16 +341,6 @@ def _candidate_to_review_field(
     evidence = evidence_items[0]
 
     value = _html.unescape(_clean_sod_text(candidate.sod_text or candidate.f_tag))
-
-    if llm_result is not None:
-        if llm_result.points:
-            poc_suggestion = json.dumps(
-                [{"label": p.label, "text": p.text, "poc": p.poc} for p in llm_result.points]
-            )
-        else:
-            poc_suggestion = llm_result.poc_suggestion or None
-    else:
-        poc_suggestion = None
 
     revision_id = uuid4().hex
     return ReviewField(
@@ -412,7 +371,7 @@ def _candidate_to_review_field(
         evidence_items=evidence_items,
         current_revision_id=revision_id,
         unresolved=candidate.uncertainty,
-        poc_suggestion=poc_suggestion,
+        poc_suggestion=None,
     )
 
 

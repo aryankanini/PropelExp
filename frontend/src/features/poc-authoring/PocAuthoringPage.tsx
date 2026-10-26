@@ -37,10 +37,15 @@ export function PocAuthoringPage({ api, confirmed = true }: PocAuthoringPageProp
   };
 
   const save = async (
+    documentDeficiencyId: string,
     expectedRevisionId: string,
     updates: Partial<Record<PocSectionName, string | null>>,
   ) => {
-    const saved = await resolvedApi.save(resolvedDeficiencyId, expectedRevisionId, updates);
+    const saved = await resolvedApi.save(
+      documentDeficiencyId,
+      expectedRevisionId,
+      updates,
+    );
     setDraft(saved);
     return saved;
   };

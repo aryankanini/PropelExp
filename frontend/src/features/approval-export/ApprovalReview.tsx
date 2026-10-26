@@ -13,7 +13,7 @@ interface ApprovalReviewProps {
 }
 
 export function ApprovalReview({ review, blockers, pending, onApprove, onRequestChanges }: ApprovalReviewProps) {
-  const complete = review.sections.length === 5 && review.sections.every((section) => section.content.trim());
+  const complete = review.sections.length > 0 && review.sections.every((section) => section.content.trim());
   const canApprove = review.role === "compliance_leader" && complete && !pending;
 
   return (
@@ -33,11 +33,11 @@ export function ApprovalReview({ review, blockers, pending, onApprove, onRequest
         <section className="evidence-strip" aria-label="Deficiency evidence and completeness">
           <div><span>Deficiency</span><strong>{review.deficiencyTag}</strong></div>
           <div><span>Evidence</span><strong>{review.evidence.length} reviewed sources</strong></div>
-          <div><span>Completeness</span><strong>{review.sections.length} of 5 sections</strong></div>
+          <div><span>Completeness</span><strong>{review.sections.length} complete records</strong></div>
           <StatusBadge status={complete ? "approved" : "blocked"} label={complete ? "Complete" : "Incomplete"} />
         </section>
         <section className="section-review" aria-labelledby="section-review-title">
-          <h2 id="section-review-title">Plan of correction</h2>
+          <h2 id="section-review-title">Combined SOD and POC document</h2>
           {review.sections.map((section, index) => (
             <article key={section.id} className="review-section">
               <div className="section-number">{index + 1}</div>

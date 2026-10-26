@@ -59,6 +59,16 @@ class OpenAiPocProvider:
         self._executor = executor
 
     def generate(self, request: PocGenerationInput) -> ProviderPocResponse:
+        return self._run(self._generate_async(request))
+
+    def generate_case(
+        self,
+        requests: tuple[PocGenerationInput, ...],
+    ) -> object:
+        return self._run(self._generate_case_async(requests))
+
+    @staticmethod
+    def _run(coroutine):
         import asyncio
 
         try:
@@ -71,9 +81,9 @@ class OpenAiPocProvider:
             import concurrent.futures
 
             with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-                future = pool.submit(asyncio.run, self._generate_async(request))
+                future = pool.submit(asyncio.run, coroutine)
                 return future.result()
-        return loop.run_until_complete(self._generate_async(request))
+        return loop.run_until_complete(coroutine)
 
     async def _generate_async(self, request: PocGenerationInput) -> ProviderPocResponse:
         user_content = json.dumps(
@@ -108,6 +118,7 @@ class OpenAiPocProvider:
                 endpoint=endpoint,
                 api_key=self._settings.api_key.get_secret_value(),
                 payload=payload,
+                api_version=self._settings.api_version,
             )
 
         try:
@@ -123,6 +134,95 @@ class OpenAiPocProvider:
             return ProviderPocResponse.model_validate_json(
                 json.dumps(_normalize_provider_response(parsed))
             )
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            raise ProviderFailure(provider_payload=InvalidProviderResponse()) from exc
+
+    async def _generate_case_async(
+        self,
+        requests: tuple[PocGenerationInput, ...],
+    ) -> object:
+        payload = {
+            "model": self._settings.model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        f"{_SYSTEM_PROMPT}\n\nGenerate one five-part POC for every "
+                        "deficiency. Preserve the input order and deficiency_id."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": json.dumps(
+                        [
+                            {
+                                "deficiency_id": request.deficiency_id,
+                                "deficiency_revision_id": request.deficiency_revision_id,
+                                "reviewed_fields": [
+                                    field.model_dump() for field in request.reviewed_fields
+                                ],
+                                "evidence_spans": [
+                                    span.model_dump() for span in request.evidence_spans
+                                ],
+                            }
+                            for request in requests
+                        ]
+                    ),
+                },
+            ],
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "cms_combined_plan_of_correction",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "entries": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "deficiency_id": {"type": "string"},
+                                        **_POC_RESPONSE_SCHEMA["properties"],
+                                    },
+                                    "required": [
+                                        "deficiency_id",
+                                        *_POC_RESPONSE_SCHEMA["required"],
+                                    ],
+                                    "additionalProperties": False,
+                                },
+                                "minItems": len(requests),
+                                "maxItems": len(requests),
+                            }
+                        },
+                        "required": ["entries"],
+                        "additionalProperties": False,
+                    },
+                },
+            },
+        }
+
+        async def invoke():
+            endpoint = str(self._settings.endpoint).rstrip("/")
+            if not endpoint.endswith("/chat/completions"):
+                endpoint = f"{endpoint}/chat/completions"
+            return await self._transport.post_json(
+                endpoint=endpoint,
+                api_key=self._settings.api_key.get_secret_value(),
+                payload=payload,
+                api_version=self._settings.api_version,
+            )
+
+        try:
+            result = await self._executor.execute(invoke)
+        except ProviderRequestError as exc:
+            raise ProviderFailure() from exc
+        if isinstance(result, ExhaustedProviderRetries):
+            raise ProviderFailure(provider_payload=result)
+        try:
+            raw = result["choices"][0]["message"]["content"]
+            return json.loads(raw)
         except (KeyError, IndexError, TypeError, ValueError) as exc:
             raise ProviderFailure(provider_payload=InvalidProviderResponse()) from exc
 

@@ -67,13 +67,30 @@ export function ApprovalExportPage() {
     evidence: currentDraftRevision?.grounded_claims.flatMap((claim) =>
       claim.support_references.map((reference) => reference.reference_id),
     ) ?? [],
-    sections: currentDraftRevision
-      ? pocSectionOrder.map((name) => ({
-          id: name,
-          title: name.replaceAll("_", " ").replace(/^./, (value) => value.toUpperCase()),
-          content: currentDraftRevision.content[name],
-          provenance: currentDraftRevision.section_origins[name].replaceAll("_", " "),
+    sections: currentDraftRevision?.document_entries?.length
+      ? currentDraftRevision.document_entries.map((entry) => ({
+          id: entry.deficiency_id,
+          title: entry.label,
+          content: [
+            "Statement of Deficiency",
+            entry.sod_text,
+            "Plan of Correction",
+            ...pocSectionOrder.map(
+              (name) =>
+                `${name.replaceAll("_", " ").replace(/^./, (value) => value.toUpperCase())}\n${entry.content[name]}`,
+            ),
+          ].join("\n\n"),
+          provenance: Object.values(entry.section_origins).includes("user_edited")
+            ? "user edited"
+            : "AI generated",
         }))
+      : currentDraftRevision
+        ? pocSectionOrder.map((name) => ({
+            id: name,
+            title: name.replaceAll("_", " ").replace(/^./, (value) => value.toUpperCase()),
+            content: currentDraftRevision.content[name],
+            provenance: currentDraftRevision.section_origins[name].replaceAll("_", " "),
+          }))
       : [],
     history: [],
   };

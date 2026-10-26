@@ -9,3 +9,8 @@ class PocProvider(Protocol):
     """Generate provider-neutral structured output from one deficiency revision."""
 
     def generate(self, request: PocGenerationInput) -> object: ...
+
+    def generate_case(
+        self,
+        requests: tuple[PocGenerationInput, ...],
+    ) -> object: ...

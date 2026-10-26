@@ -221,10 +221,17 @@ class CaseAggregate(BaseModel):
 
     def attach_poc_draft(self, draft: PocDraft) -> Self:
         """Make a generated POC draft and its reviewed evidence approval-ready."""
+        document_deficiency_ids = {
+            entry.deficiency_id
+            for entry in draft.current_revision.document_entries
+        }
         evidence_ids = tuple(
             f"{field.field_id}:p{evidence.page_number}"
             for field in self.review_fields
-            if field.deficiency_id == draft.deficiency_id
+            if (
+                field.deficiency_id == draft.deficiency_id
+                or field.deficiency_id in document_deficiency_ids
+            )
             for evidence in field.evidence_items
         )
         return self.model_copy(

@@ -27,16 +27,20 @@ class HttpxJsonTransport:
         endpoint: str,
         api_key: str,
         payload: Mapping[str, Any],
+        api_version: str | None = None,
     ) -> Mapping[str, Any]:
+        if api_version:
+            sep = "&" if "?" in endpoint else "?"
+            endpoint = f"{endpoint}{sep}api-version={api_version}"
+            auth_headers = {"api-key": api_key}
+        else:
+            auth_headers = {"Authorization": f"Bearer {api_key}"}
         try:
             async with httpx.AsyncClient(timeout=self._timeout) as client:
                 response = await client.post(
                     endpoint,
                     json=payload,
-                    headers={
-                        "Authorization": f"Bearer {api_key}",
-                        "Content-Type": "application/json",
-                    },
+                    headers={**auth_headers, "Content-Type": "application/json"},
                 )
         except httpx.TimeoutException as exc:
             raise TimeoutError("provider request timed out") from exc

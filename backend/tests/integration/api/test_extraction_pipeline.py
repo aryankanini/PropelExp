@@ -4,7 +4,6 @@ from pathlib import Path
 import pymupdf
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from pydantic import SecretStr
 
 from adapters.filesystem.temporary_workspace import TemporaryWorkspace
 from adapters.repositories.in_memory_case_repository import InMemoryCaseRepository
@@ -12,13 +11,10 @@ from cms_planner.adapters.ocr.adapter import GuardedOcrAdapter
 from cms_planner.api.review import create_review_router
 from cms_planner.api.routes.extraction_jobs import create_extraction_jobs_router
 from cms_planner.api.routes.extraction_jobs import _extract_pages_from_bytes
-from cms_planner.application.provider_approval import ProviderApproval
 from cms_planner.application.review_service import ReviewService
 from cms_planner.domain.job_event import JobTerminalStatus
 from cms_planner.domain.review import Origin
-from cms_planner.infrastructure.config.provider import ProviderSettings
 from cms_planner.modules.extraction.job_runner import ExtractionJobRunner
-from cms_planner.modules.extraction.sod_llm_cleaner import LlmCleanResult, LlmPointResult
 from domain.case.aggregate import CaseAggregate
 
 
@@ -110,10 +106,7 @@ def test_full_text_fallback_recovers_tags_outside_standard_sod_crop() -> None:
     assert "F 0686" in full_pages[0].spans[0].text
 
 
-def test_preprocessed_llm_result_is_available_to_review_api(
-    tmp_path: Path,
-    monkeypatch,
-) -> None:
+def test_intake_extracts_review_data_without_generating_poc(tmp_path: Path) -> None:
     repository = InMemoryCaseRepository()
     workspace = TemporaryWorkspace(tmp_path)
     handle = workspace.begin_upload("session-1")
@@ -127,41 +120,8 @@ def test_preprocessed_llm_result_is_available_to_review_api(
         )
     )
 
-    captured = {}
-
-    async def clean_sod(preprocessed, f_tag, **kwargs):
-        captured["preprocessed"] = preprocessed
-        captured["f_tag"] = f_tag
-        return LlmCleanResult(
-            sod_text="1. Repositioning records were incomplete.",
-            poc_suggestion="1. Audit repositioning records each shift.",
-            points=[
-                LlmPointResult(
-                    label="1.",
-                    text="Repositioning records were incomplete.",
-                    poc="Audit repositioning records each shift.",
-                )
-            ],
-        )
-
-    settings = ProviderSettings.model_construct(
-        endpoint="https://provider.example/v1",
-        model="test-model",
-        timeout_seconds=10,
-        approval=ProviderApproval(baa=True, retention=True, training_use=True, risk=True),
-    )
-    settings._api_key = SecretStr("test-key")
-    monkeypatch.setattr(
-        "cms_planner.api.routes.extraction_jobs.ProviderSettings.load",
-        lambda: settings,
-    )
-    monkeypatch.setattr(
-        "cms_planner.api.routes.extraction_jobs.clean_sod_with_llm",
-        clean_sod,
-    )
-
     job_runner = ExtractionJobRunner()
-    ocr_adapter = GuardedOcrAdapter(NullOcrProvider(), approval=settings.approval)
+    ocr_adapter = GuardedOcrAdapter(NullOcrProvider(), approved=False)
     app = FastAPI()
     app.include_router(
         create_extraction_jobs_router(repository, workspace, ocr_adapter, job_runner)
@@ -186,9 +146,6 @@ def test_preprocessed_llm_result_is_available_to_review_api(
 
     assert accepted.status_code == 202
     assert repeated.status_code == 202
-    assert captured["f_tag"] == "F0686"
-    assert "FORM CMS-2567" not in captured["preprocessed"].full_text
-    assert captured["preprocessed"].points[0].text == "Repositioning was not documented."
     assert review.status_code == 200
     assert len(review.json()) == 3
     provider_fields = {
@@ -208,7 +165,7 @@ def test_preprocessed_llm_result_is_available_to_review_api(
     )
     assert "FACILITY POC" not in field["revisions"][0]["value"]
     assert "disclosure footer" not in field["revisions"][0]["value"]
-    assert "Audit repositioning records each shift." in field["poc_suggestion"]
+    assert field["poc_suggestion"] is None
 
 
 async def _wait_for_job(job_runner: ExtractionJobRunner, job_id: str) -> None:

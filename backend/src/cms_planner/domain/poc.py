@@ -89,6 +89,7 @@ class PocRevision(BaseModel):
     section_origins: dict[PocSectionName, SectionOrigin]
     grounded_claims: tuple[GroundedClaim, ...] = ()
     missing_information: tuple[MissingInformationMarker, ...] = ()
+    document_entries: tuple["PocDocumentEntry", ...] = ()
     status: Literal["unapproved"] = "unapproved"
 
     @model_validator(mode="after")
@@ -99,7 +100,29 @@ class PocRevision(BaseModel):
 
     @property
     def approval_ready(self) -> bool:
-        return not self.missing_information
+        return not self.missing_information and all(
+            not entry.missing_information for entry in self.document_entries
+        )
+
+
+class PocDocumentEntry(BaseModel):
+    """One reviewed SOD and its generated five-part POC."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True, strict=True)
+
+    deficiency_id: NonEmptyText
+    label: NonEmptyText
+    sod_text: NonEmptyText
+    content: PocContent
+    section_origins: dict[PocSectionName, SectionOrigin]
+    grounded_claims: tuple[GroundedClaim, ...] = ()
+    missing_information: tuple[MissingInformationMarker, ...] = ()
+
+    @model_validator(mode="after")
+    def validate_section_origins(self) -> Self:
+        if set(self.section_origins) != set(POC_SECTION_ORDER):
+            raise ValueError("section_origins must identify every POC section")
+        return self
 
 
 class PocDraft(BaseModel):
@@ -181,6 +204,69 @@ class PocDraft(BaseModel):
             revision=revision,
         )
 
+    def append_document_edit(
+        self,
+        *,
+        expected_revision_id: str,
+        revision_id: str,
+        deficiency_id: str,
+        section_updates: dict[PocSectionName, str],
+    ) -> Self:
+        if expected_revision_id != self.current_revision_id:
+            raise StaleRevisionError(expected_revision_id, self.current_revision_id)
+
+        current = self.current_revision
+        entries: list[PocDocumentEntry] = []
+        matched = False
+        for entry in current.document_entries:
+            if entry.deficiency_id != deficiency_id:
+                entries.append(entry)
+                continue
+            matched = True
+            content = entry.content.model_dump()
+            origins = dict(entry.section_origins)
+            markers = list(entry.missing_information)
+            for section, value in section_updates.items():
+                content[section.value] = value
+                origins[section] = SectionOrigin.USER_EDITED
+                markers = [marker for marker in markers if marker.section != section]
+            entries.append(
+                entry.model_copy(
+                    update={
+                        "content": PocContent(**content),
+                        "section_origins": origins,
+                        "missing_information": tuple(markers),
+                    }
+                )
+            )
+        if not matched:
+            raise KeyError(deficiency_id)
+
+        revision = current.model_copy(
+            update={
+                "revision_id": revision_id,
+                "content": _combine_document_content(tuple(entries)),
+                "section_origins": {
+                    section: (
+                        SectionOrigin.USER_EDITED
+                        if section in section_updates
+                        else current.section_origins[section]
+                    )
+                    for section in POC_SECTION_ORDER
+                },
+                "missing_information": tuple(
+                    marker
+                    for entry in entries
+                    for marker in entry.missing_information
+                ),
+                "document_entries": tuple(entries),
+            }
+        )
+        return self.append_revision(
+            expected_revision_id=expected_revision_id,
+            revision=revision,
+        )
+
     def _latest_marker_for(
         self, section: PocSectionName
     ) -> MissingInformationMarker | None:
@@ -189,3 +275,20 @@ class PocDraft(BaseModel):
                 if marker.section == section:
                     return marker
         return None
+
+
+def combine_document_content(entries: tuple[PocDocumentEntry, ...]) -> PocContent:
+    """Build the legacy five-section projection for approval compatibility."""
+    return _combine_document_content(entries)
+
+
+def _combine_document_content(entries: tuple[PocDocumentEntry, ...]) -> PocContent:
+    return PocContent(
+        **{
+            section.value: "\n\n".join(
+                f"{entry.label}: {entry.content.model_dump()[section.value]}"
+                for entry in entries
+            )
+            for section in POC_SECTION_ORDER
+        }
+    )

@@ -38,6 +38,7 @@ class _ProviderEnvironment(BaseSettings):
     api_key: SecretStr = Field(min_length=1)
     model: str = Field(default="gpt-4o-mini", min_length=1)
     timeout_seconds: int = Field(gt=0, le=MAX_PROVIDER_TIMEOUT_SECONDS)
+    api_version: str | None = Field(default=None)
     baa_approved: bool
     retention_approved: bool
     training_use_approved: bool
@@ -66,6 +67,7 @@ class ProviderSettings(BaseModel):
     endpoint: AnyHttpUrl
     model: str
     timeout_seconds: int
+    api_version: str | None
     approval: ProviderApproval
     _api_key: SecretStr = PrivateAttr()
 
@@ -94,6 +96,7 @@ class ProviderSettings(BaseModel):
             endpoint=environment.endpoint,
             model=environment.model,
             timeout_seconds=environment.timeout_seconds,
+            api_version=environment.api_version,
             approval=approval,
         )
         settings._api_key = environment.api_key

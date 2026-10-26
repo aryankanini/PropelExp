@@ -39,7 +39,18 @@ export interface PocRevision {
   section_origins: Readonly<Record<PocSectionName, SectionOrigin>>;
   grounded_claims: readonly GroundedClaimContract[];
   missing_information: readonly MissingInformationContract[];
+  document_entries?: readonly PocDocumentEntry[];
   status: "unapproved";
+}
+
+export interface PocDocumentEntry {
+  deficiency_id: string;
+  label: string;
+  sod_text: string;
+  content: PocContent;
+  section_origins: Readonly<Record<PocSectionName, SectionOrigin>>;
+  grounded_claims: readonly GroundedClaimContract[];
+  missing_information: readonly MissingInformationContract[];
 }
 
 export interface PocDraft {
@@ -94,18 +105,19 @@ export function createPocApi(
   };
 
   return {
-    generate: (deficiencyId) =>
-      request(`/deficiencies/${encodeURIComponent(deficiencyId)}/poc`, {
+    generate: (_deficiencyId) =>
+      request(`/sessions/${encodeURIComponent(sessionId)}/poc-document`, {
         method: "POST",
       }),
-    load: (deficiencyId) =>
-      request(`/deficiencies/${encodeURIComponent(deficiencyId)}/poc`),
+    load: (_deficiencyId) =>
+      request(`/sessions/${encodeURIComponent(sessionId)}/poc-document`),
     save: (deficiencyId, expectedRevisionId, sectionUpdates) =>
-      request(`/deficiencies/${encodeURIComponent(deficiencyId)}/poc`, {
+      request(`/sessions/${encodeURIComponent(sessionId)}/poc-document`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           expected_revision_id: expectedRevisionId,
+          deficiency_id: deficiencyId,
           section_updates: sectionUpdates,
         }),
       }),
@@ -131,15 +143,26 @@ function parseRevision(value: unknown): PocRevision {
   const revision = record(value, "POC revision");
   exactKeys(
     revision,
-    [
+    revision.document_entries === undefined
+      ? [
+          "revision_id",
+          "deficiency_revision_id",
+          "content",
+          "section_origins",
+          "grounded_claims",
+          "missing_information",
+          "status",
+        ]
+      : [
       "revision_id",
       "deficiency_revision_id",
       "content",
       "section_origins",
       "grounded_claims",
       "missing_information",
+      "document_entries",
       "status",
-    ],
+        ],
     "POC revision",
   );
   if (revision.status !== "unapproved") {
@@ -160,7 +183,42 @@ function parseRevision(value: unknown): PocRevision {
       revision.missing_information,
       "missing_information",
     ).map(parseMissingInformation),
+    document_entries: array(
+      revision.document_entries ?? [],
+      "document_entries",
+    ).map(parseDocumentEntry),
     status: "unapproved",
+  };
+}
+
+function parseDocumentEntry(value: unknown): PocDocumentEntry {
+  const entry = record(value, "POC document entry");
+  exactKeys(
+    entry,
+    [
+      "deficiency_id",
+      "label",
+      "sod_text",
+      "content",
+      "section_origins",
+      "grounded_claims",
+      "missing_information",
+    ],
+    "POC document entry",
+  );
+  return {
+    deficiency_id: text(entry.deficiency_id, "deficiency_id"),
+    label: text(entry.label, "label"),
+    sod_text: text(entry.sod_text, "sod_text"),
+    content: sectionRecord(entry.content, text),
+    section_origins: sectionRecord(entry.section_origins, origin),
+    grounded_claims: array(entry.grounded_claims, "grounded_claims").map(
+      parseGroundedClaim,
+    ),
+    missing_information: array(
+      entry.missing_information,
+      "missing_information",
+    ).map(parseMissingInformation),
   };
 }
 

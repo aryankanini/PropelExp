@@ -4,6 +4,12 @@ import { apiUrl } from "../../shared/api/client";
 import { useSession } from "../../app/SessionContext";
 import { EndSessionDialog } from "../../shared/session/EndSessionDialog";
 import { useEndSession } from "../../shared/session/useEndSession";
+import {
+  createPocApi,
+  type PocDraft,
+  type PocSectionName,
+} from "../../shared/api/poc";
+import { PocDraftView } from "../poc-authoring/PocDraftView";
 import { SodDocumentOverview } from "./SodDocumentOverview";
 import type { ReviewField } from "./types";
 import { projectReviewField } from "./types";
@@ -20,11 +26,13 @@ export function ExtractionReviewPage() {
     reset: resetSession,
   } = useSession();
   const cleanup = useEndSession(sessionId, caseId);
+  const pocApi = createPocApi(sessionId);
 
   const [loadState, setLoadState] = useState<LoadState>("loading");
   const [fields, setFields] = useState<ReviewField[]>([]);
   const [selectedFieldIndex, setSelectedFieldIndex] = useState(0);
   const [endSessionOpen, setEndSessionOpen] = useState(false);
+  const [draft, setDraft] = useState<PocDraft | null>(null);
   const [confirmationState, setConfirmationState] = useState<
     "idle" | "pending" | "error"
   >("idle");
@@ -89,44 +97,53 @@ export function ExtractionReviewPage() {
   }
 
   async function confirmAndContinue() {
-    if (!field) return;
+    if (!field || deficiencyFields.some((item) => item.unresolved)) return;
     setConfirmationState("pending");
-    const selectedDeficiencyFields = deficiencyFields.filter(
-      (item) => item.deficiencyId === field.deficiencyId,
-    );
 
     try {
-      const response = await fetch(
-        apiUrl(
-          `/sessions/${encodeURIComponent(sessionId)}/deficiencies/${encodeURIComponent(
-            field.deficiencyId,
-          )}/confirmation`,
-        ),
-        {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            deficiency_id: field.deficiencyId,
-            expected_revisions: selectedDeficiencyFields.map((item) => ({
-              field_id: item.fieldId,
-              revision_id: item.currentRevisionId,
-            })),
-          }),
-        },
-      );
-      if (!response.ok) throw new Error("Confirmation failed");
-      const outcome = (await response.json()) as {
-        poc_generation_eligible: boolean;
-      };
-      if (!outcome.poc_generation_eligible) {
-        setConfirmationState("error");
-        return;
+      const deficiencyIds = [
+        ...new Set(deficiencyFields.map((item) => item.deficiencyId)),
+      ];
+      for (const deficiencyId of deficiencyIds) {
+        const matchingFields = deficiencyFields.filter(
+          (item) => item.deficiencyId === deficiencyId,
+        );
+        const response = await fetch(
+          apiUrl(
+            `/sessions/${encodeURIComponent(sessionId)}/deficiencies/${encodeURIComponent(
+              deficiencyId,
+            )}/confirmation`,
+          ),
+          {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              deficiency_id: deficiencyId,
+              expected_revisions: matchingFields.map((item) => ({
+                field_id: item.fieldId,
+                revision_id: item.currentRevisionId,
+              })),
+            }),
+          },
+        );
+        if (!response.ok) throw new Error("Confirmation failed");
       }
       setDeficiencyId(field.deficiencyId);
-      navigate("poc-authoring");
+      setDraft(await pocApi.generate(field.deficiencyId));
+      setConfirmationState("idle");
     } catch {
       setConfirmationState("error");
     }
+  }
+
+  async function savePoc(
+    deficiencyId: string,
+    expectedRevisionId: string,
+    updates: Partial<Record<PocSectionName, string | null>>,
+  ) {
+    const saved = await pocApi.save(deficiencyId, expectedRevisionId, updates);
+    setDraft(saved);
+    return saved;
   }
 
   if (loadState === "loading") {
@@ -279,12 +296,18 @@ export function ExtractionReviewPage() {
           <button
             className="button"
             type="button"
-            disabled={field.unresolved || confirmationState === "pending"}
+            disabled={
+              deficiencyFields.some((item) => item.unresolved)
+              || confirmationState === "pending"
+              || draft !== null
+            }
             onClick={() => void confirmAndContinue()}
           >
             {confirmationState === "pending"
-              ? "Confirming..."
-              : "Confirm and continue to POC"}
+              ? "Generating one combined POC..."
+              : draft
+                ? "POC generated below"
+                : "Confirm all SODs and generate POC"}
           </button>
         </div>
 
@@ -298,6 +321,22 @@ export function ExtractionReviewPage() {
           fields={deficiencyFields}
           selectedFieldId={field.fieldId}
         />
+        {draft && (
+          <>
+            <PocDraftView
+              draft={draft}
+              onSave={savePoc}
+              onReload={async () => setDraft(await pocApi.load(field.deficiencyId))}
+            />
+            <button
+              className="button"
+              type="button"
+              onClick={() => navigate("poc-authoring")}
+            >
+              Continue to POC draft
+            </button>
+          </>
+        )}
       </main>
 
       <EndSessionDialog

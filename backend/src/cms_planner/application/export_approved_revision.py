@@ -52,6 +52,23 @@ class ExportApprovedRevision:
 
 
 def _revision_text(revision: PocRevision) -> str:
+    if revision.document_entries:
+        return "\n\n".join(
+            "\n\n".join(
+                (
+                    entry.label,
+                    "Statement of Deficiency",
+                    entry.sod_text,
+                    "Plan of Correction",
+                    *(
+                        f"{section.value.replace('_', ' ').title()}\n"
+                        f"{entry.content.model_dump()[section.value]}"
+                        for section in POC_SECTION_ORDER
+                    ),
+                )
+            )
+            for entry in revision.document_entries
+        )
     values = revision.content.model_dump()
     return "\n\n".join(
         values[section.value]

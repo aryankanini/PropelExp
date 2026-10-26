@@ -28,7 +28,7 @@ describe("ExtractionReviewPage", () => {
     vi.clearAllMocks();
   });
 
-  it("confirms the selected deficiency and continues to POC authoring", async () => {
+  it("confirms all deficiencies and generates one combined editable document", async () => {
     const reviewField = {
       field_id: "deficiency-1",
       deficiency_id: "deficiency-1",
@@ -78,6 +78,57 @@ describe("ExtractionReviewPage", () => {
           JSON.stringify({ poc_generation_eligible: true }),
           { status: 200 },
         ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            deficiency_id: "case:case-1",
+            revisions: [{
+              revision_id: "poc-revision-1",
+              deficiency_revision_id: "review-revision-approved",
+              content: {
+                affected_residents: "Resident guidance.",
+                others_at_risk: "Risk guidance.",
+                corrective_measures: "Corrective guidance.",
+                monitoring: "Monitoring guidance.",
+                completion_date: "Completion guidance.",
+              },
+              section_origins: {
+                affected_residents: "ai_generated",
+                others_at_risk: "ai_generated",
+                corrective_measures: "ai_generated",
+                monitoring: "ai_generated",
+                completion_date: "ai_generated",
+              },
+              grounded_claims: [],
+              missing_information: [],
+              document_entries: [{
+                deficiency_id: "deficiency-1",
+                label: "F0686",
+                sod_text: "Complete statement of deficiency",
+                content: {
+                  affected_residents: "Resident guidance.",
+                  others_at_risk: "Risk guidance.",
+                  corrective_measures: "Corrective guidance.",
+                  monitoring: "Monitoring guidance.",
+                  completion_date: "Completion guidance.",
+                },
+                section_origins: {
+                  affected_residents: "ai_generated",
+                  others_at_risk: "ai_generated",
+                  corrective_measures: "ai_generated",
+                  monitoring: "ai_generated",
+                  completion_date: "ai_generated",
+                },
+                grounded_claims: [],
+                missing_information: [],
+              }],
+              status: "unapproved",
+            }],
+            current_revision_id: "poc-revision-1",
+          }),
+          { status: 200 },
+        ),
       );
 
     render(<ExtractionReviewPage />);
@@ -85,19 +136,28 @@ describe("ExtractionReviewPage", () => {
     expect(screen.getByText("12-3456")).toBeInTheDocument();
     fireEvent.click(
       screen.getByRole("button", {
-        name: "Confirm and continue to POC",
+        name: "Confirm all SODs and generate POC",
       }),
     );
 
     await waitFor(() => {
       expect(session.setDeficiencyId).toHaveBeenCalledWith("deficiency-1");
-      expect(session.navigate).toHaveBeenCalledWith("poc-authoring");
+      expect(screen.getByText("1 SOD and POC records in one document")).toBeVisible();
     });
-    expect(request).toHaveBeenLastCalledWith(
+    expect(request).toHaveBeenNthCalledWith(
+      2,
       expect.stringContaining(
         "/sessions/session-1/deficiencies/deficiency-1/confirmation",
       ),
       expect.objectContaining({ method: "PATCH" }),
     );
+    expect(request).toHaveBeenNthCalledWith(
+      3,
+      expect.stringContaining("/sessions/session-1/poc-document"),
+      expect.objectContaining({ method: "POST" }),
+    );
+    expect(session.navigate).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Continue to POC draft" }));
+    expect(session.navigate).toHaveBeenCalledWith("poc-authoring");
   });
 });
