@@ -91,6 +91,24 @@ def test_azure_provider_endpoint_requires_api_version(tmp_path: Path) -> None:
     assert error.value.setting_names == ("api_version",)
 
 
+def test_azure_provider_base_endpoint_uses_model_as_deployment(
+    tmp_path: Path,
+) -> None:
+    env_file = tmp_path / ".env"
+    write_environment(
+        env_file,
+        PROVIDER_ENDPOINT="https://resource.openai.azure.com",
+        PROVIDER_MODEL="poc deployment",
+        PROVIDER_API_VERSION="2025-01-01-preview",
+    )
+
+    settings = ProviderSettings.load(env_file)
+
+    assert str(settings.endpoint) == (
+        "https://resource.openai.azure.com/openai/deployments/poc%20deployment"
+    )
+
+
 @pytest.mark.parametrize(
     ("name", "value"),
     (

@@ -158,7 +158,10 @@ class ProviderSettings(BaseModel):
     def _from_provider(cls, environment: _ProviderEnvironment) -> Self:
         approval = _approved_policy(environment)
         settings = cls(
-            endpoint=environment.endpoint,
+            endpoint=_deployment_endpoint(
+                environment.endpoint,
+                environment.model,
+            ),
             model=environment.model,
             timeout_seconds=environment.timeout_seconds,
             api_version=environment.api_version,
@@ -173,14 +176,8 @@ class ProviderSettings(BaseModel):
         azure: _AzureOpenAiEnvironment,
         policy: _ProviderPolicyEnvironment,
     ) -> Self:
-        endpoint = str(azure.endpoint).rstrip("/")
-        if "/openai/deployments/" not in urlsplit(endpoint).path:
-            endpoint = (
-                f"{endpoint}/openai/deployments/"
-                f"{quote(azure.deployment, safe='')}"
-            )
         settings = cls(
-            endpoint=AnyHttpUrl(endpoint),
+            endpoint=_deployment_endpoint(azure.endpoint, azure.deployment),
             model=azure.deployment,
             timeout_seconds=policy.timeout_seconds,
             api_version=azure.api_version,
@@ -216,3 +213,21 @@ def _configuration_error(error: ValidationError) -> ProviderConfigurationError:
             for item in error.errors(include_input=False)
         )
     )
+
+
+def _deployment_endpoint(
+    endpoint: AnyHttpUrl,
+    deployment: str,
+) -> AnyHttpUrl:
+    value = str(endpoint).rstrip("/")
+    parsed = urlsplit(value)
+    if (
+        parsed.hostname
+        and parsed.hostname.endswith(".openai.azure.com")
+        and "/openai/deployments/" not in parsed.path
+    ):
+        value = (
+            f"{value}/openai/deployments/"
+            f"{quote(deployment, safe='')}"
+        )
+    return AnyHttpUrl(value)
