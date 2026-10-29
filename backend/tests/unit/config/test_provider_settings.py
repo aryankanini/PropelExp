@@ -78,6 +78,19 @@ def test_azure_openai_variables_are_supported_without_provider_duplicates(
     assert settings.api_key.get_secret_value() == "azure-secret-value"
 
 
+def test_azure_provider_endpoint_requires_api_version(tmp_path: Path) -> None:
+    env_file = tmp_path / ".env"
+    write_environment(
+        env_file,
+        PROVIDER_ENDPOINT="https://resource.openai.azure.com/openai/deployments/poc",
+    )
+
+    with pytest.raises(ProviderConfigurationError) as error:
+        ProviderSettings.load(env_file)
+
+    assert error.value.setting_names == ("api_version",)
+
+
 @pytest.mark.parametrize(
     ("name", "value"),
     (

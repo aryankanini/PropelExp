@@ -4,8 +4,17 @@ from pathlib import Path
 from typing import Self
 from urllib.parse import quote, urlsplit
 
-from pydantic import AnyHttpUrl, BaseModel, ConfigDict, Field, PrivateAttr, SecretStr
-from pydantic import ValidationError, field_validator
+from pydantic import (
+    AnyHttpUrl,
+    BaseModel,
+    ConfigDict,
+    Field,
+    PrivateAttr,
+    SecretStr,
+    ValidationError,
+    ValidationInfo,
+    field_validator,
+)
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from cms_planner.application.provider_approval import (
@@ -58,6 +67,22 @@ class _ProviderEnvironment(BaseSettings):
         if api_key.get_secret_value().strip().lower() in DISALLOWED_API_KEYS:
             raise ValueError("provider API key must not be a default value")
         return api_key
+
+    @field_validator("api_version")
+    @classmethod
+    def require_azure_api_version(
+        cls,
+        api_version: str | None,
+        info: ValidationInfo,
+    ) -> str | None:
+        endpoint = info.data.get("endpoint")
+        if (
+            isinstance(endpoint, AnyHttpUrl)
+            and endpoint.host.endswith(".openai.azure.com")
+            and not api_version
+        ):
+            raise ValueError("Azure OpenAI requires an API version")
+        return api_version
 
 
 class _AzureOpenAiEnvironment(BaseSettings):
