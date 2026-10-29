@@ -6,6 +6,7 @@ import { EndSessionDialog } from "../../shared/session/EndSessionDialog";
 import { useEndSession } from "../../shared/session/useEndSession";
 import {
   createPocApi,
+  PocApiError,
   type PocDraft,
   type PocSectionName,
 } from "../../shared/api/poc";
@@ -36,6 +37,7 @@ export function ExtractionReviewPage() {
   const [confirmationState, setConfirmationState] = useState<
     "idle" | "pending" | "error"
   >("idle");
+  const [confirmationError, setConfirmationError] = useState("");
 
   useEffect(() => {
     if (!sessionId) return;
@@ -99,6 +101,7 @@ export function ExtractionReviewPage() {
   async function confirmAndContinue() {
     if (!field || deficiencyFields.some((item) => item.unresolved)) return;
     setConfirmationState("pending");
+    setConfirmationError("");
 
     try {
       const deficiencyIds = [
@@ -126,12 +129,35 @@ export function ExtractionReviewPage() {
             }),
           },
         );
-        if (!response.ok) throw new Error("Confirmation failed");
+        if (!response.ok) {
+          const problem = await response.json() as {
+            detail?: { message?: string };
+            message?: string;
+          };
+          throw new Error(
+            problem.detail?.message
+              ?? problem.message
+              ?? "The extracted values could not be confirmed.",
+          );
+        }
       }
       setDeficiencyId(field.deficiencyId);
-      setDraft(await pocApi.generate(field.deficiencyId));
+      try {
+        setDraft(await pocApi.generate(field.deficiencyId));
+      } catch (error) {
+        throw new Error(
+          error instanceof PocApiError
+            ? `${error.problem.message} Your confirmations were saved; retry generation.`
+            : "POC generation failed. Your confirmations were saved; retry generation.",
+        );
+      }
       setConfirmationState("idle");
-    } catch {
+    } catch (error) {
+      setConfirmationError(
+        error instanceof Error
+          ? error.message
+          : "The document could not be generated.",
+      );
       setConfirmationState("error");
     }
   }
@@ -313,7 +339,7 @@ export function ExtractionReviewPage() {
 
         {confirmationState === "error" && (
           <p className="dialog-error" role="alert">
-            This deficiency could not be confirmed. Resolve incomplete values and try again.
+            {confirmationError}
           </p>
         )}
 

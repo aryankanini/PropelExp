@@ -47,6 +47,37 @@ def test_provider_settings_serialization_excludes_api_key(tmp_path: Path) -> Non
     assert "api_key" not in serialized
 
 
+def test_azure_openai_variables_are_supported_without_provider_duplicates(
+    tmp_path: Path,
+) -> None:
+    env_file = tmp_path / ".env"
+    env_file.write_text(
+        "\n".join(
+            (
+                "AZURE_OPENAI_ENDPOINT=https://resource.openai.azure.com",
+                "AZURE_OPENAI_API_KEY=azure-secret-value",
+                "AZURE_OPENAI_API_VERSION=2025-01-01-preview",
+                "AZURE_OPENAI_DEPLOYMENT=poc-deployment",
+                "PROVIDER_TIMEOUT_SECONDS=120",
+                "PROVIDER_BAA_APPROVED=true",
+                "PROVIDER_RETENTION_APPROVED=true",
+                "PROVIDER_TRAINING_USE_APPROVED=true",
+                "PROVIDER_RISK_APPROVED=true",
+            )
+        ),
+        encoding="utf-8",
+    )
+
+    settings = ProviderSettings.load(env_file)
+
+    assert str(settings.endpoint) == (
+        "https://resource.openai.azure.com/openai/deployments/poc-deployment"
+    )
+    assert settings.model == "poc-deployment"
+    assert settings.api_version == "2025-01-01-preview"
+    assert settings.api_key.get_secret_value() == "azure-secret-value"
+
+
 @pytest.mark.parametrize(
     ("name", "value"),
     (

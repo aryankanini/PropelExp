@@ -47,6 +47,18 @@ class ConfirmationService:
             expected = {
                 item.field_id: item.revision_id for item in command.expected_revisions
             }
+            if fields and all(
+                field.confirmed_revision_id == field.current_revision_id
+                for field in fields
+            ):
+                return aggregate, ConfirmationOutcome(
+                    deficiency_id=command.deficiency_id,
+                    confirmed=True,
+                    poc_generation_eligible=True,
+                    confirmed_revision_ids=tuple(
+                        field.current_revision_id for field in fields
+                    ),
+                )
             for field in fields:
                 if expected.get(field.field_id) != field.current_revision_id:
                     raise StaleReviewRevisionError(

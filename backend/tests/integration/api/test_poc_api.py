@@ -258,6 +258,18 @@ def test_confirmed_case_generates_all_pocs_with_one_provider_call(
             assert confirmed.status_code == 200
         generated = client.post("/sessions/session-1/poc-document")
         repeated = client.post("/sessions/session-1/poc-document")
+        repeated_confirmation = client.patch(
+            "/sessions/session-1/deficiencies/deficiency-1/confirmation",
+            json={
+                "deficiency_id": "deficiency-1",
+                "expected_revisions": [
+                    {
+                        "field_id": "deficiency-1",
+                        "revision_id": "review-revision-1",
+                    }
+                ],
+            },
+        )
         edited = client.patch(
             "/sessions/session-1/poc-document",
             json={
@@ -282,6 +294,8 @@ def test_confirmed_case_generates_all_pocs_with_one_provider_call(
 
     assert generated.status_code == 200
     assert repeated.status_code == 200
+    assert repeated_confirmation.status_code == 200
+    assert repeated_confirmation.json()["poc_generation_eligible"] is True
     assert provider.case_calls == 1
     entries = generated.json()["revisions"][0]["document_entries"]
     assert [

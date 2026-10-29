@@ -161,9 +161,6 @@ class OpenAiPocProvider:
                                 "reviewed_fields": [
                                     field.model_dump() for field in request.reviewed_fields
                                 ],
-                                "evidence_spans": [
-                                    span.model_dump() for span in request.evidence_spans
-                                ],
                             }
                             for request in requests
                         ]

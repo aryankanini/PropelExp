@@ -2,6 +2,7 @@
 
 from pathlib import Path
 from typing import Self
+from urllib.parse import quote, urlsplit
 
 from pydantic import AnyHttpUrl, BaseModel, ConfigDict, Field, PrivateAttr, SecretStr
 from pydantic import ValidationError, field_validator
@@ -59,6 +60,49 @@ class _ProviderEnvironment(BaseSettings):
         return api_key
 
 
+class _AzureOpenAiEnvironment(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_prefix="azure_openai_",
+        extra="ignore",
+        case_sensitive=False,
+    )
+
+    endpoint: AnyHttpUrl
+    api_key: SecretStr = Field(min_length=1)
+    api_version: str = Field(min_length=1)
+    deployment: str = Field(min_length=1)
+
+    @field_validator("endpoint")
+    @classmethod
+    def require_tls(cls, endpoint: AnyHttpUrl) -> AnyHttpUrl:
+        if endpoint.scheme != "https":
+            raise ValueError("Azure OpenAI endpoint must use TLS")
+        return endpoint
+
+    @field_validator("api_key")
+    @classmethod
+    def reject_default_key(cls, api_key: SecretStr) -> SecretStr:
+        if api_key.get_secret_value().strip().lower() in DISALLOWED_API_KEYS:
+            raise ValueError("Azure OpenAI API key must not be a default value")
+        return api_key
+
+
+class _ProviderPolicyEnvironment(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_prefix="provider_",
+        extra="ignore",
+        case_sensitive=False,
+    )
+
+    timeout_seconds: int = Field(gt=0, le=MAX_PROVIDER_TIMEOUT_SECONDS)
+    baa_approved: bool
+    retention_approved: bool
+    training_use_approved: bool
+    risk_approved: bool
+
+
 class ProviderSettings(BaseModel):
     """Validated non-secret provider settings and private credential access."""
 
@@ -76,22 +120,18 @@ class ProviderSettings(BaseModel):
         options = {} if env_file is None else {"_env_file": env_file}
         try:
             environment = _ProviderEnvironment(**options)
-            approval = ProviderApproval(
-                baa=environment.baa_approved,
-                retention=environment.retention_approved,
-                training_use=environment.training_use_approved,
-                risk=environment.risk_approved,
-            )
-            require_provider_approval(approval)
-        except ValidationError as error:
-            names = tuple(
-                str(item["loc"][0])
-                for item in error.errors(include_input=False)
-            )
-            raise ProviderConfigurationError(names) from None
-        except ProviderNotApprovedError as error:
-            raise ProviderConfigurationError(error.approval_names) from None
+        except ValidationError as provider_error:
+            try:
+                azure = _AzureOpenAiEnvironment(**options)
+                policy = _ProviderPolicyEnvironment(**options)
+            except ValidationError:
+                raise _configuration_error(provider_error) from None
+            return cls._from_azure(azure, policy)
+        return cls._from_provider(environment)
 
+    @classmethod
+    def _from_provider(cls, environment: _ProviderEnvironment) -> Self:
+        approval = _approved_policy(environment)
         settings = cls(
             endpoint=environment.endpoint,
             model=environment.model,
@@ -102,6 +142,52 @@ class ProviderSettings(BaseModel):
         settings._api_key = environment.api_key
         return settings
 
+    @classmethod
+    def _from_azure(
+        cls,
+        azure: _AzureOpenAiEnvironment,
+        policy: _ProviderPolicyEnvironment,
+    ) -> Self:
+        endpoint = str(azure.endpoint).rstrip("/")
+        if "/openai/deployments/" not in urlsplit(endpoint).path:
+            endpoint = (
+                f"{endpoint}/openai/deployments/"
+                f"{quote(azure.deployment, safe='')}"
+            )
+        settings = cls(
+            endpoint=AnyHttpUrl(endpoint),
+            model=azure.deployment,
+            timeout_seconds=policy.timeout_seconds,
+            api_version=azure.api_version,
+            approval=_approved_policy(policy),
+        )
+        settings._api_key = azure.api_key
+        return settings
+
     @property
     def api_key(self) -> SecretStr:
         return self._api_key
+
+
+def _approved_policy(
+    environment: _ProviderEnvironment | _ProviderPolicyEnvironment,
+) -> ProviderApproval:
+    approval = ProviderApproval(
+        baa=environment.baa_approved,
+        retention=environment.retention_approved,
+        training_use=environment.training_use_approved,
+        risk=environment.risk_approved,
+    )
+    try:
+        return require_provider_approval(approval)
+    except ProviderNotApprovedError as error:
+        raise ProviderConfigurationError(error.approval_names) from None
+
+
+def _configuration_error(error: ValidationError) -> ProviderConfigurationError:
+    return ProviderConfigurationError(
+        tuple(
+            str(item["loc"][0])
+            for item in error.errors(include_input=False)
+        )
+    )
